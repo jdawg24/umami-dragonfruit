@@ -137,6 +137,7 @@ BITCOIN_CORE_H = \
   coins.h \
   common/bloom.h \
   common/init.h \
+  common/transport.h \
   common/run_command.h \
   common/sv2_noise.h
   common/url.h \
@@ -657,7 +658,8 @@ libsugarchain_common_a_SOURCES = \
   common/init.cpp \
   common/interfaces.cpp \
   common/run_command.cpp \
-  common/sv2_noise.cpp
+  common/sv2_noise.cpp \
+  common/transport.cpp \
   compressor.cpp \
   core_read.cpp \
   core_write.cpp \
