@@ -12,6 +12,8 @@
 #include <addrdb.h>
 #include <addrman.h>
 #include <banman.h>
+#include <common/v1_transport.h>
+#include <common/v1_transport.h>
 #include <clientversion.h>
 #include <compat/compat.h>
 #include <consensus/consensus.h>
@@ -715,121 +717,6 @@ bool CNode::ReceiveMsgBytes(Span<const uint8_t> msg_bytes, bool& complete)
     return true;
 }
 
-int V1TransportDeserializer::readHeader(Span<const uint8_t> msg_bytes)
-{
-    // copy data to temporary parsing buffer
-    unsigned int nRemaining = CMessageHeader::HEADER_SIZE - nHdrPos;
-    unsigned int nCopy = std::min<unsigned int>(nRemaining, msg_bytes.size());
-
-    memcpy(&hdrbuf[nHdrPos], msg_bytes.data(), nCopy);
-    nHdrPos += nCopy;
-
-    // if header incomplete, exit
-    if (nHdrPos < CMessageHeader::HEADER_SIZE)
-        return nCopy;
-
-    // deserialize to CMessageHeader
-    try {
-        hdrbuf >> hdr;
-    }
-    catch (const std::exception&) {
-        LogPrint(BCLog::NET, "Header error: Unable to deserialize, peer=%d\n", m_node_id);
-        return -1;
-    }
-
-    // Check start string, network magic
-    if (memcmp(hdr.pchMessageStart, m_chain_params.MessageStart(), CMessageHeader::MESSAGE_START_SIZE) != 0) {
-        LogPrint(BCLog::NET, "Header error: Wrong MessageStart %s received, peer=%d\n", HexStr(hdr.pchMessageStart), m_node_id);
-        return -1;
-    }
-
-    // reject messages larger than MAX_SIZE or MAX_PROTOCOL_MESSAGE_LENGTH
-    if (hdr.nMessageSize > MAX_SIZE || hdr.nMessageSize > MAX_PROTOCOL_MESSAGE_LENGTH) {
-        LogPrint(BCLog::NET, "Header error: Size too large (%s, %u bytes), peer=%d\n", SanitizeString(hdr.GetCommand()), hdr.nMessageSize, m_node_id);
-        return -1;
-    }
-
-    // switch state to reading message data
-    in_data = true;
-
-    return nCopy;
-}
-
-int V1TransportDeserializer::readData(Span<const uint8_t> msg_bytes)
-{
-    unsigned int nRemaining = hdr.nMessageSize - nDataPos;
-    unsigned int nCopy = std::min<unsigned int>(nRemaining, msg_bytes.size());
-
-    if (vRecv.size() < nDataPos + nCopy) {
-        // Allocate up to 256 KiB ahead, but never more than the total message size.
-        vRecv.resize(std::min(hdr.nMessageSize, nDataPos + nCopy + 256 * 1024));
-    }
-
-    hasher.Write(msg_bytes.first(nCopy));
-    memcpy(&vRecv[nDataPos], msg_bytes.data(), nCopy);
-    nDataPos += nCopy;
-
-    return nCopy;
-}
-
-const uint256& V1TransportDeserializer::GetMessageHash() const
-{
-    assert(Complete());
-    if (data_hash.IsNull())
-        hasher.Finalize(data_hash);
-    return data_hash;
-}
-
-CNetMessage V1TransportDeserializer::GetMessage(const std::chrono::microseconds time, bool& reject_message)
-{
-    // Initialize out parameter
-    reject_message = false;
-    // decompose a single CNetMessage from the TransportDeserializer
-    CNetMessage msg(std::move(vRecv));
-
-    // store message type string, time, and sizes
-    msg.m_type = hdr.GetCommand();
-    msg.m_time = time;
-    msg.m_message_size = hdr.nMessageSize;
-    msg.m_raw_message_size = hdr.nMessageSize + CMessageHeader::HEADER_SIZE;
-
-    uint256 hash = GetMessageHash();
-
-    // We just received a message off the wire, harvest entropy from the time (and the message checksum)
-    RandAddEvent(ReadLE32(hash.begin()));
-
-    // Check checksum and header message type string
-    if (memcmp(hash.begin(), hdr.pchChecksum, CMessageHeader::CHECKSUM_SIZE) != 0) {
-        LogPrint(BCLog::NET, "Header error: Wrong checksum (%s, %u bytes), expected %s was %s, peer=%d\n",
-                 SanitizeString(msg.m_type), msg.m_message_size,
-                 HexStr(Span{hash}.first(CMessageHeader::CHECKSUM_SIZE)),
-                 HexStr(hdr.pchChecksum),
-                 m_node_id);
-        reject_message = true;
-    } else if (!hdr.IsCommandValid()) {
-        LogPrint(BCLog::NET, "Header error: Invalid message type (%s, %u bytes), peer=%d\n",
-                 SanitizeString(hdr.GetCommand()), msg.m_message_size, m_node_id);
-        reject_message = true;
-    }
-
-    // Always reset the network deserializer (prepare for the next message)
-    Reset();
-    return msg;
-}
-
-void V1TransportSerializer::prepareForTransport(CSerializedNetMsg& msg, std::vector<unsigned char>& header) const
-{
-    // create dbl-sha256 checksum
-    uint256 hash = Hash(msg.data);
-
-    // create header
-    CMessageHeader hdr(Params().MessageStart(), msg.m_type.c_str(), msg.data.size());
-    memcpy(hdr.pchChecksum, hash.begin(), CMessageHeader::CHECKSUM_SIZE);
-
-    // serialize header
-    header.reserve(CMessageHeader::HEADER_SIZE);
-    CVectorWriter{SER_NETWORK, INIT_PROTO_VERSION, header, 0, hdr};
-}
 
 size_t CConnman::SocketSendData(CNode& node) const
 {
