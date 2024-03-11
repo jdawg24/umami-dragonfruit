@@ -104,26 +104,6 @@ struct AddedNodeInfo
 class CNodeStats;
 class CClientUIInterface;
 
-struct CSerializedNetMsg {
-    CSerializedNetMsg() = default;
-    CSerializedNetMsg(CSerializedNetMsg&&) = default;
-    CSerializedNetMsg& operator=(CSerializedNetMsg&&) = default;
-    // No implicit copying, only moves.
-    CSerializedNetMsg(const CSerializedNetMsg& msg) = delete;
-    CSerializedNetMsg& operator=(const CSerializedNetMsg&) = delete;
-
-    CSerializedNetMsg Copy() const
-    {
-        CSerializedNetMsg copy;
-        copy.data = data;
-        copy.m_type = m_type;
-        return copy;
-    }
-
-    std::vector<unsigned char> data;
-    std::string m_type;
-};
-
 /**
  * Look up IP addresses from all interfaces on the machine and add them to the
  * list of local addresses to self-advertise.
@@ -222,52 +202,6 @@ public:
     Network m_network;
     uint32_t m_mapped_as;
     ConnectionType m_conn_type;
-};
-
-
-/** Transport protocol agnostic message container.
- * Ideally it should only contain receive time, payload,
- * type and size.
- */
-class CNetMessage {
-public:
-    CDataStream m_recv;                  //!< received message data
-    std::chrono::microseconds m_time{0}; //!< time of message receipt
-    uint32_t m_message_size{0};          //!< size of the payload
-    uint32_t m_raw_message_size{0};      //!< used wire size of the message (including header/checksum)
-    std::string m_type;
-
-    CNetMessage(CDataStream&& recv_in) : m_recv(std::move(recv_in)) {}
-    // Only one CNetMessage object will exist for the same message on either
-    // the receive or processing queue. For performance reasons we therefore
-    // delete the copy constructor and assignment operator to avoid the
-    // possibility of copying CNetMessage objects.
-    CNetMessage(CNetMessage&&) = default;
-    CNetMessage(const CNetMessage&) = delete;
-    CNetMessage& operator=(CNetMessage&&) = default;
-    CNetMessage& operator=(const CNetMessage&) = delete;
-
-    void SetVersion(int nVersionIn)
-    {
-        m_recv.SetVersion(nVersionIn);
-    }
-};
-
-/** The TransportDeserializer takes care of holding and deserializing the
- * network receive buffer. It can deserialize the network buffer into a
- * transport protocol agnostic CNetMessage (message type & payload)
- */
-class TransportDeserializer {
-public:
-    // returns true if the current deserialization is complete
-    virtual bool Complete() const = 0;
-    // set the serialization context version
-    virtual void SetVersion(int version) = 0;
-    /** read and deserialize data, advances msg_bytes data pointer */
-    virtual int Read(Span<const uint8_t>& msg_bytes) = 0;
-    // decomposes a message from the context
-    virtual CNetMessage GetMessage(std::chrono::microseconds time, bool& reject_message) = 0;
-    virtual ~TransportDeserializer() {}
 };
 
 class V1TransportDeserializer final : public TransportDeserializer
