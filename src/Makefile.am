@@ -142,6 +142,8 @@ BITCOIN_CORE_H = \
   common/sv2_messages.h \
   common/sv2_noise.h \
   common/url.h \
+  common/v1_transport.h \
+  common/v2_transport.h \
   compat/assumptions.h \
   compat/byteswap.h \
   compat/compat.h \
@@ -199,6 +201,7 @@ BITCOIN_CORE_H = \
   memusage.h \
   merkleblock.h \
   net.h \
+  net_message.h \
   net_permissions.h \
   net_processing.h \
   net_types.h \
@@ -653,6 +656,7 @@ libsugarchain_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsugarchain_common_a_SOURCES = \
   base58.cpp \
   bech32.cpp \
+  bip324.cpp \
   chainparams.cpp \
   coins.cpp \
   common/bloom.cpp \
@@ -662,6 +666,8 @@ libsugarchain_common_a_SOURCES = \
   common/sv2_messages.cpp \
   common/sv2_noise.cpp \
   common/transport.cpp \
+  common/v1_transport.cpp \
+  common/v2_transport.cpp \ 
   compressor.cpp \
   core_read.cpp \
   core_write.cpp \
