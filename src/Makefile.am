@@ -227,6 +227,7 @@ BITCOIN_CORE_H = \
   node/miner.h \
   node/minisketchwrapper.h \
   node/psbt.h \
+  node/sv2_template_provider.h
   node/transaction.h \
   node/txreconciliation.h \
   node/utxo_snapshot.h \
@@ -418,6 +419,7 @@ libsugarchain_node_a_SOURCES = \
   node/miner.cpp \
   node/minisketchwrapper.cpp \
   node/psbt.cpp \
+  node/sv2_template_provider.h \
   node/transaction.cpp \
   node/txreconciliation.cpp \
   node/utxo_snapshot.cpp \
