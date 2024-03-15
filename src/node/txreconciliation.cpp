@@ -6,7 +6,7 @@
 
 #include <util/check.h>
 #include <util/system.h>
-
+#include <hash.h>
 #include <unordered_map>
 #include <variant>
 
