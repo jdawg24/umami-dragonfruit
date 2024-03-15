@@ -330,6 +330,7 @@ BOOST_AUTO_TEST_CASE(bip340_test_vectors)
         // Do 10 iterations where we sign with a random Merkle root to tweak,
         // and compare against the resulting tweaked keys, with random aux.
         // In iteration i=0 we tweak with empty Merkle tree.
+        // lines 346 -367 sv2 code block
         for (int i = 0; i < 10; ++i) {
             uint256 merkle_root;
             if (i) merkle_root = InsecureRand256();
@@ -342,6 +343,28 @@ BOOST_AUTO_TEST_CASE(bip340_test_vectors)
             BOOST_CHECK(tweaked_key.VerifySchnorr(msg256, sig64));
         }
     }
+BOOST_AUTO_TEST_CASE(key_serialization)
+{
+    {
+        DataStream s{};
+        CKey key;
+        BOOST_CHECK_EXCEPTION(s << key, std::ios_base::failure,
+                              HasReason{"invalid key"});
+
+        s << MakeByteSpan(std::vector<std::byte>(33, std::byte(0)));
+        BOOST_CHECK_EXCEPTION(s >> key, std::ios_base::failure,
+                              HasReason{"invalid key"});
+    }
+
+    for (bool compressed : {true, false}) {
+        CKey key{GenerateRandomKey(/*compressed=*/compressed)};
+        DataStream s{};
+        s << key;
+        CKey key_copy;
+        s >> key_copy;
+        BOOST_CHECK(key == key_copy);
+    }
+}
 }
 
 BOOST_AUTO_TEST_SUITE_END()
