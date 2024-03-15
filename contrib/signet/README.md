@@ -44,6 +44,8 @@ Adding the --ongoing parameter will then cause the signet miner to create blocks
 
     $MINER --cli="$CLI" generate --grind-cmd="$GRIND" --address="$ADDR" --nbits=$NBITS --ongoing
 
+For custom signets with a trivial challenge a PSBT is not necessary. The miner detects this for `OP_TRUE`.
+
 Other options
 -------------
 
