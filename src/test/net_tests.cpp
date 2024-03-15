@@ -2,6 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+// significant changes from v25 - v27 
+
 #include <chainparams.h>
 #include <clientversion.h>
 #include <compat/compat.h>
