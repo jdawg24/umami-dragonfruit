@@ -12,7 +12,7 @@
 #include <node/connection_types.h>
 #include <consensus/amount.h>
 #include <crypto/siphash.h>
-#include <hash.h>
+
 #include <i2p.h>
 #include <net_permissions.h>
 #include <netaddress.h>
@@ -60,8 +60,7 @@ static constexpr std::chrono::minutes TIMEOUT_INTERVAL{20};
 static constexpr auto FEELER_INTERVAL = 2min;
 /** Run the extra block-relay-only connection loop once every 5 minutes. **/
 static constexpr auto EXTRA_BLOCK_RELAY_ONLY_PEER_INTERVAL = 5min;
-/** Maximum length of incoming protocol messages (no message over 4 MB is currently acceptable). */
-static const unsigned int MAX_PROTOCOL_MESSAGE_LENGTH = 4 * 1000 * 1000;
+
 /** Maximum length of the user agent string in `version` message */
 static const unsigned int MAX_SUBVERSION_LENGTH = 256;
 /** Maximum number of automatic outgoing nodes over which we'll relay everything (blocks, tx, addrs, etc) */
@@ -91,7 +90,10 @@ static constexpr bool DEFAULT_FIXEDSEEDS{true};
 static const size_t DEFAULT_MAXRECEIVEBUFFER = 5 * 1000;
 static const size_t DEFAULT_MAXSENDBUFFER    = 1 * 1000;
 
-typedef int64_t NodeId;
+struct AddedNodeParams {
+    std::string m_added_node;
+    bool m_use_v2transport;
+};
 
 struct AddedNodeInfo
 {
@@ -202,83 +204,6 @@ public:
     Network m_network;
     uint32_t m_mapped_as;
     ConnectionType m_conn_type;
-};
-
-class V1TransportDeserializer final : public TransportDeserializer
-{
-private:
-    const CChainParams& m_chain_params;
-    const NodeId m_node_id; // Only for logging
-    mutable CHash256 hasher;
-    mutable uint256 data_hash;
-    bool in_data;                   // parsing header (false) or data (true)
-    CDataStream hdrbuf;             // partially received header
-    CMessageHeader hdr;             // complete header
-    CDataStream vRecv;              // received message data
-    unsigned int nHdrPos;
-    unsigned int nDataPos;
-
-    const uint256& GetMessageHash() const;
-    int readHeader(Span<const uint8_t> msg_bytes);
-    int readData(Span<const uint8_t> msg_bytes);
-
-    void Reset() {
-        vRecv.clear();
-        hdrbuf.clear();
-        hdrbuf.resize(24);
-        in_data = false;
-        nHdrPos = 0;
-        nDataPos = 0;
-        data_hash.SetNull();
-        hasher.Reset();
-    }
-
-public:
-    V1TransportDeserializer(const CChainParams& chain_params, const NodeId node_id, int nTypeIn, int nVersionIn)
-        : m_chain_params(chain_params),
-          m_node_id(node_id),
-          hdrbuf(nTypeIn, nVersionIn),
-          vRecv(nTypeIn, nVersionIn)
-    {
-        Reset();
-    }
-
-    bool Complete() const override
-    {
-        if (!in_data)
-            return false;
-        return (hdr.nMessageSize == nDataPos);
-    }
-    void SetVersion(int nVersionIn) override
-    {
-        hdrbuf.SetVersion(nVersionIn);
-        vRecv.SetVersion(nVersionIn);
-    }
-    int Read(Span<const uint8_t>& msg_bytes) override
-    {
-        int ret = in_data ? readData(msg_bytes) : readHeader(msg_bytes);
-        if (ret < 0) {
-            Reset();
-        } else {
-            msg_bytes = msg_bytes.subspan(ret);
-        }
-        return ret;
-    }
-    CNetMessage GetMessage(std::chrono::microseconds time, bool& reject_message) override;
-};
-
-/** The TransportSerializer prepares messages for the network transport
- */
-class TransportSerializer {
-public:
-    // prepare message for transport (header construction, error-correction computation, payload encryption, etc.)
-    virtual void prepareForTransport(CSerializedNetMsg& msg, std::vector<unsigned char>& header) const = 0;
-    virtual ~TransportSerializer() {}
-};
-
-class V1TransportSerializer : public TransportSerializer {
-public:
-    void prepareForTransport(CSerializedNetMsg& msg, std::vector<unsigned char>& header) const override;
 };
 
 struct CNodeOptions
