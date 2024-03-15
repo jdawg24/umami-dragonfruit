@@ -344,7 +344,7 @@ BOOST_AUTO_TEST_CASE(bip340_test_vectors)
         }
     }
 BOOST_AUTO_TEST_CASE(key_serialization)
-{
+ {
     {
         DataStream s{};
         CKey key;
@@ -364,7 +364,7 @@ BOOST_AUTO_TEST_CASE(key_serialization)
         s >> key_copy;
         BOOST_CHECK(key == key_copy);
     }
-}
+ }
 }
 
 BOOST_AUTO_TEST_SUITE_END()
