@@ -156,6 +156,31 @@ public:
 
     //! Load private key and check that public key matches.
     bool Load(const CPrivKey& privkey, const CPubKey& vchPubKey, bool fSkipCheck);
+    /** Straight-forward serialization of key bytes (and compressed flag).
+     *  Use GetPrivKey() for OpenSSL compatible DER encoding.
+     * 29432/sv2 code block lines 159 - 183 // 25-27check needed
+     */ 
+    template <typename Stream>
+    void Serialize(Stream& s) const
+    {
+        if (!IsValid()) {
+            throw std::ios_base::failure("invalid key");
+        }
+        s << fCompressed;
+        ::Serialize(s, Span{*this});
+    }
+
+    template <typename Stream>
+    void Unserialize(Stream& s)
+    {
+        s >> fCompressed;
+        MakeKeyData();
+        s >> Span{*keydata};
+        if (!Check(keydata->data())) {
+            ClearKeyData();
+            throw std::ios_base::failure("invalid key");
+        }
+    }
 };
 
 struct CExtKey {
