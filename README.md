@@ -3,17 +3,16 @@
 Sugarchain Core integration/staging tree
 =====================================
 
-https://bitcoincore.org
+https://sugarchain.org
 
-For an immediately usable, binary version of the Sugarchain Core software, see
-https://bitcoincore.org/en/download/.
+For immediately usable, previous release, binary version of the Sugarchain Core software, see
+https://github.com/sugarchain-project/sugarchain/releases/tag/v0.16.3.36-payapoya 
 
 What is Sugarchain Core?
 ---------------------
 
 Sugarchain Core connects to the Sugarchain peer-to-peer network to download and fully
-validate blocks and transactions. It also includes a wallet and graphical user
-interface, which can be optionally built.
+validate blocks and transactions. Legacy wallet is no longer supported in this release. 
 
 Further information about Sugarchain Core is available in the [doc folder](/doc).
 
@@ -26,10 +25,6 @@ information or see https://opensource.org/licenses/MIT.
 Development Process
 -------------------
 
-The `master` branch is regularly built (see `doc/build-*.md` for instructions) and tested, but it is not guaranteed to be
-completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
-regularly from release branches to indicate new official, stable release versions of Sugarchain Core.
-
 The https://github.com/sugarchain-core/gui repository is used exclusively for the
 development of the GUI. Its master branch is identical in all monotree
 repositories. Release branches and tags do not exist, so please do not fork
@@ -41,10 +36,7 @@ and useful hints for developers can be found in [doc/developer-notes.md](doc/dev
 Testing
 -------
 
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test on short notice. Please be patient and help out by testing
-other people's pull requests, and remember this is a security-critical project where any mistake might cost people
-lots of money.
+Testing and code review is the bottleneck for development.
 
 ### Automated Testing
 
@@ -57,8 +49,6 @@ There are also [regression and integration tests](/test), written
 in Python.
 These tests can be run (if the [test dependencies](/test) are installed) with: `test/functional/test_runner.py`
 
-The CI (Continuous Integration) systems make sure that every pull request is built for Windows, Linux, and macOS,
-and that unit/sanity tests are run automatically.
 
 ### Manual Quality Assurance (QA) Testing
 
