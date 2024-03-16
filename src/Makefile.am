@@ -24,7 +24,7 @@ check_PROGRAMS =
 TESTS =
 BENCHMARKS =
 
-BITCOIN_INCLUDES=-I$(builddir) -I$(srcdir)/$(MINISKETCH_INCLUDE_DIR_INT) -I$(srcdir)/secp256k1/include -I$(srcdir)/$(UNIVALUE_INCLUDE_DIR_INT) $(LEVELDB_CPPFLAGS)
+BITCOIN_INCLUDES=-I$(builddir) -I$(srcdir)/$(MINISKETCH_INCLUDE_DIR_INT) -I$(srcdir)/secp256k1/include -I$(srcdir)/$(UNIVALUE_INCLUDE_DIR_INT)
 
 LIBBITCOIN_NODE=libsugarchain_node.a
 LIBBITCOIN_COMMON=libsugarchain_common.a
@@ -50,6 +50,8 @@ LIBBITCOIN_WALLET_TOOL=libsugarchain_wallet_tool.a
 endif
 
 LIBBITCOIN_CRYPTO = $(LIBBITCOIN_CRYPTO_BASE)
+LIBBITCOIN_CRYPTO_SSE4 = crypto/libsugarchain_crypto_sse4.la
+LIBBITCOIN_CRYPTO += $(LIBBITCOIN_CRYPTO_SSE4)
 if ENABLE_SSE41
 LIBBITCOIN_CRYPTO_SSE41 = crypto/libsugarchain_crypto_sse41.la
 LIBBITCOIN_CRYPTO += $(LIBBITCOIN_CRYPTO_SSE41)
@@ -117,6 +119,7 @@ endif
 .PHONY: FORCE check-symbols check-security
 # sugarchain core #
 BITCOIN_CORE_H = \
+  addresstype.h \
   addrdb.h \
   addressindex.h \
   spentindex.h \
@@ -126,6 +129,7 @@ BITCOIN_CORE_H = \
   banman.h \
   base58.h \
   bech32.h \
+  bip324.h \
   blockencodings.h \
   blockfilter.h \
   chain.h \
@@ -135,6 +139,7 @@ BITCOIN_CORE_H = \
   checkqueue.h \
   clientversion.h \
   coins.h \
+  common/args.h \
   common/bloom.h \
   common/init.h \
   common/transport.h \
@@ -150,6 +155,8 @@ BITCOIN_CORE_H = \
   compat/compat.h \
   compat/cpuid.h \
   compat/endian.h \
+  common/settings.h \
+  common/system.h \
   compressor.h \
   consensus/consensus.h \
   consensus/tx_check.h \
@@ -189,10 +196,14 @@ BITCOIN_CORE_H = \
   kernel/coinstats.h \
   kernel/context.h \
   kernel/cs_main.h \
+  kernel/disconnected_transactions.h \
   kernel/mempool_entry.h \
   kernel/mempool_limits.h \
   kernel/mempool_options.h \
   kernel/mempool_persist.h \
+  kernel/mempool_removal_reason.h \
+  kernel/messagestartchars.h \
+  kernel/notifications_interface.h \
   kernel/validation_cache_sizes.h \
   key.h \
   key_io.h \
@@ -210,6 +221,7 @@ BITCOIN_CORE_H = \
   netbase.h \
   netgroup.h \
   netmessagemaker.h \
+  node/abort.h \
   node/blockmanager_args.h \
   node/blockstorage.h \
   node/caches.h \
@@ -222,18 +234,23 @@ BITCOIN_CORE_H = \
   node/database_args.h \
   node/eviction.h \
   node/interface_ui.h \
+  node/kernel_notifications.h \
   node/mempool_args.h \
   node/mempool_persist_args.h \
   node/miner.h \
+  node/mini_miner.h \
   node/minisketchwrapper.h \
+  node/peerman_args.h \
+  node/protocol_version.h \
   node/psbt.h \
-  node/sv2_template_provider.h
+  node/sv2_template_provider.h \
   node/transaction.h \
   node/txreconciliation.h \
   node/utxo_snapshot.h \
   node/validation_cache_args.h \
   noui.h \
   outputtype.h \
+  policy/v3_policy.h \
   policy/feerate.h \
   policy/fees.h \
   policy/fees_args.h \
@@ -267,9 +284,9 @@ BITCOIN_CORE_H = \
   script/sign.h \
   script/signingprovider.h \
   script/standard.h \
-  shutdown.h \
   signet.h \
   streams.h \
+  support/allocators/pool.h \
   support/allocators/secure.h \
   support/allocators/zeroafterfree.h \
   support/cleanse.h \
@@ -284,7 +301,9 @@ BITCOIN_CORE_H = \
   txorphanage.h \
   txrequest.h \
   undo.h \
+  util/any.h \
   util/asmap.h \
+  util/batchpriority.h \
   util/bip32.h \
   util/bitdeque.h \
   util/bytevectorhash.h \
