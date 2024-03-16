@@ -6,7 +6,7 @@ Sugarchain Core integration/staging tree
 https://sugarchain.org
 
 For immediately usable, previous release, binary version of the Sugarchain Core software, see
-https://github.com/sugarchain-project/sugarchain/releases/tag/v0.16.3.36-payapoya 
+https://github.com/sugarchain-project/sugarchain/releases/tag/v0.16.3.36-payapoya - tested ubuntu 22.04
 
 What is Sugarchain Core?
 ---------------------
