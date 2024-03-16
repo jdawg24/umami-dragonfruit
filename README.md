@@ -1,4 +1,4 @@
-Not ready for testing, working on stratum v2 implementation, might need complete rework of code base from 25 - 27
+### Not ready for testing, working on stratum v2 / C++20 upgrades
 
 Sugarchain Core integration/staging tree
 =====================================
