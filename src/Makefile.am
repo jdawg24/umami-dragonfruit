@@ -956,8 +956,6 @@ libsugarchainkernel_la_SOURCES = \
   kernel/sugarchainkernel.cpp \
   arith_uint256.cpp \
   chain.cpp \
-  chainparamsbase.cpp \
-  chainparams.cpp \
   clientversion.cpp \
   coins.cpp \
   compressor.cpp \
@@ -976,15 +974,16 @@ libsugarchainkernel_la_SOURCES = \
   kernel/coinstats.cpp \
   kernel/context.cpp \
   kernel/cs_main.cpp \
+  kernel/disconnected_transactions.cpp \
   kernel/mempool_persist.cpp \
+  kernel/mempool_removal_reason.cpp \
   key.cpp \
   logging.cpp \
   node/blockstorage.cpp \
   node/chainstate.cpp \
-  node/interface_ui.cpp \
   node/utxo_snapshot.cpp \
+  policy/v3_policy.cpp \
   policy/feerate.cpp \
-  policy/fees.cpp \
   policy/packages.cpp \
   policy/policy.cpp \
   policy/rbf.cpp \
@@ -1000,30 +999,29 @@ libsugarchainkernel_la_SOURCES = \
   script/script.cpp \
   script/script_error.cpp \
   script/sigcache.cpp \
-  script/standard.cpp \
-  shutdown.cpp \
+  script/solver.cpp \
   signet.cpp \
+  streams.cpp \
   support/cleanse.cpp \
   support/lockedpool.cpp \
   sync.cpp \
   txdb.cpp \
   txmempool.cpp \
   uint256.cpp \
+  util/batchpriority.cpp \
+  util/chaintype.cpp \
   util/check.cpp \
   util/exception.cpp \
   util/fs.cpp \
   util/fs_helpers.cpp \
-  util/getuniquepath.cpp \
   util/hasher.cpp \
   util/moneystr.cpp \
   util/rbf.cpp \
   util/serfloat.cpp \
-  util/settings.cpp \
+  util/signalinterrupt.cpp \
   util/strencodings.cpp \
   util/string.cpp \
-  util/syscall_sandbox.cpp \
   util/syserror.cpp \
-  util/system.cpp \
   util/thread.cpp \
   util/threadnames.cpp \
   util/time.cpp \
