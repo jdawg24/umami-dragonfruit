@@ -603,9 +603,12 @@ crypto_libsugarchain_crypto_base_la_SOURCES = \
   crypto/yespower-1.0.1/yespower.h \
   crypto/yespower-1.0.1/yespower-opt.c
 
-if USE_ASM
-crypto_libsugarchain_crypto_base_la_SOURCES += crypto/sha256_sse4.cpp
-endif
+# See explanation for -static in crypto_libbitcoin_crypto_base_la's LDFLAGS and
+# CXXFLAGS above
+crypto_libsugarchain_crypto_sse4_la_LDFLAGS = $(AM_LDFLAGS) -static
+crypto_libsugarchain_crypto_sse4_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) -static
+crypto_libsugarchain_crypto_sse4_la_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libsugarchain_crypto_sse4_la_SOURCES = crypto/sha256_sse4.cpp
 
 # See explanation for -static in crypto_libsugarchain_crypto_base_la's LDFLAGS and
 # CXXFLAGS above
@@ -678,26 +681,30 @@ libsugarchain_consensus_a_SOURCES = \
   uint256.cpp \
   uint256.h \
   util/strencodings.cpp \
-  util/strencodings.h \
-  version.h
+  util/strencodings.h 
 #
 
 # common #
 libsugarchain_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
 libsugarchain_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libsugarchain_common_a_SOURCES = \
+  addresstype.cpp \
   base58.cpp \
   bech32.cpp \
   bip324.cpp \
   chainparams.cpp \
   coins.cpp \
+  common/args.cpp \
   common/bloom.cpp \
+  common/config.cpp \
   common/init.cpp \
   common/interfaces.cpp \
   common/run_command.cpp \
   common/sv2_messages.cpp \
   common/sv2_noise.cpp \
+  common/settings.cpp \
   common/sv2_transport.cpp \
+  common/system.cpp \
   common/transport.cpp \
   common/v1_transport.cpp \
   common/v2_transport.cpp \ 
@@ -716,6 +723,7 @@ libsugarchain_common_a_SOURCES = \
   netbase.cpp \
   net_permissions.cpp \
   outputtype.cpp \
+  policy/v3_policy.cpp \
   policy/feerate.cpp \
   policy/policy.cpp \
   protocol.cpp \
