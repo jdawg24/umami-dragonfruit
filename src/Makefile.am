@@ -757,27 +757,28 @@ libsugarchain_util_a_SOURCES = \
   logging.cpp \
   random.cpp \
   randomenv.cpp \
+  streams.cpp \
   support/cleanse.cpp \
   sync.cpp \
   util/asmap.cpp \
+  util/batchpriority.cpp \
   util/bip32.cpp \
   util/bytevectorhash.cpp \
+  util/chaintype.cpp \
   util/check.cpp \
   util/error.cpp \
   util/exception.cpp \
   util/fees.cpp \
   util/fs.cpp \
   util/fs_helpers.cpp \
-  util/getuniquepath.cpp \
   util/hasher.cpp \
   util/sock.cpp \
   util/syserror.cpp \
-  util/system.cpp \
   util/message.cpp \
   util/moneystr.cpp \
   util/rbf.cpp \
   util/readwritefile.cpp \
-  util/settings.cpp \
+  util/signalinterrupt.cpp \
   util/thread.cpp \
   util/threadinterrupt.cpp \
   util/threadnames.cpp \
@@ -785,7 +786,6 @@ libsugarchain_util_a_SOURCES = \
   util/spanparsing.cpp \
   util/strencodings.cpp \
   util/string.cpp \
-  util/syscall_sandbox.cpp \
   util/time.cpp \
   util/tokenpipe.cpp \
   $(BITCOIN_CORE_H)
