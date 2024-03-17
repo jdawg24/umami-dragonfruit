@@ -556,6 +556,10 @@ libsugarchain_wallet_tool_a_SOURCES = \
 #
 
 # crypto #
+
+# crypto_base contains the unspecialized (unoptimized) versions of our
+# crypto functions. Functions that require custom compiler flags and/or
+# runtime opt-in are omitted.
 crypto_libsugarchain_crypto_base_la_CPPFLAGS = $(AM_CPPFLAGS)
 
 # Specify -static in both CXXFLAGS and LDFLAGS so libtool will only build a
