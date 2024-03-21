@@ -1,6 +1,7 @@
 ### Not ready for testing, working on stratum v2 / C++20 upgrades
 
 https://en.bitcoin.it/wiki/BIP_0324 
+https://github.com/rust-bitcoin/rust-bitcoin/tree/0.29.1 
 
 Sugarchain Core integration/staging tree
 =====================================
