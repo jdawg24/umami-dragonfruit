@@ -56,8 +56,6 @@ public:
             pn[i] = 0;
     }
 
-    explicit base_uint(const std::string& str);
-
     base_uint operator~() const
     {
         base_uint ret;
@@ -219,8 +217,6 @@ public:
     friend inline bool operator!=(const base_uint& a, uint64_t b) { return !a.EqualTo(b); }
 
     std::string GetHex() const;
-    void SetHex(const char* psz);
-    void SetHex(const std::string& str);
     std::string ToString() const;
 
     unsigned int size() const
@@ -247,7 +243,6 @@ public:
     arith_uint256() {}
     arith_uint256(const base_uint<256>& b) : base_uint<256>(b) {}
     arith_uint256(uint64_t b) : base_uint<256>(b) {}
-    explicit arith_uint256(const std::string& str) : base_uint<256>(str) {}
 
     /**
      * The "compact" format is a representation of a whole
