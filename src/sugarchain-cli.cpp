@@ -9,6 +9,8 @@
 
 #include <chainparamsbase.h>
 #include <clientversion.h>
+#include <common/args.h>
+#include <common/system.h>
 #include <common/url.h>
 #include <compat/compat.h>
 #include <compat/stdin.h>
@@ -19,9 +21,10 @@
 #include <rpc/request.h>
 #include <tinyformat.h>
 #include <univalue.h>
+#include <util/chaintype.h>
 #include <util/exception.h>
 #include <util/strencodings.h>
-#include <util/system.h>
+#include <util/time.h>
 #include <util/translation.h>
 
 #include <algorithm>
@@ -403,6 +406,7 @@ private:
         std::string conn_type;
         std::string network;
         std::string age;
+        std::string transport_protocol_type;
         double min_ping;
         double ping;
         int64_t addr_processed;
@@ -424,10 +428,17 @@ private:
     std::vector<Peer> m_peers;
     std::string ChainToString() const
     {
-        if (gArgs.GetChainName() == CBaseChainParams::TESTNET) return " testnet";
-        if (gArgs.GetChainName() == CBaseChainParams::SIGNET) return " signet";
-        if (gArgs.GetChainName() == CBaseChainParams::REGTEST) return " regtest";
-        return "";
+        switch (gArgs.GetChainType()) {
+        case ChainType::TESTNET:
+            return " testnet";
+        case ChainType::SIGNET:
+            return " signet";
+        case ChainType::REGTEST:
+            return " regtest";
+        case ChainType::MAIN:
+            return "";
+        }
+        assert(false);
     }
     std::string PingTimeToString(double seconds) const
     {
@@ -507,6 +518,7 @@ public:
                 const std::string addr{peer["addr"].get_str()};
                 const std::string age{conn_time == 0 ? "" : ToString((time_now - conn_time) / 60)};
                 const std::string sub_version{peer["subver"].get_str()};
+                const std::string transport{peer["transport_protocol_type"].isNull() ? "v1" : peer["transport_protocol_type"].get_str()};
                 const bool is_addr_relay_enabled{peer["addr_relay_enabled"].isNull() ? false : peer["addr_relay_enabled"].get_bool()};
                 const bool is_bip152_hb_from{peer["bip152_hb_from"].get_bool()};
                 const bool is_bip152_hb_to{peer["bip152_hb_to"].get_bool()};
@@ -539,6 +551,7 @@ public:
                     peer.is_outbound ? "out" : "in",
                     ConnectionTypeForNetinfo(peer.conn_type),
                     peer.network,
+                    peer.transport_protocol_type.starts_with('v') ? peer.transport_protocol_type[1] : ' ',
                     PingTimeToString(peer.min_ping),
                     PingTimeToString(peer.ping),
                     peer.last_send ? ToString(time_now - peer.last_send) : "",
@@ -648,6 +661,7 @@ public:
         "           \"feeler\" - short-lived connection for testing addresses\n"
         "           \"addr\"   - address fetch; short-lived connection for requesting addresses\n"
         "  net      Network the peer connected through (\"ipv4\", \"ipv6\", \"onion\", \"i2p\", \"cjdns\", or \"npr\" (not publicly routable))\n"
+        "  v        Version of transport protocol used for the connection\n"
         "  mping    Minimum observed ping time, in milliseconds (ms)\n"
         "  ping     Last observed ping time, in milliseconds (ms)\n"
         "  send     Time since last message sent to the peer, in seconds\n"
