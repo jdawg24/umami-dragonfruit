@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2022 The Bitcoin Core developers
+// Copyright (c) 2019-2024 The Sugarchain Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,17 +12,21 @@
 #include <flatfile.h>
 #include <kernel/cs_main.h>
 #include <primitives/block.h>
+#include <serialize.h>
 #include <sync.h>
 #include <uint256.h>
 #include <util/time.h>
 
+#include <algorithm>
+#include <cassert>
+#include <cstdint>
+#include <string>
 #include <vector>
 
 /**
  * Maximum amount of time that a block timestamp is allowed to exceed the
  * current network-adjusted time before the block will be accepted.
  */
-// FTL: 60 seconds, approx. 12 blocks. // was (2 * 60 * 60)
 static constexpr int64_t MAX_FUTURE_BLOCK_TIME = 2 * 60 * 60 / 120;
 
 /**
@@ -62,22 +67,8 @@ public:
         READWRITE(VARINT(obj.nTimeLast));
     }
 
-    void SetNull()
-    {
-        nBlocks = 0;
-        nSize = 0;
-        nUndoSize = 0;
-        nHeightFirst = 0;
-        nHeightLast = 0;
-        nTimeFirst = 0;
-        nTimeLast = 0;
-    }
-
-    CBlockFileInfo()
-    {
-        SetNull();
-    }
-
+    CBlockFileInfo() {}
+    
     std::string ToString() const;
 
     /** update statistics (does not update nSize) */
@@ -135,10 +126,18 @@ enum BlockStatus : uint32_t {
     BLOCK_OPT_WITNESS        =   128, //!< block data in blk*.dat was received with a witness-enforcing client
 
     /**
-     * If set, this indicates that the block index entry is assumed-valid.
-     * Certain diagnostics will be skipped in e.g. CheckBlockIndex().
-     * It almost certainly means that the block's full validation is pending
-     * on a background chainstate. See `doc/design/assumeutxo.md`.
+     * If ASSUMED_VALID is set, it means that this block has not been validated
+     * and has validity status less than VALID_SCRIPTS. Also that it may have
+     * descendant blocks with VALID_SCRIPTS set, because they can be validated
+     * based on an assumeutxo snapshot.
+     *
+     * When an assumeutxo snapshot is loaded, the ASSUMED_VALID flag is added to
+     * unvalidated blocks at the snapshot height and below. Then, as the background
+     * validation progresses, and these blocks are validated, the ASSUMED_VALID
+     * flags are removed. See `doc/design/assumeutxo.md` for details.
+     *
+     * This flag is only used to implement checks in CheckBlockIndex() and
+     * should not be used elsewhere.
      */
     BLOCK_ASSUMED_VALID      =   256,
 };
@@ -208,7 +207,7 @@ public:
     uint32_t nNonce{0};
 
     /* YespowerSugar */
-    //! (currently memory only, but don't have to be)
+    //! (currently memory only, but doesn't have to be)
     bool cache_init{false};
     uint256 cache_block_hash{};
     uint256 cache_PoW_hash{};
@@ -298,7 +297,11 @@ public:
      *
      * Does not imply the transactions are consensus-valid (ConnectTip might fail)
      * Does not imply the transactions are still stored on disk. (IsBlockPruned might return true)
-     */
+     *
+     * Note that this will be true for the snapshot base block, if one is loaded (and
+     * all subsequent assumed-valid blocks) since its nChainTx value will have been set
+     * manually based on the related AssumeutxoData entry.
+     */   
     bool HaveTxsDownloaded() const { return nChainTx != 0; }
 
     NodeSeconds Time() const
@@ -410,6 +413,14 @@ const CBlockIndex* LastCommonAncestor(const CBlockIndex* pa, const CBlockIndex* 
 /** Used to marshal pointers into hashes for db storage. */
 class CDiskBlockIndex : public CBlockIndex
 {
+    /** Historically CBlockLocator's version field has been written to disk
+     * streams as the client version, but the value has never been used.
+     *
+     * Hard-code to the highest client version ever written.
+     * SerParams can be used if the field requires any meaning in the future.
+     **/
+    static constexpr int DUMMY_VERSION = 259900;
+
 public:
     uint256 hashPrev;
 

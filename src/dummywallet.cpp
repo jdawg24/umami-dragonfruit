@@ -3,6 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <util/system.h>
+#include <logging.h>
 #include <walletinitinterface.h>
 
 class ArgsManager;
