@@ -2,6 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#if defined(HAVE_CONFIG_H)
+#include <config/sugarchain-config.h>
+#endif
+
 #include <clientversion.h>
 #include <util/translation.h>
 
@@ -16,7 +20,7 @@
  * for both sugarchaind and sugarchain-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Umami");
+const std::string CLIENT_NAME("Umami-Dragonfruit");
 
 
 #ifdef HAVE_BUILD_INFO
