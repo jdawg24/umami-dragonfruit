@@ -9,6 +9,10 @@
 #include <optional>
 #include <string>
 
+namespace util {
+class SignalInterrupt;
+} // namespace util
+
 static const int DEFAULT_HTTP_THREADS=4;
 static const int DEFAULT_HTTP_WORKQUEUE=128; // was (16)
 static const int DEFAULT_HTTP_SERVER_TIMEOUT=30;
@@ -57,6 +61,7 @@ class HTTPRequest
 {
 private:
     struct evhttp_request* req;
+    const util::SignalInterrupt& m_interrupt;
     bool replySent;
 
 public:
