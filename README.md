@@ -28,7 +28,9 @@ Original Concept [Payapoya](https://github.com/sugarchain-project/sugarchain/blo
 ### ports
 umami [08fd1fc](https://github.com/sugarchain-project/umami/commit/08fd1fce9f8184936922e21aad569d2bc109622c)
 
-### addressindex.h / spentindex.h | umami [1a255aa](https://github.com/sugarchain-project/umami/commit/1a255aa8343a6629da95c826e6041bbb7a2b8c17)
+### addressindex.h / spentindex.h 
+
+umami [1a255aa](https://github.com/sugarchain-project/umami/commit/1a255aa8343a6629da95c826e6041bbb7a2b8c17)
 
 ### Algo general 
 [Summary of Difficulty Algorithms](https://github.com/zawy12/difficulty-algorithms/issues/50)
