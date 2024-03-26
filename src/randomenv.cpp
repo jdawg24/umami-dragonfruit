@@ -10,6 +10,7 @@
 #include <randomenv.h>
 
 #include <clientversion.h>
+#include <compat/compat.h>
 #include <compat/cpuid.h>
 #include <crypto/sha512.h>
 #include <support/cleanse.h>
@@ -323,7 +324,7 @@ void RandAddStaticEnv(CSHA512& hasher)
     hasher.Write((const unsigned char*)COMPILER_VERSION, strlen(COMPILER_VERSION) + 1);
 #endif
 
-    // Sugarchain client version
+    // Bitcoin client version
     hasher << CLIENT_VERSION;
 
 #if defined(HAVE_STRONG_GETAUXVAL)

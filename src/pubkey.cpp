@@ -7,6 +7,7 @@
 
 #include <hash.h>
 #include <secp256k1.h>
+#include <secp256k1_ellswift.h>
 #include <secp256k1_extrakeys.h>
 #include <secp256k1_recovery.h>
 #include <secp256k1_schnorrsig.h>
@@ -34,7 +35,7 @@ struct Secp256k1SelfTester
  *
  *  Supported violations include negative integers, excessive padding, garbage
  *  at the end, and overly long length descriptors. This is safe to use in
- *  Sugarchain because since the activation of BIP66, signatures are verified to be
+ *  Bitcoin because since the activation of BIP66, signatures are verified to be
  *  strict DER before being passed to this module, and we know it supports all
  *  violations present in the blockchain before that point.
  */
@@ -203,6 +204,13 @@ std::vector<CKeyID> XOnlyPubKey::GetKeyIDs() const
     return out;
 }
 
+CPubKey XOnlyPubKey::GetEvenCorrespondingCPubKey() const
+{
+    unsigned char full_key[CPubKey::COMPRESSED_SIZE] = {0x02};
+    std::copy(begin(), end(), full_key + 1);
+    return CPubKey{full_key};
+}
+
 bool XOnlyPubKey::IsFullyValid() const
 {
     secp256k1_xonly_pubkey pubkey;
@@ -268,7 +276,7 @@ bool CPubKey::Verify(const uint256 &hash, const std::vector<unsigned char>& vchS
         return false;
     }
     /* libsecp256k1's ECDSA verification requires lower-S signatures, which have
-     * not historically been enforced in Sugarchain, so normalize them first. */
+     * not historically been enforced in Bitcoin, so normalize them first. */
     secp256k1_ecdsa_signature_normalize(secp256k1_context_static, &sig, &sig);
     return secp256k1_ecdsa_verify(secp256k1_context_static, &sig, hash.begin(), &pubkey);
 }
@@ -333,6 +341,26 @@ bool CPubKey::Derive(CPubKey& pubkeyChild, ChainCode &ccChild, unsigned int nChi
     secp256k1_ec_pubkey_serialize(secp256k1_context_static, pub, &publen, &pubkey, SECP256K1_EC_COMPRESSED);
     pubkeyChild.Set(pub, pub + publen);
     return true;
+}
+
+EllSwiftPubKey::EllSwiftPubKey(Span<const std::byte> ellswift) noexcept
+{
+    assert(ellswift.size() == SIZE);
+    std::copy(ellswift.begin(), ellswift.end(), m_pubkey.begin());
+}
+
+CPubKey EllSwiftPubKey::Decode() const
+{
+    secp256k1_pubkey pubkey;
+    secp256k1_ellswift_decode(secp256k1_context_static, &pubkey, UCharCast(m_pubkey.data()));
+
+    size_t sz = CPubKey::COMPRESSED_SIZE;
+    std::array<uint8_t, CPubKey::COMPRESSED_SIZE> vch_bytes;
+
+    secp256k1_ec_pubkey_serialize(secp256k1_context_static, vch_bytes.data(), &sz, &pubkey, SECP256K1_EC_COMPRESSED);
+    assert(sz == vch_bytes.size());
+
+    return CPubKey{vch_bytes.begin(), vch_bytes.end()};
 }
 
 void CExtPubKey::Encode(unsigned char code[BIP32_EXTKEY_SIZE]) const {

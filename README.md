@@ -6,25 +6,32 @@ https://github.com/rust-bitcoin/rust-bitcoin/tree/0.29.1
 
 https://github.com/stratum-mining/stratum
 
-### Sugarchain Core 
+## Sugarchain Core 
 
-#### chain.h
+### chain.h
 file updates [d22825a](https://github.com/sugarchain-project/umami/commit/d22825a648274b7c7ba3beb1caed4a5c8f45a63d)  
 Original Concept [Payapoya](https://github.com/sugarchain-project/sugarchain/blob/d2d13cacd9e7c2640a02e6392978a26df06f9eb8/src/chain.h#L36)
 
-#### chainparams.cpp
+### chainparams.cpp
 file updates [bb8fab8](https://github.com/sugarchain-project/umami/commit/bb8fab82b2eabd5608b192e0bed18c77c5365b02)
+
 umami [3955f9c](https://github.com/sugarchain-project/umami/blob/main/src/chainparams.cpp)
+
 Original Concept [Payapoya](https://github.com/sugarchain-project/sugarchain/blob/d2d13cacd9e7c2640a02e6392978a26df06f9eb8/src/chainparams.cpp#L143-L170)
 
-#### pow.cpp
+### pow.cpp
 Original Concept [Payapoya](https://github.com/sugarchain-project/sugarchain/blob/d2d13cacd9e7c2640a02e6392978a26df06f9eb8/src/pow.cpp)
 
-#### timedata.h 
+### timedata.h 
 Original Concept [Payapoya](https://github.com/sugarchain-project/sugarchain/blob/d2d13cacd9e7c2640a02e6392978a26df06f9eb8/src/timedata.h#L23)
 
-#### Algo general 
-[Summary of Difficulty Algorithms] (https://github.com/zawy12/difficulty-algorithms/issues/50)
+### ports
+umami [08fd1fc](https://github.com/sugarchain-project/umami/commit/08fd1fce9f8184936922e21aad569d2bc109622c)
+
+### addressindex.h / spentindex.h | umami [1a255aa](https://github.com/sugarchain-project/umami/commit/1a255aa8343a6629da95c826e6041bbb7a2b8c17)
+
+### Algo general 
+[Summary of Difficulty Algorithms](https://github.com/zawy12/difficulty-algorithms/issues/50)
 
 Sugarchain Core integration/staging tree
 =====================================
