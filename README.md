@@ -6,25 +6,42 @@ https://github.com/rust-bitcoin/rust-bitcoin/tree/0.29.1
 
 https://github.com/stratum-mining/stratum
 
-### Sugarchain Core 
+## Sugarchain Core 
 
-#### chain.h
+### chain.h
 file updates [d22825a](https://github.com/sugarchain-project/umami/commit/d22825a648274b7c7ba3beb1caed4a5c8f45a63d)  
 Original Concept [Payapoya](https://github.com/sugarchain-project/sugarchain/blob/d2d13cacd9e7c2640a02e6392978a26df06f9eb8/src/chain.h#L36)
 
-#### chainparams.cpp
+### chainparams.cpp
 file updates [bb8fab8](https://github.com/sugarchain-project/umami/commit/bb8fab82b2eabd5608b192e0bed18c77c5365b02)
+
 umami [3955f9c](https://github.com/sugarchain-project/umami/blob/main/src/chainparams.cpp)
+
 Original Concept [Payapoya](https://github.com/sugarchain-project/sugarchain/blob/d2d13cacd9e7c2640a02e6392978a26df06f9eb8/src/chainparams.cpp#L143-L170)
 
-#### pow.cpp
+### pow.cpp
 Original Concept [Payapoya](https://github.com/sugarchain-project/sugarchain/blob/d2d13cacd9e7c2640a02e6392978a26df06f9eb8/src/pow.cpp)
 
-#### timedata.h 
+### timedata.h 
 Original Concept [Payapoya](https://github.com/sugarchain-project/sugarchain/blob/d2d13cacd9e7c2640a02e6392978a26df06f9eb8/src/timedata.h#L23)
 
-#### Algo general 
-[Summary of Difficulty Algorithms] (https://github.com/zawy12/difficulty-algorithms/issues/50)
+### ports
+umami [08fd1fc](https://github.com/sugarchain-project/umami/commit/08fd1fce9f8184936922e21aad569d2bc109622c)
+
+### addressindex.h / spentindex.h 
+
+umami [1a255aa](https://github.com/sugarchain-project/umami/commit/1a255aa8343a6629da95c826e6041bbb7a2b8c17)
+
+### Algo general 
+[Summary of Difficulty Algorithms](https://github.com/zawy12/difficulty-algorithms/issues/50)
+
+## Change Log (not exhaustive but core / more complex edits)
+
+### /src/txdb --> /src/node/blockstorage
+
+DragonFruit [543f8e5](https://github.com/sugarchain-project/umami/commit/543f8e5fa066d13efc9a380569125612b1de4b60) && [fa65111](https://github.com/bitcoin/bitcoin/commit/fa65111b99627289fd47dcfaa5197e0f09b8a50e#diff-114c2880ec1ff2c5293ac65ceda0637bf92c05745b74b58410585a549464a33f) && [1a255aa](https://github.com/sugarchain-project/umami/commit/1a255aa8343a6629da95c826e6041bbb7a2b8c17#diff-cafbe1353eff6084b73fd3b6c3dee603e0827348fdd2fe12dfad1e01003a84ed)
+
+
 
 Sugarchain Core integration/staging tree
 =====================================
