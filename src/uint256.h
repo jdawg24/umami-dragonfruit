@@ -22,6 +22,7 @@ class base_blob
 {
 protected:
     static constexpr int WIDTH = BITS / 8;
+    static_assert(BITS % 8 == 0, "base_blob currently only supports whole bytes.");
     std::array<uint8_t, WIDTH> m_data;
     static_assert(WIDTH == sizeof(m_data), "Sanity check");
 
@@ -84,7 +85,7 @@ public:
     template<typename Stream>
     void Serialize(Stream& s) const
     {
-        s.write(MakeByteSpan(m_data));
+        s << Span(m_data);
     }
 
     template<typename Stream>
@@ -102,7 +103,6 @@ class uint160 : public base_blob<160> {
 public:
     constexpr uint160() = default;
     constexpr explicit uint160(Span<const unsigned char> vch) : base_blob<160>(vch) {}
-    constexpr explicit uint160(const uint8_t *p, size_t l) : base_blob<160>(p, l) {}
 };
 
 /** 256-bit opaque blob.
