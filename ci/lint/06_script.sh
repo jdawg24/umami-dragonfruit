@@ -6,6 +6,8 @@
 
 export LC_ALL=C
 
+set -ex
+
 if [ -n "$LOCAL_BRANCH" ]; then
   # To faithfully recreate CI linting locally, specify all commits on the current
   # branch.
@@ -21,17 +23,9 @@ else
 fi
 export COMMIT_RANGE
 
-# This only checks that the trees are pure subtrees, it is not doing a full
-# check with -r to not have to fetch all the remotes.
-test/lint/git-subtree-check.sh src/crypto/ctaes
-test/lint/git-subtree-check.sh src/secp256k1
-test/lint/git-subtree-check.sh src/minisketch
-test/lint/git-subtree-check.sh src/leveldb
-test/lint/git-subtree-check.sh src/crc32c
-test/lint/check-doc.py
-test/lint/all-lint.py
+RUST_BACKTRACE=1 "${LINT_RUNNER_PATH}/test_runner"
 
-if [ "$CIRRUS_REPO_FULL_NAME" = "sugarchain/sugarchain" ] && [ "$CIRRUS_PR" = "" ] ; then
+if [ "$CIRRUS_REPO_FULL_NAME" = "bitcoin/bitcoin" ] && [ "$CIRRUS_PR" = "" ] ; then
     # Sanity check only the last few commits to get notified of missing sigs,
     # missing keys, or expired keys. Usually there is only one new merge commit
     # per push on the master branch and a few commits on release branches, so
