@@ -20,7 +20,7 @@ git diff -U0 HEAD~1.. | ./contrib/devtools/clang-format-diff.py -p1 -i -v
 copyright\_header.py
 ====================
 
-Provides utilities for managing copyright headers of `The Sugarchain Core
+Provides utilities for managing copyright headers of `The Bitcoin Core
 developers` in repository source files. It has three subcommands:
 
 ```
@@ -83,18 +83,28 @@ A small script to automatically create manpages in ../../doc/man by running the 
 This requires help2man which can be found at: https://www.gnu.org/software/help2man/
 
 With in-tree builds this tool can be run from any directory within the
-repostitory. To use this tool with out-of-tree builds set `BUILDDIR`. For
+repository. To use this tool with out-of-tree builds set `BUILDDIR`. For
 example:
 
 ```bash
 BUILDDIR=$PWD/build contrib/devtools/gen-manpages.py
 ```
 
-gen-sugarchain-conf.sh
+headerssync-params.py
+=====================
+
+A script to generate optimal parameters for the headerssync module (src/headerssync.cpp). It takes no command-line
+options, as all its configuration is set at the top of the file. It runs many times faster inside PyPy. Invocation:
+
+```bash
+pypy3 contrib/devtools/headerssync-params.py
+```
+
+gen-bitcoin-conf.sh
 ===================
 
-Generates a sugarchain.conf file in `share/examples/` by parsing the output from `sugarchaind --help`. This script is run during the
-release process to include a sugarchain.conf with the release binaries and can also be run by users to generate a file locally.
+Generates a bitcoin.conf file in `share/examples/` by parsing the output from `bitcoind --help`. This script is run during the
+release process to include a bitcoin.conf with the release binaries and can also be run by users to generate a file locally.
 When generating a file as part of the release process, make sure to commit the changes after running the script.
 
 With in-tree builds this tool can be run from any directory within the
@@ -102,7 +112,7 @@ repository. To use this tool with out-of-tree builds set `BUILDDIR`. For
 example:
 
 ```bash
-BUILDDIR=$PWD/build contrib/devtools/gen-sugarchain-conf.sh
+BUILDDIR=$PWD/build contrib/devtools/gen-bitcoin-conf.sh
 ```
 
 security-check.py and test-security-check.py
@@ -129,10 +139,10 @@ If no errors occur the return value will be 0 and the output will be empty.
 
 If there are any errors the return value will be 1 and output like this will be printed:
 
-    .../64/test_sugarchain: symbol memcpy from unsupported version GLIBC_2.14
-    .../64/test_sugarchain: symbol __fdelt_chk from unsupported version GLIBC_2.15
-    .../64/test_sugarchain: symbol std::out_of_range::~out_of_range() from unsupported version GLIBCXX_3.4.15
-    .../64/test_sugarchain: symbol _ZNSt8__detail15_List_nod from unsupported version GLIBCXX_3.4.15
+    .../64/test_bitcoin: symbol memcpy from unsupported version GLIBC_2.14
+    .../64/test_bitcoin: symbol __fdelt_chk from unsupported version GLIBC_2.15
+    .../64/test_bitcoin: symbol std::out_of_range::~out_of_range() from unsupported version GLIBCXX_3.4.15
+    .../64/test_bitcoin: symbol _ZNSt8__detail15_List_nod from unsupported version GLIBCXX_3.4.15
 
 circular-dependencies.py
 ========================

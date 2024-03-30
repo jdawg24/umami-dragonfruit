@@ -2,10 +2,10 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Sugarchain
 Upstream-Contact: Satoshi Nakamoto <satoshin@gmx.com>
  irc://#sugarchain-core-dev@libera.chat
-Source: https://github.com/bitcoin/bitcoin
+Source: https://github.com/sugarchain-project/sugarchain
 
 Files: *
-Copyright: 2009-2023, Sugarchain Core Developers
+Copyright: 2019-2024, Sugarchain Core Developers
 License: Expat
 Comment: The Sugarchain Core Developers encompasses all contributors to the
          project, listed in the release notes or the git log.
@@ -72,7 +72,7 @@ Files: src/qt/res/icons/sugarchain.*
        src/qt/res/src/sugarchain.svg
 Copyright: Bitboy, Jonas Schnelli
 License: public-domain
-Comment: Site: https://sugarchaintalk.org/?topic=1756.0
+Comment: Site: https://bitcointalk.org/index.php?topic=5177722.0
 
 Files: src/qt/res/icons/proxy.png
        src/qt/res/src/proxy.svg
