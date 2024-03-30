@@ -2,14 +2,14 @@
 # dependencies that cannot be fixed in-tree.
 #
 # Example use:
-# $ valgrind --suppressions=contrib/valgrind.supp src/test/test_sugarchain
+# $ valgrind --suppressions=contrib/valgrind.supp src/test/test_bitcoin
 # $ valgrind --suppressions=contrib/valgrind.supp --leak-check=full \
-#       --show-leak-kinds=all src/test/test_sugarchain
+#       --show-leak-kinds=all src/test/test_bitcoin
 #
 # To create suppressions for found issues, use the --gen-suppressions=all option:
 # $ valgrind --suppressions=contrib/valgrind.supp --leak-check=full \
 #       --show-leak-kinds=all --gen-suppressions=all --show-reachable=yes \
-#       --error-limit=no src/test/test_sugarchain
+#       --error-limit=no src/test/test_bitcoin
 #
 # Note that suppressions may depend on OS and/or library versions.
 # Tested on:
@@ -88,4 +88,10 @@
    fun:malloc
    ...
    fun:_ZN5BCLog6Logger12StartLoggingEv
+}
+{
+   Suppress https://bugs.kde.org/show_bug.cgi?id=472219 - fixed in Valgrind 3.22.
+   Memcheck:Param
+   ppoll(ufds.events)
+   obj:/lib/ld-musl-aarch64.so.1
 }
