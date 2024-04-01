@@ -6,7 +6,6 @@
 #include <key.h>
 #include <pubkey.h>
 #include <script/descriptor.h>
-#include <script/standard.h>
 
 #include <string>
 #include <utility>
@@ -33,3 +32,4 @@ static void ExpandDescriptor(benchmark::Bench& bench)
 }
 
 BENCHMARK(ExpandDescriptor, benchmark::PriorityLevel::HIGH);
+

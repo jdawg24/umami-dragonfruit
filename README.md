@@ -35,6 +35,10 @@ umami [1a255aa](https://github.com/sugarchain-project/umami/commit/1a255aa8343a6
 ### Algo general 
 [Summary of Difficulty Algorithms](https://github.com/zawy12/difficulty-algorithms/issues/50)
 
+### YesPowerSugar 
+
+umami [0297777](https://github.com/sugarchain-project/umami/commit/02977772f85b627f0d50e4596fa2f17c2406709c)
+
 ## Change Log (not exhaustive but core / more complex edits)
 
 ### /src/txdb --> /src/node/blockstorage
@@ -48,7 +52,6 @@ DragonFruit [61a286c](https://github.com/sugarchain-project/umami/commit/61a286c
 ### /src/validation 
 
 DragonFruit [58bdf7d](https://github.com/sugarchain-project/umami/commit/58bdf7d015b8f487715f80b526f65f8d0dd5c4f1)
-
 
 
 Sugarchain Core integration/staging tree
