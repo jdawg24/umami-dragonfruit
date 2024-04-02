@@ -2,6 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include <init.h>
 #include <interfaces/chain.h>
 #include <interfaces/echo.h>
 #include <interfaces/init.h>
@@ -10,7 +11,6 @@
 #include <interfaces/wallet.h>
 #include <node/context.h>
 #include <util/check.h>
-#include <util/system.h>
 
 #include <memory>
 
@@ -25,7 +25,7 @@ public:
         : m_node(node),
           m_ipc(interfaces::MakeIpc(EXE_NAME, arg0, *this))
     {
-        m_node.args = &gArgs;
+        InitContext(m_node);
         m_node.init = this;
     }
     std::unique_ptr<interfaces::Node> makeNode() override { return interfaces::MakeNode(m_node); }
@@ -46,7 +46,7 @@ namespace interfaces {
 std::unique_ptr<Init> MakeNodeInit(node::NodeContext& node, int argc, char* argv[], int& exit_status)
 {
     auto init = std::make_unique<init::SugarchainNodeInit>(node, argc > 0 ? argv[0] : "");
-    // Check if sugarchain-node is being invoked as an IPC server. If so, then
+    // Check if bitcoin-node is being invoked as an IPC server. If so, then
     // bypass normal execution and just respond to requests over the IPC
     // channel and return null.
     if (init->m_ipc->startSpawnedProcess(argc, argv, exit_status)) {

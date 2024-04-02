@@ -144,12 +144,14 @@ public:
     /** Construct a Stratum v2 transport as the initiator
       *
       * @param[in] static_key a securely generated key
+
       */
     Sv2Transport(CKey static_key, XOnlyPubKey responder_authority_key) noexcept;
 
         /** Construct a Stratum v2 transport as the responder
       *
       * @param[in] static_key a securely generated key
+
       */
     Sv2Transport(CKey static_key, Sv2SignatureNoiseMessage certificate) noexcept;
 
