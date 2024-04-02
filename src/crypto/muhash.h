@@ -5,10 +5,6 @@
 #ifndef BITCOIN_CRYPTO_MUHASH_H
 #define BITCOIN_CRYPTO_MUHASH_H
 
-#if defined(HAVE_CONFIG_H)
-#include <config/sugarchain-config.h>
-#endif
-
 #include <serialize.h>
 #include <uint256.h>
 
@@ -89,7 +85,7 @@ public:
  * is intended to represent a set of elements.
  *
  * See also https://cseweb.ucsd.edu/~mihir/papers/inchash.pdf and
- * https://lists.linuxfoundation.org/pipermail/sugarchain-dev/2017-May/014337.html.
+ * https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-May/014337.html.
  */
 class MuHash3072
 {

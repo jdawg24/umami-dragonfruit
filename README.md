@@ -39,6 +39,10 @@ umami [1a255aa](https://github.com/sugarchain-project/umami/commit/1a255aa8343a6
 
 umami [0297777](https://github.com/sugarchain-project/umami/commit/02977772f85b627f0d50e4596fa2f17c2406709c)
 
+### Sugarsheild 
+
+umami [553dee7](https://github.com/sugarchain-project/umami/commit/553dee71f348ce968629b371db4599832db11532)
+
 ## Change Log (not exhaustive but core / more complex edits)
 
 ### /src/txdb --> /src/node/blockstorage
