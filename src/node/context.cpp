@@ -11,6 +11,7 @@
 #include <net.h>
 #include <net_processing.h>
 #include <netgroup.h>
+#include <node/kernel_notifications.h>
 #include <node/sv2_template_provider.h>
 #include <policy/fees.h>
 #include <scheduler.h>
@@ -21,3 +22,4 @@ namespace node {
 NodeContext::NodeContext() = default;
 NodeContext::~NodeContext() = default;
 } // namespace node
+

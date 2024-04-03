@@ -14,14 +14,18 @@
 #include <optional>
 #include <stdint.h>
 
+#include <boost/multi_index/identity.hpp>
+#include <boost/multi_index/indexed_by.hpp>
 #include <boost/multi_index/ordered_index.hpp>
+#include <boost/multi_index/tag.hpp>
 #include <boost/multi_index_container.hpp>
 
 class ArgsManager;
-class ChainstateManager;
 class CBlockIndex;
 class CChainParams;
 class CScript;
+class Chainstate;
+class ChainstateManager;
 
 /** Default for -sv2interval **/
 static constexpr unsigned int DEFAULT_SV2_INTERVAL{30};
@@ -143,7 +147,7 @@ private:
     uint64_t nBlockTx;
     uint64_t nBlockSigOpsCost;
     CAmount nFees;
-    CTxMemPool::setEntries inBlock;
+    std::unordered_set<Txid, SaltedTxidHasher> inBlock;
 
     // Chain context for the block
     int nHeight;

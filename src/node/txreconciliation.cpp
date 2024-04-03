@@ -4,9 +4,11 @@
 
 #include <node/txreconciliation.h>
 
-#include <util/check.h>
-#include <util/system.h>
+#include <common/system.h>
 #include <hash.h>
+#include <logging.h>
+#include <util/check.h>
+
 #include <unordered_map>
 #include <variant>
 
