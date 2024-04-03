@@ -1,7 +1,7 @@
 #include <node/sv2_template_provider.h>
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoin-config.h>
+#include <config/sugarchain-config.h>
 #endif
 
 #include <base58.h>

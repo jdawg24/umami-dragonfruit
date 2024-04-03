@@ -2,6 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include <common/system.h>
 #include <interfaces/init.h>
 #include <interfaces/ipc.h>
 #include <ipc/capnp/protocol.h>
@@ -10,7 +11,6 @@
 #include <logging.h>
 #include <tinyformat.h>
 #include <util/fs.h>
-#include <util/system.h>
 
 #include <cstdio>
 #include <cstdlib>
@@ -76,3 +76,4 @@ std::unique_ptr<Ipc> MakeIpc(const char* exe_name, const char* process_argv0, In
     return std::make_unique<ipc::IpcImpl>(exe_name, process_argv0, init);
 }
 } // namespace interfaces
+
