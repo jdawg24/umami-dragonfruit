@@ -32,13 +32,13 @@ class Init;
 } // namespace interfaces
 
 
-/** Main Bitcoin application object */
-class BitcoinApplication: public QApplication
+/** Main Sugarchain application object */
+class SugarchainApplication: public QApplication
 {
     Q_OBJECT
 public:
-    explicit BitcoinApplication();
-    ~BitcoinApplication();
+    explicit SugarchainApplication();
+    ~SugarchainApplication();
 
 #ifdef ENABLE_WALLET
     /// Create payment server
