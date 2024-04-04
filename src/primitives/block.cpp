@@ -15,11 +15,10 @@
 #include <stdlib.h> // exit()
 #include <sync.h>
 
-uint256 CBlockHeaderUncached::GetHash() const
+uint256 CBlockHeader::GetHash() const
 {
-    return SerializeHash(*this);
+    return (HashWriter{} << *this).GetHash();
 }
-
 
 /* YespowerSugar */
 uint256 CBlockHeaderUncached::GetPoWHash() const
