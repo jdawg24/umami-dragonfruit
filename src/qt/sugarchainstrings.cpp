@@ -8,7 +8,7 @@
 #else
 #define UNUSED
 #endif
-static const char UNUSED *bitcoin_strings[] = {
+static const char UNUSED *sugarchain_strings[] = {
 QT_TRANSLATE_NOOP("sugarchain-core", "The %s developers"),
 QT_TRANSLATE_NOOP("sugarchain-core", ""
 "%s corrupt. Try using the wallet tool sugarchain-wallet to salvage or restoring "
