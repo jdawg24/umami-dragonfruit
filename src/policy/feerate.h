@@ -22,7 +22,7 @@ enum class FeeEstimateMode {
     UNSET,        //!< Use default settings based on other criteria
     ECONOMICAL,   //!< Force estimateSmartFee to use non-conservative estimates
     CONSERVATIVE, //!< Force estimateSmartFee to use conservative estimates
-    BTC_KVB,      //!< Use BTC/kvB fee rate unit
+    SUGAR_KVB,      //!< Use SUGAR/kvB fee rate unit
     SAT_VB,       //!< Use sat/vB fee rate unit
 };
 

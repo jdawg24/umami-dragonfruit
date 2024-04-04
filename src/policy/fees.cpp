@@ -653,7 +653,7 @@ bool CBlockPolicyEstimator::processBlockTx(unsigned int nBlockHeight, const Remo
         return false;
     }
 
-    // Feerates are stored and reported as BTC-per-kb:
+    // Feerates are stored and reported as SUGAR-per-kb:
     CFeeRate feeRate(tx.info.m_fee, tx.info.m_virtual_transaction_size);
 
     feeStats->Record(blocksToConfirm, static_cast<double>(feeRate.GetFeePerK()));
