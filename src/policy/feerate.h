@@ -22,7 +22,7 @@ enum class FeeEstimateMode {
     UNSET,        //!< Use default settings based on other criteria
     ECONOMICAL,   //!< Force estimateSmartFee to use non-conservative estimates
     CONSERVATIVE, //!< Force estimateSmartFee to use conservative estimates
-    SUGAR_KVB,      //!< Use SUGAR/kvB fee rate unit
+    BTC_KVB,      //!< Use BTC/kvB fee rate unit
     SAT_VB,       //!< Use sat/vB fee rate unit
 };
 
@@ -62,7 +62,7 @@ public:
     /**
      * Return the fee in satoshis for a vsize of 1000 vbytes
      */
-    CAmount GetFeePerK() const { return GetFee(1000); }
+    CAmount GetFeePerK() const { return nSatoshisPerK; }
     friend bool operator<(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK < b.nSatoshisPerK; }
     friend bool operator>(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK > b.nSatoshisPerK; }
     friend bool operator==(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK == b.nSatoshisPerK; }
@@ -70,7 +70,9 @@ public:
     friend bool operator>=(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK >= b.nSatoshisPerK; }
     friend bool operator!=(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK != b.nSatoshisPerK; }
     CFeeRate& operator+=(const CFeeRate& a) { nSatoshisPerK += a.nSatoshisPerK; return *this; }
-    std::string ToString(const FeeEstimateMode& fee_estimate_mode = FeeEstimateMode::SUGAR_KVB) const;
+    std::string ToString(const FeeEstimateMode& fee_estimate_mode = FeeEstimateMode::BTC_KVB) const;
+    friend CFeeRate operator*(const CFeeRate& f, int a) { return CFeeRate(a * f.nSatoshisPerK); }
+    friend CFeeRate operator*(int a, const CFeeRate& f) { return CFeeRate(a * f.nSatoshisPerK); }
 
     SERIALIZE_METHODS(CFeeRate, obj) { READWRITE(obj.nSatoshisPerK); }
 };
