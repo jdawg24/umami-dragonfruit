@@ -53,15 +53,14 @@ struct AddressTableEntryLessThan
 };
 
 /* Determine address type from address purpose */
-static AddressTableEntry::Type translateTransactionType(wallet::AddressPurpose purpose, bool isMine)
+constexpr AddressTableEntry::Type translateTransactionType(wallet::AddressPurpose purpose, bool isMine)
 {
     // "refund" addresses aren't shown, and change addresses aren't returned by getAddresses at all.
     switch (purpose) {
     case wallet::AddressPurpose::SEND: return AddressTableEntry::Sending;
     case wallet::AddressPurpose::RECEIVE: return AddressTableEntry::Receiving;
     case wallet::AddressPurpose::REFUND: return AddressTableEntry::Hidden;
-    // No default case to allow for compiler to warn
-    }
+    } // no default case, so the compiler can warn about missing cases
     assert(false);
 }
 
@@ -336,7 +335,7 @@ QModelIndex AddressTableModel::index(int row, int column, const QModelIndex &par
 void AddressTableModel::updateEntry(const QString &address,
         const QString &label, bool isMine, wallet::AddressPurpose purpose, int status)
 {
-    // Update address book model from Sugarchain core
+    // Update address book model from Bitcoin core
     priv->updateEntry(address, label, isMine, purpose, status);
 }
 
@@ -452,3 +451,6 @@ void AddressTableModel::emitDataChanged(int idx)
 {
     Q_EMIT dataChanged(index(idx, 0, QModelIndex()), index(idx, columns.length()-1, QModelIndex()));
 }
+
+QString AddressTableModel::GetWalletDisplayName() const { return walletModel->getDisplayName(); };
+

@@ -2,10 +2,6 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#if defined(HAVE_CONFIG_H)
-#include <config/sugarchain-config.h>
-#endif
-
 #include <qt/addressbookpage.h>
 #include <qt/forms/ui_addressbookpage.h>
 
@@ -81,9 +77,7 @@ AddressBookPage::AddressBookPage(const PlatformStyle *platformStyle, Mode _mode,
         ui->exportButton->setIcon(platformStyle->SingleColorIcon(":/icons/export"));
     }
 
-    switch(mode)
-    {
-    case ForSelection:
+    if (mode == ForSelection) {
         switch(tab)
         {
         case SendingTab: setWindowTitle(tr("Choose the address to send coins to")); break;
@@ -94,24 +88,16 @@ AddressBookPage::AddressBookPage(const PlatformStyle *platformStyle, Mode _mode,
         ui->tableView->setFocus();
         ui->closeButton->setText(tr("C&hoose"));
         ui->exportButton->hide();
-        break;
-    case ForEditing:
-        switch(tab)
-        {
-        case SendingTab: setWindowTitle(tr("Sending addresses")); break;
-        case ReceivingTab: setWindowTitle(tr("Receiving addresses")); break;
-        }
-        break;
     }
     switch(tab)
     {
     case SendingTab:
-        ui->labelExplanation->setText(tr("These are your Sugarchain addresses for sending payments. Always check the amount and the receiving address before sending coins."));
+        ui->labelExplanation->setText(tr("These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins."));
         ui->deleteAddress->setVisible(true);
         ui->newAddress->setVisible(true);
         break;
     case ReceivingTab:
-        ui->labelExplanation->setText(tr("These are your Sugarchain addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.\nSigning is only possible with addresses of the type 'legacy'."));
+        ui->labelExplanation->setText(tr("These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.\nSigning is only possible with addresses of the type 'legacy'."));
         ui->deleteAddress->setVisible(false);
         ui->newAddress->setVisible(false);
         break;
@@ -164,6 +150,7 @@ void AddressBookPage::setModel(AddressTableModel *_model)
     connect(_model, &AddressTableModel::rowsInserted, this, &AddressBookPage::selectNewAddress);
 
     selectionChanged();
+    this->updateWindowsTitleWithWalletName();
 }
 
 void AddressBookPage::on_copyAddress_clicked()
@@ -326,5 +313,18 @@ void AddressBookPage::selectNewAddress(const QModelIndex &parent, int begin, int
         ui->tableView->setFocus();
         ui->tableView->selectRow(idx.row());
         newAddressToSelect.clear();
+    }
+}
+
+void AddressBookPage::updateWindowsTitleWithWalletName()
+{
+    const QString walletName = this->model->GetWalletDisplayName();
+
+    if (mode == ForEditing) {
+        switch(tab)
+        {
+        case SendingTab: setWindowTitle(tr("Sending addresses - %1").arg(walletName)); break;
+        case ReceivingTab: setWindowTitle(tr("Receiving addresses - %1").arg(walletName)); break;
+        }
     }
 }

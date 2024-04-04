@@ -2,6 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#if defined(HAVE_CONFIG_H)
+#include <config/sugarchain-config.h>
+#endif
+
 #include <qt/sugarchaingui.h>
 
 #include <qt/sugarchainunits.h>
@@ -30,15 +34,16 @@
 #include <qt/macdockiconhandler.h>
 #endif
 
-#include <functional>
 #include <chain.h>
 #include <chainparams.h>
+#include <common/system.h>
 #include <interfaces/handler.h>
 #include <interfaces/node.h>
 #include <node/interface_ui.h>
-#include <util/system.h>
 #include <util/translation.h>
 #include <validation.h>
+
+#include <functional>
 
 #include <QAction>
 #include <QActionGroup>
@@ -95,7 +100,7 @@ SugarchainGUI::SugarchainGUI(interfaces::Node& node, const PlatformStyle *_platf
     setContextMenuPolicy(Qt::PreventContextMenu);
 
 #ifdef ENABLE_WALLET
-    enableWallet = WalletModel::isWalletEnabled();
+    enableWallet = WalletModel::isWalletEnabled(
 #endif // ENABLE_WALLET
     QApplication::setWindowIcon(m_network_style->getTrayAndWindowIcon());
     setWindowIcon(m_network_style->getTrayAndWindowIcon());
@@ -108,10 +113,7 @@ SugarchainGUI::SugarchainGUI(interfaces::Node& node, const PlatformStyle *_platf
     {
         /** Create wallet frame and make it the central widget */
         walletFrame = new WalletFrame(_platformStyle, this);
-        connect(walletFrame, &WalletFrame::createWalletButtonClicked, [this] {
-            auto activity = new CreateWalletActivity(getWalletController(), this);
-            activity->create();
-        });
+        connect(walletFrame, &WalletFrame::createWalletButtonClicked, this, &SugarchainGU::createWallet);
         connect(walletFrame, &WalletFrame::message, [this](const QString& title, const QString& message, unsigned int style) {
             this->message(title, message, style);
         });
@@ -238,7 +240,6 @@ SugarchainGUI::~SugarchainGUI()
         trayIcon->hide();
 #ifdef Q_OS_MACOS
     delete m_app_nap_inhibitor;
-    delete appMenuBar;
     MacDockIconHandler::cleanup();
 #endif
 
@@ -258,14 +259,14 @@ void SugarchainGUI::createActions()
     tabGroup->addAction(overviewAction);
 
     sendCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/send"), tr("&Send"), this);
-    sendCoinsAction->setStatusTip(tr("Send coins to a Sugarchain address"));
+    sendCoinsAction->setStatusTip(tr("Send coins to a Bitcoin address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
     sendCoinsAction->setShortcut(QKeySequence(QStringLiteral("Alt+2")));
     tabGroup->addAction(sendCoinsAction);
 
     receiveCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/receiving_addresses"), tr("&Receive"), this);
-    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and sugarchain: URIs)"));
+    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and bitcoin: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
     receiveCoinsAction->setShortcut(QKeySequence(QStringLiteral("Alt+3")));
@@ -315,13 +316,13 @@ void SugarchainGUI::createActions()
     changePassphraseAction = new QAction(tr("&Change Passphrase…"), this);
     changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
     signMessageAction = new QAction(tr("Sign &message…"), this);
-    signMessageAction->setStatusTip(tr("Sign messages with your Sugarchain addresses to prove you own them"));
+    signMessageAction->setStatusTip(tr("Sign messages with your Bitcoin addresses to prove you own them"));
     verifyMessageAction = new QAction(tr("&Verify message…"), this);
-    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified Sugarchain addresses"));
+    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified Bitcoin addresses"));
     m_load_psbt_action = new QAction(tr("&Load PSBT from file…"), this);
-    m_load_psbt_action->setStatusTip(tr("Load Partially Signed Sugarchain Transaction"));
+    m_load_psbt_action->setStatusTip(tr("Load Partially Signed Bitcoin Transaction"));
     m_load_psbt_clipboard_action = new QAction(tr("Load PSBT from &clipboard…"), this);
-    m_load_psbt_clipboard_action->setStatusTip(tr("Load Partially Signed Sugarchain Transaction from clipboard"));
+    m_load_psbt_clipboard_action->setStatusTip(tr("Load Partially Signed Bitcoin Transaction from clipboard"));
 
     openRPCConsoleAction = new QAction(tr("Node window"), this);
     openRPCConsoleAction->setStatusTip(tr("Open node debugging and diagnostic console"));
@@ -335,7 +336,7 @@ void SugarchainGUI::createActions()
     usedReceivingAddressesAction->setStatusTip(tr("Show the list of used receiving addresses and labels"));
 
     openAction = new QAction(tr("Open &URI…"), this);
-    openAction->setStatusTip(tr("Open a sugarchain: URI"));
+    openAction->setStatusTip(tr("Open a bitcoin: URI"));
 
     m_open_wallet_action = new QAction(tr("Open Wallet"), this);
     m_open_wallet_action->setEnabled(false);
@@ -358,9 +359,13 @@ void SugarchainGUI::createActions()
     m_close_all_wallets_action = new QAction(tr("Close All Wallets…"), this);
     m_close_all_wallets_action->setStatusTip(tr("Close all wallets"));
 
+    m_migrate_wallet_action = new QAction(tr("Migrate Wallet"), this);
+    m_migrate_wallet_action->setEnabled(false);
+    m_migrate_wallet_action->setStatusTip(tr("Migrate a wallet"));
+
     showHelpMessageAction = new QAction(tr("&Command-line options"), this);
     showHelpMessageAction->setMenuRole(QAction::NoRole);
-    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible Sugarchain command-line options").arg(PACKAGE_NAME));
+    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible Bitcoin command-line options").arg(PACKAGE_NAME));
 
     m_mask_values_action = new QAction(tr("&Mask values"), this);
     m_mask_values_action->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_M));
@@ -411,6 +416,7 @@ void SugarchainGUI::createActions()
                 connect(action, &QAction::triggered, [this, path] {
                     auto activity = new OpenWalletActivity(m_wallet_controller, this);
                     connect(activity, &OpenWalletActivity::opened, this, &SugarchainGUI::setCurrentWallet, Qt::QueuedConnection);
+                    connect(activity, &OpenWalletActivity::opened, rpcConsole, &RPCConsole::setCurrentWallet, Qt::QueuedConnection);
                     activity->open(path);
                 });
             }
@@ -440,6 +446,7 @@ void SugarchainGUI::createActions()
 
             auto activity = new RestoreWalletActivity(m_wallet_controller, this);
             connect(activity, &RestoreWalletActivity::restored, this, &SugarchainGUI::setCurrentWallet, Qt::QueuedConnection);
+            connect(activity, &RestoreWalletActivity::restored, rpcConsole, &RPCConsole::setCurrentWallet, Qt::QueuedConnection);
 
             auto backup_file_path = fs::PathFromString(backup_file.toStdString());
             activity->restore(backup_file_path, wallet_name.toStdString());
@@ -447,13 +454,14 @@ void SugarchainGUI::createActions()
         connect(m_close_wallet_action, &QAction::triggered, [this] {
             m_wallet_controller->closeWallet(walletFrame->currentWalletModel(), this);
         });
-        connect(m_create_wallet_action, &QAction::triggered, [this] {
-            auto activity = new CreateWalletActivity(m_wallet_controller, this);
-            connect(activity, &CreateWalletActivity::created, this, &SugarchainGUI::setCurrentWallet);
-            activity->create();
-        });
+        connect(m_create_wallet_action, &QAction::triggered, this, &SugarchainGUI::createWallet);
         connect(m_close_all_wallets_action, &QAction::triggered, [this] {
             m_wallet_controller->closeAllWallets(this);
+        });
+        connect(m_migrate_wallet_action, &QAction::triggered, [this] {
+            auto activity = new MigrateWalletActivity(m_wallet_controller, this);
+            connect(activity, &MigrateWalletActivity::migrated, this, &SugarchainGUI::setCurrentWallet);
+            activity->migrate(walletFrame->currentWalletModel());
         });
         connect(m_mask_values_action, &QAction::toggled, this, &SugarchainGUI::setPrivacy);
         connect(m_mask_values_action, &QAction::toggled, this, &SugarchainGUI::enableHistoryAction);
@@ -466,13 +474,7 @@ void SugarchainGUI::createActions()
 
 void SugarchainGUI::createMenuBar()
 {
-#ifdef Q_OS_MACOS
-    // Create a decoupled menu bar on Mac which stays even if the window is closed
-    appMenuBar = new QMenuBar();
-#else
-    // Get the main window's menu bar on other platforms
     appMenuBar = menuBar();
-#endif
 
     // Configure the menus
     QMenu *file = appMenuBar->addMenu(tr("&File"));
@@ -482,6 +484,7 @@ void SugarchainGUI::createMenuBar()
         file->addAction(m_open_wallet_action);
         file->addAction(m_close_wallet_action);
         file->addAction(m_close_all_wallets_action);
+        file->addAction(m_migrate_wallet_action);
         file->addSeparator();
         file->addAction(backupWalletAction);
         file->addAction(m_restore_wallet_action);
@@ -651,7 +654,8 @@ void SugarchainGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockA
 
         m_mask_values_action->setChecked(_clientModel->getOptionsModel()->getOption(OptionsModel::OptionID::MaskValues).toBool());
     } else {
-        if(trayIconMenu)
+        // Shutdown requested, disable menus
+        if (trayIconMenu)
         {
             // Disable context menu on tray icon
             trayIconMenu->clear();
@@ -665,17 +669,21 @@ void SugarchainGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockA
         }
 #endif // ENABLE_WALLET
         unitDisplayControl->setOptionsModel(nullptr);
+        // Disable top bar menu actions
+        appMenuBar->clear();
     }
 }
 
 #ifdef ENABLE_WALLET
 void SugarchainGUI::enableHistoryAction(bool privacy)
 {
-    historyAction->setEnabled(!privacy);
-    if (historyAction->isChecked()) gotoOverviewPage();
+    if (walletFrame->currentWalletModel()) {
+        historyAction->setEnabled(!privacy);
+        if (historyAction->isChecked()) gotoOverviewPage();
+    }
 }
 
-void SugarchainGUI::setWalletController(WalletController* wallet_controller)
+void SugarchainGUI::setWalletController(WalletController* wallet_controller, bool show_loading_minimized)
 {
     assert(!m_wallet_controller);
     assert(wallet_controller);
@@ -695,7 +703,7 @@ void SugarchainGUI::setWalletController(WalletController* wallet_controller)
     });
 
     auto activity = new LoadWalletsActivity(m_wallet_controller, this);
-    activity->load();
+    activity->load(show_loading_minimized);
 }
 
 WalletController* SugarchainGUI::getWalletController()
@@ -766,6 +774,7 @@ void SugarchainGUI::setCurrentWallet(WalletModel* wallet_model)
         }
     }
     updateWindowTitle();
+    m_migrate_wallet_action->setEnabled(wallet_model->wallet().isLegacy());
 }
 
 void SugarchainGUI::setCurrentWalletBySelectorIndex(int index)
@@ -799,6 +808,7 @@ void SugarchainGUI::setWalletActionsEnabled(bool enabled)
     openAction->setEnabled(enabled);
     m_close_wallet_action->setEnabled(enabled);
     m_close_all_wallets_action->setEnabled(enabled);
+    m_migrate_wallet_action->setEnabled(enabled);
 }
 
 void SugarchainGUI::createTrayIcon()
@@ -860,6 +870,7 @@ void SugarchainGUI::createTrayIconMenu()
     // Note: On macOS, the Dock icon is used to provide the tray's functionality.
     MacDockIconHandler* dockIconHandler = MacDockIconHandler::instance();
     connect(dockIconHandler, &MacDockIconHandler::dockIconClicked, [this] {
+        if (m_node.shutdownRequested()) return; // nothing to show, node is shutting down.
         show();
         activateWindow();
     });
@@ -871,6 +882,8 @@ void SugarchainGUI::createTrayIconMenu()
         // See https://bugreports.qt.io/browse/QTBUG-91697
         trayIconMenu.get(), &QMenu::aboutToShow,
         [this, show_hide_action, send_action, receive_action, sign_action, verify_action, options_action, node_window_action, quit_action] {
+            if (m_node.shutdownRequested()) return; // nothing to do, node is shutting down.
+
             if (show_hide_action) show_hide_action->setText(
                 (!isHidden() && !isMinimized() && !GUIUtil::isObscured(this)) ?
                     tr("&Hide") :
@@ -991,7 +1004,7 @@ void SugarchainGUI::updateNetworkState()
 
     if (m_node.getNetworkActive()) {
         //: A substring of the tooltip.
-        tooltip = tr("%n active connection(s) to Sugarchain network.", "", count);
+        tooltip = tr("%n active connection(s) to Bitcoin network.", "", count);
     } else {
         //: A substring of the tooltip.
         tooltip = tr("Network activity disabled.");
@@ -1177,6 +1190,21 @@ void SugarchainGUI::setNumBlocks(int count, const QDateTime& blockDate, double n
     labelBlocksIcon->setToolTip(tooltip);
     progressBarLabel->setToolTip(tooltip);
     progressBar->setToolTip(tooltip);
+}
+
+void SugarchainGUI::createWallet()
+{
+#ifdef ENABLE_WALLET
+#ifndef USE_SQLITE
+    // Compiled without sqlite support (required for descriptor wallets)
+    message(tr("Error creating wallet"), tr("Cannot create new wallet, the software was compiled without sqlite support (required for descriptor wallets)"), CClientUIInterface::MSG_ERROR);
+    return;
+#endif // USE_SQLITE
+    auto activity = new CreateWalletActivity(getWalletController(), this);
+    connect(activity, &CreateWalletActivity::created, this, &SugarchainGUI::setCurrentWallet);
+    connect(activity, &CreateWalletActivity::created, rpcConsole, &RPCConsole::setCurrentWallet);
+    activity->create();
+#endif // ENABLE_WALLET
 }
 
 void SugarchainGUI::message(const QString& title, QString message, unsigned int style, bool* ret, const QString& detailed_message)

@@ -35,7 +35,7 @@ public:
 
     enum ColumnIndex {
         Label = 0,   /**< User specified label */
-        Address = 1  /**< Sugarchain address */
+        Address = 1  /**< Bitcoin address */
     };
 
     enum RoleIndex {
@@ -86,6 +86,8 @@ public:
     EditStatus getEditStatus() const { return editStatus; }
 
     OutputType GetDefaultAddressType() const;
+
+    QString GetWalletDisplayName() const;
 
 private:
     WalletModel* const walletModel;

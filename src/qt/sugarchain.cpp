@@ -9,11 +9,15 @@
 #include <qt/sugarchain.h>
 
 #include <chainparams.h>
+#include <common/args.h>
 #include <common/init.h>
+#include <common/system.h>
 #include <init.h>
 #include <interfaces/handler.h>
 #include <interfaces/init.h>
 #include <interfaces/node.h>
+#include <logging.h>
+#include <node/context.h>
 #include <node/interface_ui.h>
 #include <noui.h>
 #include <qt/sugarchaingui.h>
@@ -31,7 +35,6 @@
 #include <uint256.h>
 #include <util/exception.h>
 #include <util/string.h>
-#include <util/system.h>
 #include <util/threadnames.h>
 #include <util/translation.h>
 #include <validation.h>
@@ -161,12 +164,12 @@ static void initTranslations(QTranslator &qtTranslatorBase, QTranslator &qtTrans
         QApplication::installTranslator(&qtTranslator);
     }
 
-    // Load e.g. sugarchain_de.qm (shortcut "de" needs to be defined in sugarchain.qrc)
+    // Load e.g. bitcoin_de.qm (shortcut "de" needs to be defined in sugarchain.qrc)
     if (translatorBase.load(lang, ":/translations/")) {
         QApplication::installTranslator(&translatorBase);
     }
 
-    // Load e.g. sugarchain_de_DE.qm (shortcut "de_DE" needs to be defined in sugarchain.qrc)
+    // Load e.g. bitcoin_de_DE.qm (shortcut "de_DE" needs to be defined in sugarchain.qrc)
     if (translator.load(lang_territory, ":/translations/")) {
         QApplication::installTranslator(&translator);
     }
@@ -218,7 +221,7 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
 static int qt_argc = 1;
 static const char* qt_argv = "sugarchain-qt";
 
-SugarchainApplication::SugarchainApplication()
+BitcoinApplication::BitcoinApplication()
     : QApplication(qt_argc, const_cast<char**>(&qt_argv))
 {
     // Qt runs setlocale(LC_ALL, "") on initialization.
@@ -226,10 +229,10 @@ SugarchainApplication::SugarchainApplication()
     setQuitOnLastWindowClosed(false);
 }
 
-void SugarchainApplication::setupPlatformStyle()
+void BitcoinApplication::setupPlatformStyle()
 {
     // UI per-platform customization
-    // This must be done inside the SugarchainApplication constructor, or after it, because
+    // This must be done inside the BitcoinApplication constructor, or after it, because
     // PlatformStyle::instantiate requires a QApplication
     std::string platformName;
     platformName = gArgs.GetArg("-uiplatform", SugarchainGUI::DEFAULT_UIPLATFORM);
@@ -239,7 +242,7 @@ void SugarchainApplication::setupPlatformStyle()
     assert(platformStyle);
 }
 
-SugarchainApplication::~SugarchainApplication()
+BitcoinApplication::~BitcoinApplication()
 {
     m_executor.reset();
 
@@ -250,13 +253,13 @@ SugarchainApplication::~SugarchainApplication()
 }
 
 #ifdef ENABLE_WALLET
-void SugarchainApplication::createPaymentServer()
+void BitcoinApplication::createPaymentServer()
 {
     paymentServer = new PaymentServer(this);
 }
 #endif
 
-bool SugarchainApplication::createOptionsModel(bool resetSettings)
+bool BitcoinApplication::createOptionsModel(bool resetSettings)
 {
     optionsModel = new OptionsModel(node(), this);
     if (resetSettings) {
@@ -278,10 +281,10 @@ bool SugarchainApplication::createOptionsModel(bool resetSettings)
     return true;
 }
 
-void SugarchainApplication::createWindow(const NetworkStyle *networkStyle)
+void BitcoinApplication::createWindow(const NetworkStyle *networkStyle)
 {
     window = new SugarchainGUI(node(), platformStyle, networkStyle, nullptr);
-    connect(window, &SugarchainGUI::quitRequested, this, &SugarchainApplication::requestShutdown);
+    connect(window, &SugarchainGUI::quitRequested, this, &BitcoinApplication::requestShutdown);
 
     pollShutdownTimer = new QTimer(window);
     connect(pollShutdownTimer, &QTimer::timeout, [this]{
@@ -291,41 +294,41 @@ void SugarchainApplication::createWindow(const NetworkStyle *networkStyle)
     });
 }
 
-void SugarchainApplication::createSplashScreen(const NetworkStyle *networkStyle)
+void BitcoinApplication::createSplashScreen(const NetworkStyle *networkStyle)
 {
     assert(!m_splash);
     m_splash = new SplashScreen(networkStyle);
     m_splash->show();
 }
 
-void SugarchainApplication::createNode(interfaces::Init& init)
+void BitcoinApplication::createNode(interfaces::Init& init)
 {
     assert(!m_node);
     m_node = init.makeNode();
     if (m_splash) m_splash->setNode(*m_node);
 }
 
-bool SugarchainApplication::baseInitialize()
+bool BitcoinApplication::baseInitialize()
 {
     return node().baseInitialize();
 }
 
-void SugarchainApplication::startThread()
+void BitcoinApplication::startThread()
 {
     assert(!m_executor);
     m_executor.emplace(node());
 
     /*  communication to and from thread */
-    connect(&m_executor.value(), &InitExecutor::initializeResult, this, &SugarchainApplication::initializeResult);
+    connect(&m_executor.value(), &InitExecutor::initializeResult, this, &BitcoinApplication::initializeResult);
     connect(&m_executor.value(), &InitExecutor::shutdownResult, this, [] {
         QCoreApplication::exit(0);
     });
-    connect(&m_executor.value(), &InitExecutor::runawayException, this, &SugarchainApplication::handleRunawayException);
-    connect(this, &SugarchainApplication::requestedInitialize, &m_executor.value(), &InitExecutor::initialize);
-    connect(this, &SugarchainApplication::requestedShutdown, &m_executor.value(), &InitExecutor::shutdown);
+    connect(&m_executor.value(), &InitExecutor::runawayException, this, &BitcoinApplication::handleRunawayException);
+    connect(this, &BitcoinApplication::requestedInitialize, &m_executor.value(), &InitExecutor::initialize);
+    connect(this, &BitcoinApplication::requestedShutdown, &m_executor.value(), &InitExecutor::shutdown);
 }
 
-void SugarchainApplication::parameterSetup()
+void BitcoinApplication::parameterSetup()
 {
     // Default printtoconsole to false for the GUI. GUI programs should not
     // print to the console unnecessarily.
@@ -335,19 +338,19 @@ void SugarchainApplication::parameterSetup()
     InitParameterInteraction(gArgs);
 }
 
-void SugarchainApplication::InitPruneSetting(int64_t prune_MiB)
+void BitcoinApplication::InitPruneSetting(int64_t prune_MiB)
 {
     optionsModel->SetPruneTargetGB(PruneMiBtoGB(prune_MiB));
 }
 
-void SugarchainApplication::requestInitialize()
+void BitcoinApplication::requestInitialize()
 {
     qDebug() << __func__ << ": Requesting initialize";
     startThread();
     Q_EMIT requestedInitialize();
 }
 
-void SugarchainApplication::requestShutdown()
+void BitcoinApplication::requestShutdown()
 {
     for (const auto w : QGuiApplication::topLevelWindows()) {
         w->hide();
@@ -392,13 +395,11 @@ void SugarchainApplication::requestShutdown()
     Q_EMIT requestedShutdown();
 }
 
-void SugarchainApplication::initializeResult(bool success, interfaces::BlockAndHeaderTipInfo tip_info)
+void BitcoinApplication::initializeResult(bool success, interfaces::BlockAndHeaderTipInfo tip_info)
 {
     qDebug() << __func__ << ": Initialization result: " << success;
 
-    // Set exit result.
-    returnValue = success ? EXIT_SUCCESS : EXIT_FAILURE;
-    if(success) {
+    if (success) {
         delete m_splash;
         m_splash = nullptr;
 
@@ -406,18 +407,21 @@ void SugarchainApplication::initializeResult(bool success, interfaces::BlockAndH
         qInfo() << "Platform customization:" << platformStyle->getName();
         clientModel = new ClientModel(node(), optionsModel);
         window->setClientModel(clientModel, &tip_info);
+
+        // If '-min' option passed, start window minimized (iconified) or minimized to tray
+        bool start_minimized = gArgs.GetBoolArg("-min", false);
 #ifdef ENABLE_WALLET
         if (WalletModel::isWalletEnabled()) {
             m_wallet_controller = new WalletController(*clientModel, platformStyle, this);
-            window->setWalletController(m_wallet_controller);
+            window->setWalletController(m_wallet_controller, /*show_loading_minimized=*/start_minimized);
             if (paymentServer) {
                 paymentServer->setOptionsModel(optionsModel);
             }
         }
 #endif // ENABLE_WALLET
 
-        // If -min option passed, start window minimized (iconified) or minimized to tray
-        if (!gArgs.GetBoolArg("-min", false)) {
+        // Show or minimize window
+        if (!start_minimized) {
             window->show();
         } else if (clientModel->getOptionsModel()->getMinimizeToTray() && window->hasTrayIcon()) {
             // do nothing as the window is managed by the tray icon
@@ -444,7 +448,7 @@ void SugarchainApplication::initializeResult(bool success, interfaces::BlockAndH
     }
 }
 
-void SugarchainApplication::handleRunawayException(const QString &message)
+void BitcoinApplication::handleRunawayException(const QString &message)
 {
     QMessageBox::critical(
         nullptr, tr("Runaway exception"),
@@ -453,7 +457,7 @@ void SugarchainApplication::handleRunawayException(const QString &message)
     ::exit(EXIT_FAILURE);
 }
 
-void SugarchainApplication::handleNonFatalException(const QString& message)
+void BitcoinApplication::handleNonFatalException(const QString& message)
 {
     assert(QThread::currentThread() == thread());
     QMessageBox::warning(
@@ -463,7 +467,7 @@ void SugarchainApplication::handleNonFatalException(const QString& message)
         QLatin1String("<br><br>") + GUIUtil::MakeHtmlLink(message, PACKAGE_BUGREPORT));
 }
 
-WId SugarchainApplication::getMainWinId() const
+WId BitcoinApplication::getMainWinId() const
 {
     if (!window)
         return 0;
@@ -471,7 +475,7 @@ WId SugarchainApplication::getMainWinId() const
     return window->winId();
 }
 
-bool SugarchainApplication::event(QEvent* e)
+bool BitcoinApplication::event(QEvent* e)
 {
     if (e->type() == QEvent::Quit) {
         requestShutdown();
@@ -494,7 +498,7 @@ static void SetupUIArgs(ArgsManager& argsman)
 int GuiMain(int argc, char* argv[])
 {
 #ifdef WIN32
-    util::WinCmdLineArgs winArgs;
+    common::WinCmdLineArgs winArgs;
     std::tie(argc, argv) = winArgs.get();
 #endif
 
@@ -512,7 +516,7 @@ int GuiMain(int argc, char* argv[])
 
     /// 1. Basic Qt initialization (not dependent on parameters or configuration)
     Q_INIT_RESOURCE(sugarchain);
-    Q_INIT_RESOURCE(sugarchain_locale);
+    Q_INIT_RESOURCE(bitcoin_locale);
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
     // Generate high-dpi pixmaps
@@ -526,7 +530,7 @@ int GuiMain(int argc, char* argv[])
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
 #endif
 
-    SugarchainApplication app;
+    BitcoinApplication app;
     GUIUtil::LoadFont(QStringLiteral(":/fonts/monospace"));
 
     /// 2. Parse command-line options. We do this after qt in order to show an error if there are problems parsing these
@@ -541,6 +545,34 @@ int GuiMain(int argc, char* argv[])
             // message cannot be translated because translations have not been initialized
             QString::fromStdString("Error parsing command line arguments: %1.").arg(QString::fromStdString(error)));
         return EXIT_FAILURE;
+    }
+
+    // Error out when loose non-argument tokens are encountered on command line
+    // However, allow BIP-21 URIs only if no options follow
+    bool payment_server_token_seen = false;
+    for (int i = 1; i < argc; i++) {
+        QString arg(argv[i]);
+        bool invalid_token = !arg.startsWith("-");
+#ifdef ENABLE_WALLET
+        if (arg.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) {
+            invalid_token &= false;
+            payment_server_token_seen = true;
+        }
+#endif
+        if (payment_server_token_seen && arg.startsWith("-")) {
+            InitError(Untranslated(strprintf("Options ('%s') cannot follow a BIP-21 payment URI", argv[i])));
+            QMessageBox::critical(nullptr, PACKAGE_NAME,
+                                  // message cannot be translated because translations have not been initialized
+                                  QString::fromStdString("Options ('%1') cannot follow a BIP-21 payment URI").arg(QString::fromStdString(argv[i])));
+            return EXIT_FAILURE;
+        }
+        if (invalid_token) {
+            InitError(Untranslated(strprintf("Command line contains unexpected token '%s', see sugarchain-qt -h for a list of options.", argv[i])));
+            QMessageBox::critical(nullptr, PACKAGE_NAME,
+                                  // message cannot be translated because translations have not been initialized
+                                  QString::fromStdString("Command line contains unexpected token '%1', see sugarchain-qt -h for a list of options.").arg(QString::fromStdString(argv[i])));
+            return EXIT_FAILURE;
+        }
     }
 
     // Now that the QApplication is setup and we have parsed our parameters, we can set the platform style
@@ -600,7 +632,7 @@ int GuiMain(int argc, char* argv[])
     PaymentServer::ipcParseCommandLine(argc, argv);
 #endif
 
-    QScopedPointer<const NetworkStyle> networkStyle(NetworkStyle::instantiate(Params().NetworkIDString()));
+    QScopedPointer<const NetworkStyle> networkStyle(NetworkStyle::instantiate(Params().GetChainType()));
     assert(!networkStyle.isNull());
     // Allow for separate UI settings for testnets
     QApplication::setApplicationName(networkStyle->getAppName());
@@ -629,7 +661,10 @@ int GuiMain(int argc, char* argv[])
     app.installEventFilter(new GUIUtil::LabelOutOfFocusEventFilter(&app));
 #if defined(Q_OS_WIN)
     // Install global event filter for processing Windows session related Windows messages (WM_QUERYENDSESSION and WM_ENDSESSION)
-    qApp->installNativeEventFilter(new WinShutdownMonitor());
+    // Note: it is safe to call app.node() in the lambda below despite the fact
+    // that app.createNode() hasn't been called yet, because native events will
+    // not be processed until the Qt event loop is executed.
+    qApp->installNativeEventFilter(new WinShutdownMonitor([&app] { app.node().startShutdown(); }));
 #endif
     // Install qDebug() message handler to route to debug.log
     qInstallMessageHandler(DebugMessageHandler);
@@ -652,7 +687,6 @@ int GuiMain(int argc, char* argv[])
         app.InitPruneSetting(prune_MiB);
     }
 
-    int rv = EXIT_SUCCESS;
     try
     {
         app.createWindow(networkStyle.data());
@@ -665,10 +699,9 @@ int GuiMain(int argc, char* argv[])
             WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("%1 didn't yet exit safely…").arg(PACKAGE_NAME), (HWND)app.getMainWinId());
 #endif
             app.exec();
-            rv = app.getReturnValue();
         } else {
             // A dialog with detailed error will have been shown by InitError()
-            rv = EXIT_FAILURE;
+            return EXIT_FAILURE;
         }
     } catch (const std::exception& e) {
         PrintExceptionContinue(&e, "Runaway exception");
@@ -677,5 +710,5 @@ int GuiMain(int argc, char* argv[])
         PrintExceptionContinue(nullptr, "Runaway exception");
         app.handleRunawayException(QString::fromStdString(app.node().getWarnings().translated));
     }
-    return rv;
+    return app.node().getExitStatus();
 }

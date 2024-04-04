@@ -32,13 +32,13 @@ class Init;
 } // namespace interfaces
 
 
-/** Main Sugarchain application object */
-class SugarchainApplication: public QApplication
+/** Main Bitcoin application object */
+class BitcoinApplication: public QApplication
 {
     Q_OBJECT
 public:
-    explicit SugarchainApplication();
-    ~SugarchainApplication();
+    explicit BitcoinApplication();
+    ~BitcoinApplication();
 
 #ifdef ENABLE_WALLET
     /// Create payment server
@@ -61,9 +61,6 @@ public:
 
     /// Request core initialization
     void requestInitialize();
-
-    /// Get process return value
-    int getReturnValue() const { return returnValue; }
 
     /// Get window identifier of QMainWindow (SugarchainGUI)
     WId getMainWinId() const;
@@ -104,7 +101,6 @@ private:
     PaymentServer* paymentServer{nullptr};
     WalletController* m_wallet_controller{nullptr};
 #endif
-    int returnValue{0};
     const PlatformStyle* platformStyle{nullptr};
     std::unique_ptr<QWidget> shutdownWindow;
     SplashScreen* m_splash = nullptr;
