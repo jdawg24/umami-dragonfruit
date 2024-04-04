@@ -15,7 +15,7 @@
 #include <stdlib.h> // exit()
 #include <sync.h>
 
-uint256 CBlockHeader::GetHash() const
+uint256 CBlockHeaderUncached::GetHash() const
 {
     return (HashWriter{} << *this).GetHash();
 }
