@@ -2,6 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#if defined(HAVE_CONFIG_H)
+#include <config/sugarchain-config.h>
+#endif
+
 #include <qt/notificator.h>
 
 #include <QApplication>
@@ -240,3 +244,4 @@ void Notificator::notify(Class cls, const QString &title, const QString &text, c
         break;
     }
 }
+
