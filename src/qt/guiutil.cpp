@@ -136,8 +136,8 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
     // and this is the only place, where this address is supplied.
     widget->setPlaceholderText(QObject::tr("Enter a Sugarchain address (e.g. %1)").arg(
         QString::fromStdString(DummyAddress(Params()))));
-    widget->setValidator(new BitcoinAddressEntryValidator(parent));
-    widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
+    widget->setValidator(new SugarchainAddressEntryValidator(parent));
+    widget->setCheckValidator(new SugarchainAddressCheckValidator(parent));
 }
 
 void AddButtonShortcut(QAbstractButton* button, const QKeySequence& shortcut)
@@ -145,7 +145,7 @@ void AddButtonShortcut(QAbstractButton* button, const QKeySequence& shortcut)
     QObject::connect(new QShortcut(shortcut, button), &QShortcut::activated, [button]() { button->animateClick(); });
 }
 
-bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
+bool parseSugarchainURI(const QUrl &uri, SendCoinsRecipient *out)
 {
     // return if URI is not valid or is no sugarchain: URI
     if(!uri.isValid() || uri.scheme() != QString("sugarchain"))
@@ -184,7 +184,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if (!SugarchainUnits::parse(SugarchainUnit::BTC, i->second, &rv.amount)) {
+                if (!SugarchainUnits::parse(SugarchainUnit::SUGAR, i->second, &rv.amount)) {
                     return false;
                 }
             }
@@ -201,13 +201,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
     return true;
 }
 
-bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
+bool parseSugarchainURI(QString uri, SendCoinsRecipient *out)
 {
     QUrl uriInstance(uri);
-    return parseBitcoinURI(uriInstance, out);
+    return parseSugarchainURI(uriInstance, out);
 }
 
-QString formatBitcoinURI(const SendCoinsRecipient &info)
+QString formatSugarchainURI(const SendCoinsRecipient &info)
 {
     bool bech_32 = info.address.startsWith(QString::fromStdString(Params().Bech32HRP() + "1"));
 
@@ -216,7 +216,7 @@ QString formatBitcoinURI(const SendCoinsRecipient &info)
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(SugarchainUnits::format(SugarchainUnit::BTC, info.amount, false, SugarchainUnits::SeparatorStyle::NEVER));
+        ret += QString("?amount=%1").arg(SugarchainUnits::format(SugarchainUnit::SUGAR, info.amount, false, SugarchainUnits::SeparatorStyle::NEVER));
         paramCount++;
     }
 
@@ -434,7 +434,7 @@ void openDebugLogfile()
         QDesktopServices::openUrl(QUrl::fromLocalFile(PathToQString(pathDebug)));
 }
 
-bool openBitcoinConf()
+bool openSugarchainConf()
 {
     fs::path pathConfig = gArgs.GetConfigFilePath();
 

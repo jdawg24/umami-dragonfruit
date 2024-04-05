@@ -191,15 +191,15 @@ bool OptionsModel::Init(bilingual_str& error)
     fMinimizeOnClose = settings.value("fMinimizeOnClose").toBool();
 
     // Display
-    if (!settings.contains("DisplayBitcoinUnit")) {
-        settings.setValue("DisplayBitcoinUnit", QVariant::fromValue(BitcoinUnit::BTC));
+    if (!settings.contains("DisplaySugarchainUnit")) {
+        settings.setValue("DisplaySugarchainUnit", QVariant::fromValue(SugarchainUnit::BTC));
     }
-    QVariant unit = settings.value("DisplayBitcoinUnit");
-    if (unit.canConvert<BitcoinUnit>()) {
-        m_display_bitcoin_unit = unit.value<BitcoinUnit>();
+    QVariant unit = settings.value("DisplaySugarchainUnit");
+    if (unit.canConvert<SugarchainUnit>()) {
+        m_display_sugarchain_unit = unit.value<SugarchainUnit>();
     } else {
-        m_display_bitcoin_unit = BitcoinUnit::BTC;
-        settings.setValue("DisplayBitcoinUnit", QVariant::fromValue(m_display_bitcoin_unit));
+        m_display_sugarchain_unit = SugarchainUnit::SUGAR;
+        settings.setValue("DisplaySugarchainUnit", QVariant::fromValue(m_display_sugarchain_unit));
     }
 
     if (!settings.contains("strThirdPartyTxUrls"))
@@ -459,7 +459,7 @@ QVariant OptionsModel::getOption(OptionID option, const std::string& suffix) con
         return m_sub_fee_from_amount;
 #endif
     case DisplayUnit:
-        return QVariant::fromValue(m_display_bitcoin_unit);
+        return QVariant::fromValue(m_display_sugarchain_unit);
     case ThirdPartyTxUrls:
         return strThirdPartyTxUrls;
     case Language:
@@ -708,11 +708,11 @@ bool OptionsModel::setOption(OptionID option, const QVariant& value, const std::
 
 void OptionsModel::setDisplayUnit(const QVariant& new_unit)
 {
-    if (new_unit.isNull() || new_unit.value<BitcoinUnit>() == m_display_bitcoin_unit) return;
-    m_display_bitcoin_unit = new_unit.value<BitcoinUnit>();
+    if (new_unit.isNull() || new_unit.value<SugarchainUnit>() == m_display_sugarchain_unit) return;
+    m_display_bitcoin_unit = new_unit.value<SugarchainUnit>();
     QSettings settings;
-    settings.setValue("DisplayBitcoinUnit", QVariant::fromValue(m_display_bitcoin_unit));
-    Q_EMIT displayUnitChanged(m_display_bitcoin_unit);
+    settings.setValue("DisplayBitcoinUnit", QVariant::fromValue(m_display_sugarchain_unit));
+    Q_EMIT displayUnitChanged(m_display_sugarchain_unit);
 }
 
 void OptionsModel::setRestartRequired(bool fRequired)
