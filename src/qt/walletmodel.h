@@ -5,12 +5,7 @@
 #ifndef BITCOIN_QT_WALLETMODEL_H
 #define BITCOIN_QT_WALLETMODEL_H
 
-#if defined(HAVE_CONFIG_H)
-#include <config/sugarchain-config.h>
-#endif
-
 #include <key.h>
-#include <script/standard.h>
 
 #include <qt/walletmodeltransaction.h>
 
@@ -48,7 +43,7 @@ QT_BEGIN_NAMESPACE
 class QTimer;
 QT_END_NAMESPACE
 
-/** Interface to Sugarchain wallet from Qt view code. */
+/** Interface to Bitcoin wallet from Qt view code. */
 class WalletModel : public QObject
 {
     Q_OBJECT
