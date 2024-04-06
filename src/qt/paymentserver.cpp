@@ -126,7 +126,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer)
     : QObject(parent)
 {
     // Install global event filter to catch QFileOpenEvents
-    // on Mac: sent when you click bitcoin: links
+    // on Mac: sent when you click sugarchain: links
     // other OSes: helpful when dealing with payment request files
     if (parent)
         parent->installEventFilter(this);
@@ -143,7 +143,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer)
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "Q_EMIT message()" here
             QMessageBox::critical(nullptr, tr("Payment request error"),
-                tr("Cannot start bitcoin: click-to-pay handler"));
+                tr("Cannot start sugarchain: click-to-pay handler"));
         }
         else {
             connect(uriServer, &QLocalServer::newConnection, this, &PaymentServer::handleURIConnection);
@@ -189,7 +189,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith("bitcoin://", Qt::CaseInsensitive))
+    if (s.startsWith("sugarchain://", Qt::CaseInsensitive))
     {
         Q_EMIT message(tr("URI handling"), tr("'bitcoin://' is not a valid URI. Use 'bitcoin:' instead."),
             CClientUIInterface::MSG_ERROR);
@@ -200,7 +200,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
         // normal URI
         {
             SendCoinsRecipient recipient;
-            if (GUIUtil::parseBitcoinURI(s, &recipient))
+            if (GUIUtil::parseSugarchainURI(s, &recipient))
             {
                 std::string error_msg;
                 const CTxDestination dest = DecodeDestination(recipient.address.toStdString(), error_msg);
@@ -221,7 +221,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
             }
             else
                 Q_EMIT message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters."),
+                    tr("URI cannot be parsed! This can be caused by an invalid Sugarchain address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;
