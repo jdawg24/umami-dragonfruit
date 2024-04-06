@@ -2,10 +2,6 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#if defined(HAVE_CONFIG_H)
-#include <config/sugarchain-config.h>
-#endif
-
 #include <qt/paymentserver.h>
 
 #include <qt/sugarchainunits.h>
@@ -13,11 +9,11 @@
 #include <qt/optionsmodel.h>
 
 #include <chainparams.h>
+#include <common/args.h>
 #include <interfaces/node.h>
 #include <key_io.h>
 #include <node/interface_ui.h>
 #include <policy/policy.h>
-#include <util/system.h>
 #include <wallet/wallet.h>
 
 #include <cstdlib>
@@ -158,7 +154,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer)
 PaymentServer::~PaymentServer() = default;
 
 //
-// OSX-specific way of handling sugarchain: URIs
+// OSX-specific way of handling bitcoin: URIs
 //
 bool PaymentServer::eventFilter(QObject *object, QEvent *event)
 {
@@ -195,7 +191,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
 
     if (s.startsWith("sugarchain://", Qt::CaseInsensitive))
     {
-        Q_EMIT message(tr("URI handling"), tr("'sugarchain://' is not a valid URI. Use 'sugarchain:' instead."),
+        Q_EMIT message(tr("URI handling"), tr("'bitcoin://' is not a valid URI. Use 'bitcoin:' instead."),
             CClientUIInterface::MSG_ERROR);
     }
     else if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // sugarchain: URI
