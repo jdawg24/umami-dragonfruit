@@ -21,7 +21,7 @@ namespace Ui {
 }
 
 /**
- * A single entry in the dialog for sending sugarchains.
+ * A single entry in the dialog for sending bitcoins.
  */
 class SendCoinsEntry : public QWidget
 {
