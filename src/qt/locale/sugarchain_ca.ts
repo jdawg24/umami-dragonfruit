@@ -240,7 +240,7 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
     </message>
 </context>
 <context>
-    <name>BitcoinApplication</name>
+    <name>SugarchainApplication</name>
     <message>
         <source>Runaway exception</source>
         <translation type="unfinished">Excepció fugitiva</translation>
@@ -372,7 +372,7 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
     </message>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>SugarchainGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation type="unfinished">&amp;Visió general</translation>

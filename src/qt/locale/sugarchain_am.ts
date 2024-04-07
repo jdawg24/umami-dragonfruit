@@ -232,7 +232,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>BitcoinApplication</name>
+    <name>SugarchainApplication</name>
     <message>
         <source>Internal error</source>
         <translation type="unfinished">ውስጣዊ ስህተት</translation>
@@ -301,7 +301,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>SugarchainGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation type="unfinished">&amp;አጠቃላይ እይታ</translation>

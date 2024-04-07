@@ -278,7 +278,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     </group>
   </body></file>
   <file original="../sugarchain.cpp" datatype="cpp" source-language="en"><body>
-    <group restype="x-trolltech-linguist-context" resname="BitcoinApplication">
+    <group restype="x-trolltech-linguist-context" resname="SugarchainApplication">
       <trans-unit id="_msg61">
         <source xml:space="preserve">Settings file %1 might be corrupt or invalid.</source>
         <context-group purpose="location"><context context-type="linenumber">275</context></context-group>
@@ -322,7 +322,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     </group>
   </body></file>
   <file original="../bitcoingui.cpp" datatype="cpp" source-language="en"><body>
-    <group restype="x-trolltech-linguist-context" resname="BitcoinGUI">
+    <group restype="x-trolltech-linguist-context" resname="SugarchainApplication">
       <trans-unit id="_msg70">
         <source xml:space="preserve">&amp;Overview</source>
         <context-group purpose="location"><context context-type="linenumber">250</context></context-group>

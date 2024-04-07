@@ -40,7 +40,7 @@ Hierdie is die adresse waar u Bitcoins sal ontvang. Ons beveel aan dat u 'n nuwe
     </message>
     </context>
 <context>
-    <name>BitcoinApplication</name>
+    <name>SugarchainApplication</name>
     <message>
         <source>Settings file %1 might be corrupt or invalid.</source>
         <translation type="unfinished">Instellingslêer %1 kan korrup of ongeldig wees.</translation>
@@ -104,7 +104,7 @@ Hierdie is die adresse waar u Bitcoins sal ontvang. Ons beveel aan dat u 'n nuwe
     </message>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>SugarchainGUI</name>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
         <translation type="unfinished">

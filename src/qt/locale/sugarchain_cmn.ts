@@ -247,7 +247,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>BitcoinApplication</name>
+    <name>SugarchainApplication</name>
     <message>
         <source>Settings file %1 might be corrupt or invalid.</source>
         <translation type="unfinished">设置文件%1可能已损坏或无效。</translation>
@@ -378,7 +378,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>SugarchainGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation type="unfinished">概况(&amp;O)</translation>
@@ -636,7 +636,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Open a sugarchain: URI</source>
-        <translation type="unfinished">打开bitcoin:开头的URI</translation>
+        <translation type="unfinished">打开sugarchain:开头的URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>

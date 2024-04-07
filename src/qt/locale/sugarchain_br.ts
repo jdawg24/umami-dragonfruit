@@ -11,7 +11,7 @@
     </message>
     </context>
 <context>
-    <name>BitcoinApplication</name>
+    <name>SugarchainApplication</name>
     <message>
         <source>Internal error</source>
         <translation type="unfinished">Fazi diabarzh</translation>
@@ -67,7 +67,7 @@
     </message>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>SugarchainGUI</name>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
         <translation type="unfinished">

@@ -327,7 +327,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     </message>
 </context>
 <context>
-    <name>BitcoinApplication</name>
+    <name>SugarchainApplication</name>
     <message>
         <location filename="../sugarchain.cpp" line="+275"/>
         <source>Settings file %1 might be corrupt or invalid.</source>
@@ -355,7 +355,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>SugarchainApplication</name>
     <message>
         <location filename="../bitcoingui.cpp" line="+250"/>
         <source>&amp;Overview</source>
