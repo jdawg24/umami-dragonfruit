@@ -3,7 +3,7 @@
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
-        <translation type="unfinished">Десен клик за промяна на адреса или името</translation>
+        <translation type="unfinished">Десен клик за промяна на адреса или етикета</translation>
     </message>
     <message>
         <source>Create a new address</source>
@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished">Копирай</translation>
+        <translation type="unfinished">&amp;Копирай</translation>
     </message>
     <message>
         <source>C&amp;lose</source>
@@ -31,7 +31,7 @@
     </message>
     <message>
         <source>Enter address or label to search</source>
-        <translation type="unfinished">Търсене по адрес или име</translation>
+        <translation type="unfinished">Търсене по адрес или етикет</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -56,14 +56,6 @@
     <message>
         <source>C&amp;hoose</source>
         <translation type="unfinished">Избери</translation>
-    </message>
-    <message>
-        <source>Sending addresses</source>
-        <translation type="unfinished">Адреси за изпращане</translation>
-    </message>
-    <message>
-        <source>Receiving addresses</source>
-        <translation type="unfinished">Адреси за получаване</translation>
     </message>
     <message>
         <source>These are your Sugarchain addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
@@ -183,7 +175,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Въведете старата и новата паролна фраза за портфейла.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your sugarchains from being stolen by malware infecting your computer.</source>
+        <source>Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
         <translation type="unfinished">Не забравяйте, че криптирането на вашия портфейл не може напълно да защити вашите биткойни от кражба от зловреден софтуер, заразяващ компютъра ви.</translation>
     </message>
     <message>
@@ -227,6 +219,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Паролата на портфейла беше променена успешно.</translation>
     </message>
     <message>
+        <source>Passphrase change failed</source>
+        <translation type="unfinished">Неуспешна промяна на фраза за достъп</translation>
+    </message>
+    <message>
         <source>Warning: The Caps Lock key is on!</source>
         <translation type="unfinished">Внимание:Бутонът Caps Lock е включен.</translation>
     </message>
@@ -243,7 +239,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>SugarchainApplication</name>
+    <name>BitcoinApplication</name>
     <message>
         <source>Settings file %1 might be corrupt or invalid.</source>
         <translation type="unfinished">Файлът с настройки %1 може да е повреден или невалиден.</translation>
@@ -395,7 +391,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>SugarchainGUI</name>
+    <name>BitcoinGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation type="unfinished">Преглед</translation>
@@ -893,10 +889,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Такса:</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">прах:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation type="unfinished">След такса:</translation>
     </message>
@@ -985,28 +977,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Копиране на байтовете</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Копирай прахта:</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Промяна на копирането</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
         <translation type="unfinished">(%1 заключен)</translation>
-    </message>
-    <message>
-        <source>yes</source>
-        <translation type="unfinished">да</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation type="unfinished">не</translation>
-    </message>
-    <message>
-        <source>This label turns red if any recipient receives an amount smaller than the current dust threshold.</source>
-        <translation type="unfinished">Този етикет става червен ако някой получател получи количество, по-малко от текущия праг на прах</translation>
     </message>
     <message>
         <source>Can vary +/- %1 satoshi(s) per input.</source>
@@ -1100,9 +1076,19 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Възстановяване на Портфейл</translation>
     </message>
     <message>
+        <source>Restoring Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
+        <extracomment>Descriptive text of the restore wallets progress window which indicates to the user that wallets are currently being restored.</extracomment>
+        <translation type="unfinished">Възстановяване на портфейл &lt;b&gt;%1&lt;/b&gt;…</translation>
+    </message>
+    <message>
         <source>Restore wallet failed</source>
         <extracomment>Title of message box which is displayed when the wallet could not be restored.</extracomment>
         <translation type="unfinished">Възстановяването на портфейла не бе успешно</translation>
+    </message>
+    <message>
+        <source>Restore wallet warning</source>
+        <extracomment>Title of message box which is displayed when the wallet is restored with some warning.</extracomment>
+        <translation type="unfinished">Предупреждение за възстановяване на портфейл</translation>
     </message>
     <message>
         <source>Restore wallet message</source>
@@ -1176,14 +1162,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Създайте празен портфейл</translation>
     </message>
     <message>
-        <source>Use descriptors for scriptPubKey management</source>
-        <translation type="unfinished">Използвайте декодери за управление на scriptPubKey</translation>
-    </message>
-    <message>
-        <source>Descriptor Wallet</source>
-        <translation type="unfinished">Декодер за портфейл</translation>
-    </message>
-    <message>
         <source>Use an external signing device such as a hardware wallet. Configure the external signer script in wallet preferences first.</source>
         <translation type="unfinished">Използвайте външно устройство за подписване, като хардуерен портфейл. Конфигурирайте първо външния скрипт на подписа в предпочитания портфейл.</translation>
     </message>
@@ -1194,10 +1172,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Create</source>
         <translation type="unfinished">Създай</translation>
-    </message>
-    <message>
-        <source>Compiled without sqlite support (required for descriptor wallets)</source>
-        <translation type="unfinished">Компилиран без поддръжка на sqlite (изисква се за декодер на портфейли)</translation>
     </message>
     <message>
         <source>Compiled without external signing support (required for external signing)</source>
@@ -1292,8 +1266,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message numerus="yes">
         <source>%n GB of space available</source>
         <translation type="unfinished">
-            <numerusform />
-            <numerusform />
+            <numerusform>%n ГБ свободни</numerusform>
+            <numerusform>%nГигабайти свободни</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -1420,7 +1394,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Последните трансакции все още не могат да се виждат и следователно балансът на портфейла ви може да бъде неправилен. Тази информация ще бъде правилна, след като портфейлът ви приключи синхронизирането с Sugarchain мрежата, както е подробно описано по-долу.</translation>
     </message>
     <message>
-        <source>Attempting to spend sugarchains that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend coins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation type="unfinished">Опитът да се изразходват биткойни, които са засегнати от все още показаните трансакции, няма да бъдат приети от мрежата.</translation>
     </message>
     <message>
@@ -1748,6 +1722,14 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Опции за конфигуриране</translation>
     </message>
     <message>
+        <source>Continue</source>
+        <translation type="unfinished">Продължи</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Отказ</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation type="unfinished">грешка</translation>
     </message>
@@ -1818,12 +1800,24 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>PSBTOperationsDialog</name>
     <message>
+        <source>Sign Tx</source>
+        <translation type="unfinished">Подпиши Тх</translation>
+    </message>
+    <message>
         <source>Save…</source>
         <translation type="unfinished">Запази...</translation>
     </message>
     <message>
         <source>Close</source>
         <translation type="unfinished">Затвори</translation>
+    </message>
+    <message>
+        <source>own address</source>
+        <translation type="unfinished">собствен адрес</translation>
+    </message>
+    <message>
+        <source>Total Amount</source>
+        <translation type="unfinished">Тотално количество</translation>
     </message>
     <message>
         <source>or</source>
@@ -1860,6 +1854,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>Ping</source>
         <extracomment>Title of Peers Table column which indicates the current latency of the connection with the peer.</extracomment>
         <translation type="unfinished">пинг</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <extracomment>Title of Peers Table column which indicates the duration (length of time) since the peer connection started.</extracomment>
+        <translation type="unfinished">Възраст</translation>
     </message>
     <message>
         <source>Direction</source>
@@ -2062,6 +2061,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Out:</source>
         <translation type="unfinished">Изходящи</translation>
+    </message>
+    <message>
+        <source>Ctrl++</source>
+        <extracomment>Main shortcut to increase the RPC console font size.</extracomment>
+        <translation type="unfinished">Контрол++</translation>
+    </message>
+    <message>
+        <source>Ctrl+=</source>
+        <extracomment>Secondary shortcut to increase the RPC console font size.</extracomment>
+        <translation type="unfinished">Контрол+=</translation>
     </message>
     <message>
         <source>&amp;Copy address</source>
@@ -2297,10 +2306,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Изчисти всички полета от формуляра.</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">прах:</translation>
-    </message>
-    <message>
         <source>Clear &amp;All</source>
         <translation type="unfinished">&amp;Изчисти</translation>
     </message>
@@ -2337,10 +2342,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Копиране на байтовете</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Копирай прахта:</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Промяна на копирането</translation>
     </message>
@@ -2351,6 +2352,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Transaction fee</source>
         <translation type="unfinished">Такса</translation>
+    </message>
+    <message>
+        <source>Total Amount</source>
+        <translation type="unfinished">Тотално количество</translation>
     </message>
     <message>
         <source>Confirm send coins</source>
@@ -2712,10 +2717,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Изпратени на</translation>
     </message>
     <message>
-        <source>Payment to yourself</source>
-        <translation type="unfinished">Плащане към себе си</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation type="unfinished">Емитирани</translation>
     </message>
@@ -2777,10 +2778,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Sent to</source>
         <translation type="unfinished">Изпратени на</translation>
-    </message>
-    <message>
-        <source>To yourself</source>
-        <translation type="unfinished">Собствени</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -2925,7 +2922,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>The wallet data was successfully saved to %1.</source>
         <translation type="unfinished">Информацията за портфейла беше успешно запазена в %1.</translation>
     </message>
-    </context>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Отказ</translation>
+    </message>
+</context>
 <context>
     <name>sugarchain-core</name>
     <message>
