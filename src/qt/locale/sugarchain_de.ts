@@ -164,8 +164,8 @@ Das Signieren ist nur mit Adressen vom Typ 'Legacy' möglich.</translation>
         <translation type="unfinished">Wallet-Verschlüsselung bestätigen</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">Warnung: Wenn Sie Ihre Wallet verschlüsseln und Ihre Passphrase verlieren, werden Sie &lt;b&gt;ALLE IHRE BITCOINS VERLIEREN&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Warnung: Wenn Sie Ihre Wallet verschlüsseln und Ihre Passphrase verlieren, werden Sie &lt;b&gt;ALLE IHRE MÜNZEN VERLIEREN&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -4363,7 +4363,7 @@ Bitte nutzen Sie entweder "bdb" oder "sqlite".</translation>
     </message>
     <message>
         <source>The preselected coins total amount does not cover the transaction target. Please allow other inputs to be automatically selected or include more coins manually</source>
-        <translation type="unfinished">Die vorgewählte Gesamtsumme der Coins deckt das Transaktionsziel nicht ab. Bitte erlauben Sie, dass andere Eingaben automatisch ausgewählt werden, oder fügen Sie manuell mehr Coins hinzu</translation>
+        <translation type="unfinished">Die vorgewählte Gesamtsumme der Münzen deckt das Transaktionsziel nicht ab. Bitte erlauben Sie, dass andere Eingaben automatisch ausgewählt werden, oder fügen Sie manuell mehr Münzen hinzu</translation>
     </message>
     <message>
         <source>Transaction requires one destination of non-0 value, a non-0 feerate, or a pre-selected input</source>
