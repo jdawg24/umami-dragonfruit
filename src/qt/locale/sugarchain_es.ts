@@ -2082,7 +2082,7 @@ El proceso de migración creará una copia de seguridad de la billetera antes de
     </message>
     <message>
         <source>'sugarchain://' is not a valid URI. Use 'sugarchain:' instead.</source>
-        <translation type="unfinished">«bitcoin: //» no es un URI válido. Use «bitcoin:» en su lugar.</translation>
+        <translation type="unfinished">«sugarchain: //» no es un URI válido. Use «sugarchain:» en su lugar.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.
