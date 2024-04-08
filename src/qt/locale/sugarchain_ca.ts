@@ -156,8 +156,8 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">Confirma el xifratge de la cartera</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">Avís: si xifreu la cartera i perdeu la contrasenya, &lt;b&gt;PERDREU TOTS ELS BITCOINS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Avís: si xifreu la cartera i perdeu la contrasenya, &lt;b&gt;PERDREU TOTS ELS MONEDES&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -177,7 +177,7 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
     </message>
     <message>
         <source>Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Recorda que tot i xifrant la teva cartera, els teus coins no estan completament protegits de robatori a través de programari maliciós que estigui infectant el teu ordinador.</translation>
+        <translation type="unfinished">Recorda que tot i xifrant la teva cartera, els teus monedes no estan completament protegits de robatori a través de programari maliciós que estigui infectant el teu ordinador.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -1284,7 +1284,7 @@ Això és ideal per a carteres de mode només lectura.</translation>
     </message>
     <message>
         <source>Attempting to spend coins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">Els intents de gastar coins que es veuen afectats per les transaccions que encara no s'hagin mostrat no seran acceptats per la xarxa.</translation>
+        <translation type="unfinished">Els intents de gastar monedes que es veuen afectats per les transaccions que encara no s'hagin mostrat no seran acceptats per la xarxa.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -2865,7 +2865,7 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
     </message>
     <message>
         <source>The fee will be deducted from the amount being sent. The recipient will receive less coins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">La tarifa es deduirà de l'import que s'enviarà. El destinatari rebrà menys coins que les que introduïu al camp d'import. Si se seleccionen múltiples destinataris, la tarifa es dividirà per igual.</translation>
+        <translation type="unfinished">La tarifa es deduirà de l'import que s'enviarà. El destinatari rebrà menys monedes que les que introduïu al camp d'import. Si se seleccionen múltiples destinataris, la tarifa es dividirà per igual.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2911,7 +2911,7 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
     </message>
     <message>
         <source>You can sign messages/agreements with your addresses to prove you can receive coins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">Podeu signar missatges/acords amb les vostres adreces per a provar que rebeu les coins que s'hi envien. Aneu amb compte no signar res que sigui vague o aleatori, perquè en alguns atacs de suplantació es pot provar que hi signeu la vostra identitat. Només signeu aquelles declaracions completament detallades en què hi esteu d'acord. </translation>
+        <translation type="unfinished">Podeu signar missatges/acords amb les vostres adreces per a provar que rebeu les monedes que s'hi envien. Aneu amb compte no signar res que sigui vague o aleatori, perquè en alguns atacs de suplantació es pot provar que hi signeu la vostra identitat. Només signeu aquelles declaracions completament detallades en què hi esteu d'acord. </translation>
     </message>
     <message>
         <source>The Sugarchain address to sign the message with</source>

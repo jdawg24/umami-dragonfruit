@@ -58,16 +58,8 @@
         <translation type="unfinished">&amp;Elekti</translation>
     </message>
     <message>
-        <source>Sending addresses</source>
-        <translation type="unfinished">Sendaj adresoj</translation>
-    </message>
-    <message>
-        <source>Receiving addresses</source>
-        <translation type="unfinished">Ricevaj adresoj</translation>
-    </message>
-    <message>
         <source>These are your Sugarchain addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Jen viaj Bitmon-adresoj por sendi pagojn. Zorge kontrolu la sumon kaj la alsendan adreson antaŭ ol sendi.</translation>
+        <translation type="unfinished">Jen viaj Sugarchain-adresoj por sendi pagojn. Zorge kontrolu la sumon kaj la alsendan adreson antaŭ ol sendi.</translation>
     </message>
     <message>
         <source>These are your Sugarchain addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
@@ -163,8 +155,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Konfirmo de ĉifrado de la monujo</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">Atentu! Se vi ĉifras vian monujon kaj perdas la pasfrazon, vi &lt;b&gt;PERDOS LA TUTON DE VIA BITMONO&lt;b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Atentu! Se vi ĉifras vian monujon kaj perdas la pasfrazon, vi &lt;b&gt;PERDOS LA TUTON DE VIA MONEROJ&lt;b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -371,7 +363,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Send coins to a Sugarchain address</source>
-        <translation type="unfinished">Sendi monon al Bitmon-adreso</translation>
+        <translation type="unfinished">Sendi monon al Sugarchain-adreso</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -395,11 +387,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Sign messages with your Sugarchain addresses to prove you own them</source>
-        <translation type="unfinished">Subskribi mesaĝojn per via Bitmon-adresoj por pravigi, ke vi estas la posedanto</translation>
+        <translation type="unfinished">Subskribi mesaĝojn per via Sugarchain-adresoj por pravigi, ke vi estas la posedanto</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Sugarchain addresses</source>
-        <translation type="unfinished">Kontroli mesaĝojn por kontroli ĉu ili estas subskribitaj per specifaj Bitmon-adresoj</translation>
+        <translation type="unfinished">Kontroli mesaĝojn por kontroli ĉu ili estas subskribitaj per specifaj Sugarchain-adresoj</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -601,10 +593,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Krompago:</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Polvo:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation type="unfinished">Post krompago:</translation>
     </message>
@@ -669,24 +657,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kopii bajtojn</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Kopii polvon</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Kopii restmonon</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
         <translation type="unfinished">(%1 ŝlosita)</translation>
-    </message>
-    <message>
-        <source>yes</source>
-        <translation type="unfinished">jes</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation type="unfinished">ne</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -815,7 +791,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>The entered address "%1" is not a valid Sugarchain address.</source>
-        <translation type="unfinished">La adreso enigita "%1" ne estas valida Bitmon-adreso.</translation>
+        <translation type="unfinished">La adreso enigita "%1" ne estas valida Sugarchain-adreso.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -1162,6 +1138,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Close</source>
         <translation type="unfinished">Fermi</translation>
+    </message>
+    <message>
+        <source>own address</source>
+        <translation type="unfinished">propra adreso</translation>
     </message>
     <message>
         <source>Total Amount</source>
@@ -1534,10 +1514,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Malplenigi ĉiujn kampojn de la formularo.</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Polvo:</translation>
-    </message>
-    <message>
         <source>Clear &amp;All</source>
         <translation type="unfinished">&amp;Forigi Ĉion</translation>
     </message>
@@ -1572,10 +1548,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Copy bytes</source>
         <translation type="unfinished">Kopii bajtojn</translation>
-    </message>
-    <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Kopii polvon</translation>
     </message>
     <message>
         <source>Copy change</source>
@@ -1626,7 +1598,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Warning: Invalid Sugarchain address</source>
-        <translation type="unfinished">Averto: Nevalida Bitmon-adreso</translation>
+        <translation type="unfinished">Averto: Nevalida Sugarchain-adreso</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1707,7 +1679,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Sign the message to prove you own this Sugarchain address</source>
-        <translation type="unfinished">Subskribi la mesaĝon por pravigi, ke vi estas la posedanto de tiu Bitmon-adreso</translation>
+        <translation type="unfinished">Subskribi la mesaĝon por pravigi, ke vi estas la posedanto de tiu Sugarchain-adreso</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1727,7 +1699,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Sugarchain address</source>
-        <translation type="unfinished">Kontroli la mesaĝon por pravigi, ke ĝi ja estas subskribita per la specifa Bitmon-adreso</translation>
+        <translation type="unfinished">Kontroli la mesaĝon por pravigi, ke ĝi ja estas subskribita per la specifa Sugarchain-adreso</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1956,10 +1928,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Sendita al</translation>
     </message>
     <message>
-        <source>Payment to yourself</source>
-        <translation type="unfinished">Pago al vi mem</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation type="unfinished">Minita</translation>
     </message>
@@ -2021,10 +1989,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Sent to</source>
         <translation type="unfinished">Sendita al</translation>
-    </message>
-    <message>
-        <source>To yourself</source>
-        <translation type="unfinished">Al vi mem</translation>
     </message>
     <message>
         <source>Mined</source>

@@ -164,8 +164,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">የቢትኮይን ቦርሳዎን ማመስጠር ያረጋግጡ</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">ማስጠንቀቂያ: የቢትኮይን ቦርሳዎን አመስጥረው የይለፍ-ሐረግዎን ካጡት&lt;b&gt;ቢትኮይኖቾን በሙሉ ያጣሉ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <translation type="unfinished">ማስጠንቀቂያ: የቢትኮይን ቦርሳዎን አመስጥረው የይለፍ-ሐረግዎን ካጡት&lt;b&gt;ሁሉንም ሳንቲሞችዎን ያጣሉ&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>

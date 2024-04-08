@@ -164,8 +164,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">تأكيد تشفير المحفظة</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">تحذير: إذا قمت بتشفير المحفظة وأضعت الكلمة السرية؛ &lt;b&gt;ستفقد كل البتكوين&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <translation type="unfinished">تحذير: إذا قمت بتشفير المحفظة وأضعت الكلمة السرية؛ &lt;b&gt;سوف تفقد كل ما تبذلونه من القطع النقدية&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>

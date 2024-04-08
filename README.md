@@ -1,4 +1,7 @@
-### Not ready for testing, working on stratum v2 / C++20 upgrades
+# Sugarchain Yumekawa
+## DragonFruit v0.17.0 Daemon 
+
+### Not ready for testing, working on stratum v2 / C++20 upgrades @75% completion 
 
 https://en.bitcoin.it/wiki/BIP_0324 
 
