@@ -3,7 +3,7 @@
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
-        <translation type="unfinished">Mag-right click para ibahin ang address o label</translation>
+        <translation type="unfinished">Right-click para ma-edit ang address o label</translation>
     </message>
     <message>
         <source>Create a new address</source>
@@ -56,14 +56,6 @@
     <message>
         <source>C&amp;hoose</source>
         <translation type="unfinished">Pumili</translation>
-    </message>
-    <message>
-        <source>Sending addresses</source>
-        <translation type="unfinished">Mga address na padadalahan</translation>
-    </message>
-    <message>
-        <source>Receiving addresses</source>
-        <translation type="unfinished">Mga address na tatanggap</translation>
     </message>
     <message>
         <source>These are your Sugarchain addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
@@ -150,8 +142,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kumpirmahin ang pag-enkripto ng pitaka</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">Babala: Kung na-encrypt mo ang iyong walet at nawala ang iyong passphrase, &lt;b&gt;MAWAWALA MO ANG LAHAT NG IYONG MGA BITCOIN!&lt;/b&gt;</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Babala: Kung na-encrypt mo ang iyong walet at nawala ang iyong passphrase, &lt;b&gt;MAWAWALA MO ANG LAHAT NG IYONG MGA BARYA!&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -170,7 +162,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Ipasok ang lumang passphrase at bagong passphrase para sa pitaka.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your sugarchains from being stolen by malware infecting your computer.</source>
+        <source>Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
         <translation type="unfinished">Tandaan na ang pag-eenkripto ng iyong pitaka ay hindi buong makakaprotekta sa inyong mga sugarchain mula sa pagnanakaw ng mga nag-iimpektong malware.</translation>
     </message>
     <message>
@@ -698,28 +690,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kopyahin ang bytes</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Kopyahin ang dust</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Kopyahin ang sukli</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
-        <translation type="unfinished">(%1 Naka-lock)</translation>
-    </message>
-    <message>
-        <source>yes</source>
-        <translation type="unfinished">oo</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation type="unfinished">hindi</translation>
-    </message>
-    <message>
-        <source>This label turns red if any recipient receives an amount smaller than the current dust threshold.</source>
-        <translation type="unfinished">Ang label na ito ay magiging pula kung ang sinumang tatanggap ay tumanggap ng halagang mas mababa sa kasalukuyang dust threshold.</translation>
+        <translation type="unfinished">(%1 ay naka-lock)</translation>
     </message>
     <message>
         <source>Can vary +/- %1 satoshi(s) per input.</source>
@@ -1015,7 +991,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Ang mga bagong transaksyon ay hindi pa makikita kaya ang balanse ng iyong walet ay maaaring hindi tama. Ang impormasyong ito ay maiitama pagkatapos ma-synchronize ng iyong walet sa sugarchain network, ayon sa ibaba.</translation>
     </message>
     <message>
-        <source>Attempting to spend sugarchains that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend coins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation type="unfinished">Ang pagtangkang gastusin ang mga sugarchain na apektado ng mga transaksyon na hindi pa naipapakita ay hindi tatanggapin ng network.</translation>
     </message>
     <message>
@@ -1391,6 +1367,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Transaction broadcast successfully! Transaction ID: %1</source>
         <translation type="unfinished">%1</translation>
+    </message>
+    <message>
+        <source>own address</source>
+        <translation type="unfinished">sariling address</translation>
     </message>
     <message>
         <source>Pays transaction fee: </source>
@@ -2030,10 +2010,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kopyahin ang bytes</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Kopyahin ang dust</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Kopyahin ang sukli</translation>
     </message>
@@ -2169,7 +2145,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Alisin ang entry na ito</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less sugarchains than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less coins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation type="unfinished">Ibabawas ang bayad mula sa halagang ipapadala. Ang tatanggap ay makakatanggap ng mas kaunting mga sugarchain kaysa sa pinasok mo sa patlang ng halaga. Kung napili ang maraming tatanggap, ang bayad ay paghihiwalayin.</translation>
     </message>
     <message>
@@ -2211,7 +2187,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Pirmahan ang Mensahe</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive sugarchains sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive coins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation type="unfinished">Maaari kang pumirma ng mga mensahe/kasunduan sa iyong mga address upang mapatunayan na maaari kang makatanggap ng mga sugarchain na ipinadala sa kanila. Mag-ingat na huwag pumirma ng anumang bagay na hindi malinaw o random, dahil ang mga phishing attack ay maaaring subukan na linlangin ka sa pagpirma ng iyong pagkakakilanlan sa kanila. Pumirma lamang ng kumpletong mga pahayag na sumasang-ayon ka.</translation>
     </message>
     <message>
@@ -2535,10 +2511,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Ipinadala sa</translation>
     </message>
     <message>
-        <source>Payment to yourself</source>
-        <translation type="unfinished">Pagbabayad sa iyong sarili</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation type="unfinished">Namina</translation>
     </message>
@@ -2604,10 +2576,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Sent to</source>
         <translation type="unfinished">Ipinadala sa</translation>
-    </message>
-    <message>
-        <source>To yourself</source>
-        <translation type="unfinished">Sa iyong sarili</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -2793,10 +2761,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation type="unfinished">Naipamahagi sa ilalim ng lisensya ng MIT software, tingnan ang kasamang file %s o %s</translation>
-    </message>
-    <message>
-        <source>Error reading %s! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation type="unfinished">Error sa pagbabasa %s! Nabasa nang tama ang lahat ng mga key, ngunit ang data ng transaksyon o mga entry sa address book ay maaaring nawawala o hindi tama.</translation>
     </message>
     <message>
         <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>

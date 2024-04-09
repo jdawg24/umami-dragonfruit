@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation type="unfinished">Copier l’adresse sélectionnée actuellement dans le presse-papiers</translation>
+        <translation type="unfinished">Copier l’adresse sélectionnée dans le presse-papiers</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
@@ -27,7 +27,7 @@
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation type="unfinished">Supprimer l’adresse sélectionnée actuellement de la liste</translation>
+        <translation type="unfinished">Supprimer l’adresse sélectionnée de la liste</translation>
     </message>
     <message>
         <source>Enter address or label to search</source>
@@ -55,19 +55,11 @@
     </message>
     <message>
         <source>C&amp;hoose</source>
-        <translation type="unfinished">C&amp;hoisir</translation>
-    </message>
-    <message>
-        <source>Sending addresses</source>
-        <translation type="unfinished">Adresses d’envoi</translation>
-    </message>
-    <message>
-        <source>Receiving addresses</source>
-        <translation type="unfinished">Adresses de réception</translation>
+        <translation type="unfinished">&amp;Choisir</translation>
     </message>
     <message>
         <source>These are your Sugarchain addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Ce sont vos adresses Sugarchain pour envoyer des paiements. Vérifiez toujours le montant et l’adresse du destinataire avant d’envoyer des pièces.</translation>
+        <translation type="unfinished">Ce sont vos adresses Sugarchain pour envoyer des paiements. Vérifiez toujours le montant et l’adresse de réception avant d’envoyer des pièces.</translation>
     </message>
     <message>
         <source>These are your Sugarchain addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
@@ -81,7 +73,7 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     </message>
     <message>
         <source>Copy &amp;Label</source>
-        <translation type="unfinished">Copier l’é&amp;tiquette</translation>
+        <translation type="unfinished">Copier &amp;l’étiquette</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -94,12 +86,20 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     <message>
         <source>Comma separated file</source>
         <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
-        <translation type="unfinished">Fichier séparé par des virgules</translation>
+        <translation type="unfinished">Fichier avec séparateur virgule</translation>
     </message>
     <message>
         <source>There was an error trying to save the address list to %1. Please try again.</source>
         <extracomment>An error message. %1 is a stand-in argument for the name of the file we attempted to save to.</extracomment>
         <translation type="unfinished">Une erreur est survenue lors de l'enregistrement de la liste d'adresses vers %1. Veuillez réessayer plus tard.</translation>
+    </message>
+    <message>
+        <source>Sending addresses - %1</source>
+        <translation type="unfinished">Adresses d’envois - %1</translation>
+    </message>
+    <message>
+        <source>Receiving addresses - %1</source>
+        <translation type="unfinished">Adresses de réceptions - %1</translation>
     </message>
     <message>
         <source>Exporting Failed</source>
@@ -164,8 +164,8 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Confirmer le chiffrement du porte-monnaie</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">Avertissement : Si vous chiffrez votre porte-monnaie et perdez votre phrase de passe, vous &lt;b&gt;PERDREZ TOUS VOS BITCOINS&lt;/b&gt; !</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Avertissement : Si vous chiffrez votre porte-monnaie et perdez votre phrase de passe, vous allez &lt;b&gt;PERDRE TOUS VOS PIÈCES DE MONNAIE&lt;/b&gt; !</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -184,8 +184,8 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Saisir l’ancienne puis la nouvelle phrase de passe du porte-monnaie.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your sugarchains from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">N’oubliez pas que le chiffrement de votre porte-monnaie ne peut pas protéger entièrement vos sugarchains contre le vol par des programmes malveillants qui infecteraient votre ordinateur.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">N’oubliez pas que le chiffrement de votre porte-monnaie ne peut pas protéger entièrement vos pièces contre le vol par des programmes malveillants qui infecteraient votre ordinateur.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -224,8 +224,20 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">La phrase de passe saisie pour déchiffrer le porte-monnaie était erronée.</translation>
     </message>
     <message>
+        <source>The passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 25.0, please try again with only the characters up to — but not including — the first null character. If this is successful, please set a new passphrase to avoid this issue in the future.</source>
+        <translation type="unfinished">La phrase secrète saisie pour le décryptage du portefeuille est incorrecte. Elle contient un caractère nul (c'est-à-dire un octet de zéro). Si la phrase secrète a été définie avec une version de ce logiciel antérieure à la version 25.0, veuillez réessayer en ne saisissant que les caractères jusqu'au premier caractère nul (non compris). Si vous y parvenez, définissez une nouvelle phrase secrète afin d'éviter ce problème à l'avenir.</translation>
+    </message>
+    <message>
         <source>Wallet passphrase was successfully changed.</source>
         <translation type="unfinished">La phrase de passe du porte-monnaie a été modifiée avec succès.</translation>
+    </message>
+    <message>
+        <source>Passphrase change failed</source>
+        <translation type="unfinished">Le changement de phrase secrète a échoué</translation>
+    </message>
+    <message>
+        <source>The old passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 25.0, please try again with only the characters up to — but not including — the first null character.</source>
+        <translation type="unfinished">L'ancienne phrase secrète introduite pour le décryptage du portefeuille est incorrecte. Elle contient un caractère nul (c'est-à-dire un octet de zéro). Si la phrase secrète a été définie avec une version de ce logiciel antérieure à la version 25.0, veuillez réessayer en ne saisissant que les caractères jusqu'au premier caractère nul (non compris).</translation>
     </message>
     <message>
         <source>Warning: The Caps Lock key is on!</source>
@@ -687,12 +699,30 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Fermer le porte-monnaie</translation>
     </message>
     <message>
+        <source>Restore Wallet…</source>
+        <extracomment>Name of the menu item that restores wallet from a backup file.</extracomment>
+        <translation type="unfinished">Restaurer le Portefeuille...</translation>
+    </message>
+    <message>
+        <source>Restore a wallet from a backup file</source>
+        <extracomment>Status tip for Restore Wallet menu item</extracomment>
+        <translation type="unfinished">Restaurer le Portefeuille depuis un fichier de sauvegarde</translation>
+    </message>
+    <message>
         <source>Close all wallets</source>
         <translation type="unfinished">Fermer tous les porte-monnaie</translation>
     </message>
     <message>
+        <source>Migrate Wallet</source>
+        <translation type="unfinished">Migrer le portefeuille</translation>
+    </message>
+    <message>
+        <source>Migrate a wallet</source>
+        <translation type="unfinished">Migrer un portefeuilles </translation>
+    </message>
+    <message>
         <source>Show the %1 help message to get a list with possible Sugarchain command-line options</source>
-        <translation type="unfinished">Afficher le message d’aide de %1 pour obtenir la liste des options possibles de ligne de commande Sugarchain</translation>
+        <translation type="unfinished">Afficher le message d’aide de %1 pour obtenir la liste des options possibles en ligne de commande Sugarchain</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -714,6 +744,11 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <source>Wallet Data</source>
         <extracomment>Name of the wallet data file format.</extracomment>
         <translation type="unfinished">Données du porte-monnaie</translation>
+    </message>
+    <message>
+        <source>Load Wallet Backup</source>
+        <extracomment>The title for Restore Wallet File Windows</extracomment>
+        <translation type="unfinished">Lancer un Portefeuille de sauvegarde</translation>
     </message>
     <message>
         <source>Restore Wallet</source>
@@ -776,6 +811,18 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <source>Enable network activity</source>
         <extracomment>A context menu item. The network activity was disabled previously.</extracomment>
         <translation type="unfinished">Activer l’activité réseau</translation>
+    </message>
+    <message>
+        <source>Pre-syncing Headers (%1%)…</source>
+        <translation type="unfinished">En-têtes de pré-synchronisation (%1%)...</translation>
+    </message>
+    <message>
+        <source>Error creating wallet</source>
+        <translation type="unfinished">Erreur lors de la création du portefeuille</translation>
+    </message>
+    <message>
+        <source>Cannot create new wallet, the software was compiled without sqlite support (required for descriptor wallets)</source>
+        <translation type="unfinished">Impossible de créer un nouveau portefeuilles, le logiciel a été compilé sans support pour sqlite (nécessaire pour le portefeuille décris) </translation>
     </message>
     <message>
         <source>Error: %1</source>
@@ -884,10 +931,6 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Frais :</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Poussière :</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation type="unfinished">Après les frais :</translation>
     </message>
@@ -968,28 +1011,12 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Copier les octets</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Copier la poussière</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Copier la monnaie</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
         <translation type="unfinished">(%1 verrouillée)</translation>
-    </message>
-    <message>
-        <source>yes</source>
-        <translation type="unfinished">oui</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation type="unfinished">non</translation>
-    </message>
-    <message>
-        <source>This label turns red if any recipient receives an amount smaller than the current dust threshold.</source>
-        <translation type="unfinished">Cette étiquette devient rouge si un destinataire reçoit un montant inférieur au seuil actuel de poussière.</translation>
     </message>
     <message>
         <source>Can vary +/- %1 satoshi(s) per input.</source>
@@ -1032,7 +1059,11 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <source>Can't list signers</source>
         <translation type="unfinished">Impossible de lister les signataires</translation>
     </message>
-    </context>
+    <message>
+        <source>Too many external signers found</source>
+        <translation type="unfinished">Trop de signataires externes trouvés</translation>
+    </message>
+</context>
 <context>
     <name>LoadWalletsActivity</name>
     <message>
@@ -1044,6 +1075,56 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <source>Loading wallets…</source>
         <extracomment>Descriptive text of the load wallets progress window which indicates to the user that wallets are currently being loaded.</extracomment>
         <translation type="unfinished">Chargement des porte-monnaie…</translation>
+    </message>
+</context>
+<context>
+    <name>MigrateWalletActivity</name>
+    <message>
+        <source>Migrate wallet</source>
+        <translation type="unfinished">Migrer le portefeuille</translation>
+    </message>
+    <message>
+        <source>Are you sure you wish to migrate the wallet &lt;i&gt;%1&lt;/i&gt;?</source>
+        <translation type="unfinished">Êtes-vous sûr de vouloir migrer le portefeuille 1 %1 1?</translation>
+    </message>
+    <message>
+        <source>Migrating the wallet will convert this wallet to one or more descriptor wallets. A new wallet backup will need to be made.
+If this wallet contains any watchonly scripts, a new wallet will be created which contains those watchonly scripts.
+If this wallet contains any solvable but not watched scripts, a different and new wallet will be created which contains those scripts.
+
+The migration process will create a backup of the wallet before migrating. This backup file will be named &lt;wallet name&gt;-&lt;timestamp&gt;.legacy.bak and can be found in the directory for this wallet. In the event of an incorrect migration, the backup can be restored with the "Restore Wallet" functionality.</source>
+        <translation type="unfinished">La migration du porte-monnaie convertira ce porte-monnaie en un ou plusieurs porte-monnaie de descripteurs. Une nouvelle sauvegarde du porte-monnaie devra être effectuée.
+Si ce porte-monnaie contient des scripts en lecture seule, un nouveau porte-monnaie sera créé contenant ces scripts en lecture seule. 
+Si ce porte-monnaie contient des scripts solvables mais non surveillés, un autre nouveau porte-monnaie sera créé contenant ces scripts.
+Le processus de migration créera une sauvegarde du porte-monnaie avant la migration. Ce fichier de sauvegarde sera nommé &lt;nom du porte-monnaie&gt;-&lt;horodatage&gt;.legacy.bak et pourra être trouvé dans le répertoire de ce porte-monnaie. En cas de migration incorrecte, la sauvegarde peut être restaurée avec la fonctionnalité "Restaurer le porte-monnaie".</translation>
+    </message>
+    <message>
+        <source>Migrate Wallet</source>
+        <translation type="unfinished">Migrer le portefeuille</translation>
+    </message>
+    <message>
+        <source>Migrating Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
+        <translation type="unfinished">Migration du portefeuille &lt;b&gt;%1&lt;/b&gt;…</translation>
+    </message>
+    <message>
+        <source>The wallet '%1' was migrated successfully.</source>
+        <translation type="unfinished">Le porte-monnaie '%1' a été migré avec succès.</translation>
+    </message>
+    <message>
+        <source> Watchonly scripts have been migrated to a new wallet named '%1'.</source>
+        <translation type="unfinished">Les scripts en mode de visualisation ont été migrés vers un nouveau porte-monnaie nommé '%1'.</translation>
+    </message>
+    <message>
+        <source> Solvable but not watched scripts have been migrated to a new wallet named '%1'.</source>
+        <translation type="unfinished">Les scripts solvables mais non surveillés ont été migrés vers un nouveau porte-monnaie nommé '%1'.</translation>
+    </message>
+    <message>
+        <source>Migration failed</source>
+        <translation type="unfinished">La migration a échoué</translation>
+    </message>
+    <message>
+        <source>Migration Successful</source>
+        <translation type="unfinished">Migration réussie</translation>
     </message>
 </context>
 <context>
@@ -1079,11 +1160,26 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Restaurer le portefeuille</translation>
     </message>
     <message>
+        <source>Restoring Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
+        <extracomment>Descriptive text of the restore wallets progress window which indicates to the user that wallets are currently being restored.</extracomment>
+        <translation type="unfinished">Restauration du Portefeuille&lt;b&gt;%1&lt;/b&gt;...</translation>
+    </message>
+    <message>
         <source>Restore wallet failed</source>
         <extracomment>Title of message box which is displayed when the wallet could not be restored.</extracomment>
         <translation type="unfinished">Échec de la restauration du portefeuille</translation>
     </message>
-    </context>
+    <message>
+        <source>Restore wallet warning</source>
+        <extracomment>Title of message box which is displayed when the wallet is restored with some warning.</extracomment>
+        <translation type="unfinished">Avertissement du Portefeuille restauré</translation>
+    </message>
+    <message>
+        <source>Restore wallet message</source>
+        <extracomment>Title of message box which is displayed when the wallet is successfully restored.</extracomment>
+        <translation type="unfinished">Message du Portefeuille restauré</translation>
+    </message>
+</context>
 <context>
     <name>WalletController</name>
     <message>
@@ -1112,6 +1208,14 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     <message>
         <source>Create Wallet</source>
         <translation type="unfinished">Créer un porte-monnaie</translation>
+    </message>
+    <message>
+        <source>You are one step away from creating your new wallet!</source>
+        <translation type="unfinished">Vous n'êtes qu'à un pas de la création de votre nouveau portefeuille !</translation>
+    </message>
+    <message>
+        <source>Please provide a name and, if desired, enable any advanced options</source>
+        <translation type="unfinished">Veuillez fournir un nom et, si désiré, activer toutes les options avancées.</translation>
     </message>
     <message>
         <source>Wallet Name</source>
@@ -1150,14 +1254,6 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Créer un porte-monnaie vide</translation>
     </message>
     <message>
-        <source>Use descriptors for scriptPubKey management</source>
-        <translation type="unfinished">Utiliser des descripteurs pour la gestion des scriptPubKey</translation>
-    </message>
-    <message>
-        <source>Descriptor Wallet</source>
-        <translation type="unfinished">Porte-monnaie de descripteurs</translation>
-    </message>
-    <message>
         <source>Use an external signing device such as a hardware wallet. Configure the external signer script in wallet preferences first.</source>
         <translation type="unfinished">Utiliser un appareil externe de signature tel qu’un porte-monnaie matériel. Configurer d’abord le script signataire externe dans les préférences du porte-monnaie.</translation>
     </message>
@@ -1168,10 +1264,6 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     <message>
         <source>Create</source>
         <translation type="unfinished">Créer</translation>
-    </message>
-    <message>
-        <source>Compiled without sqlite support (required for descriptor wallets)</source>
-        <translation type="unfinished">Compilé sans prise en charge de sqlite (requis pour les porte-monnaie de descripteurs)</translation>
     </message>
     <message>
         <source>Compiled without external signing support (required for external signing)</source>
@@ -1281,6 +1373,10 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         </translation>
     </message>
     <message>
+        <source>Choose data directory</source>
+        <translation type="unfinished">Choisissez un répertoire de donnée</translation>
+    </message>
+    <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
         <translation type="unfinished">Au moins %1 Go de données seront stockés dans ce répertoire et sa taille augmentera avec le temps.</translation>
     </message>
@@ -1341,6 +1437,10 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Cette synchronisation initiale est très exigeante et pourrait exposer des problèmes matériels dans votre ordinateur passés inaperçus auparavant. Chaque fois que vous exécuterez %1, le téléchargement reprendra où il s’était arrêté.</translation>
     </message>
     <message>
+        <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2 GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
+        <translation type="unfinished">Quand vous cliquerez sur Valider, %1 commencera à télécharger et à traiter l’intégralité de la chaîne de blocs %4 (%2 Go) en débutant avec les transactions les plus anciennes de %3, quand %4 a été lancé initialement.</translation>
+    </message>
+    <message>
         <source>If you have chosen to limit block chain storage (pruning), the historical data must still be downloaded and processed, but will be deleted afterward to keep your disk usage low.</source>
         <translation type="unfinished">Si vous avez choisi de limiter le stockage de la chaîne de blocs (élagage), les données historiques doivent quand même être téléchargées et traitées, mais seront supprimées par la suite pour minimiser l’utilisation de votre espace disque.</translation>
     </message>
@@ -1386,8 +1486,8 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Les transactions récentes ne sont peut-être pas encore visibles et par conséquent le solde de votre porte-monnaie est peut-être erroné. Ces renseignements seront justes quand votre porte-monnaie aura fini de se synchroniser avec le réseau Sugarchain, comme décrit ci-dessous.</translation>
     </message>
     <message>
-        <source>Attempting to spend sugarchains that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">Toute tentative de dépense de sugarchains affectés par des transactions qui ne sont pas encore affichées ne sera pas acceptée par le réseau.</translation>
+        <source>Attempting to spend coins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation type="unfinished">Toute tentative de dépense de pièces affectés par des transactions qui ne sont pas encore affichées ne sera pas acceptée par le réseau.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1433,7 +1533,11 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <source>Unknown. Syncing Headers (%1, %2%)…</source>
         <translation type="unfinished">Inconnu. Synchronisation des en-têtes (%1, %2 %)…</translation>
     </message>
-    </context>
+    <message>
+        <source>Unknown. Pre-syncing Headers (%1, %2%)…</source>
+        <translation type="unfinished">Inconnu. En-têtes de présynchronisation (%1, %2%)...</translation>
+    </message>
+</context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -1477,6 +1581,10 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Nombre de fils de &amp;vérification de script</translation>
     </message>
     <message>
+        <source>Full path to a %1 compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Chemin complet vers un %1 script compatible (par exemple, C:\Downloads\hwi.exe ou /Users/you/Downloads/hwi.py). Attention : les malwares peuvent voler vos pièces !</translation>
+    </message>
+    <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation type="unfinished">Adresse IP du mandataire (p. ex. IPv4 : 127.0.0.1 / IPv6 : ::1)</translation>
     </message>
@@ -1487,6 +1595,10 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</source>
         <translation type="unfinished">Quand la fenêtre est fermée, la réduire au lieu de quitter l’application. Si cette option est activée, l’application ne sera fermée qu’en sélectionnant Quitter dans le menu.</translation>
+    </message>
+    <message>
+        <source>Options set in this dialog are overridden by the command line:</source>
+        <translation type="unfinished">Les options définies dans cette boîte de dialogue sont remplacées par la ligne de commande :</translation>
     </message>
     <message>
         <source>Open the %1 configuration file from the working directory.</source>
@@ -1748,6 +1860,11 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Le redémarrage du client est exigé pour activer les changements.</translation>
     </message>
     <message>
+        <source>Current settings will be backed up at "%1".</source>
+        <extracomment>Text explaining to the user that the client's current settings will be backed up at a specific location. %1 is a stand-in argument for the backup location's path.</extracomment>
+        <translation type="unfinished">Les paramètres actuels vont être restaurés à "%1".</translation>
+    </message>
+    <message>
         <source>Client will be shut down. Do you want to proceed?</source>
         <extracomment>Text asking the user to confirm if they would like to proceed with a client shutdown.</extracomment>
         <translation type="unfinished">Le client sera arrêté. Voulez-vous continuer ?</translation>
@@ -1785,6 +1902,13 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     <message>
         <source>The supplied proxy address is invalid.</source>
         <translation type="unfinished">L’adresse de serveur mandataire fournie est invalide.</translation>
+    </message>
+</context>
+<context>
+    <name>OptionsModel</name>
+    <message>
+        <source>Could not read setting "%1", %2.</source>
+        <translation type="unfinished">Impossible de lire le paramètre "%1", %2.</translation>
     </message>
 </context>
 <context>
@@ -1869,6 +1993,10 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
 <context>
     <name>PSBTOperationsDialog</name>
     <message>
+        <source>PSBT Operations</source>
+        <translation type="unfinished">Opération PSBT</translation>
+    </message>
+    <message>
         <source>Sign Tx</source>
         <translation type="unfinished">Signer la transaction</translation>
     </message>
@@ -1944,6 +2072,10 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     <message>
         <source> * Sends %1 to %2</source>
         <translation type="unfinished"> * Envoie %1 à %2</translation>
+    </message>
+    <message>
+        <source>own address</source>
+        <translation type="unfinished">votre adresse</translation>
     </message>
     <message>
         <source>Unable to calculate transaction fee or total transaction amount.</source>
@@ -2201,6 +2333,26 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="unfinished">Sélectionnez un pair pour afficher des renseignements détaillés.</translation>
     </message>
     <message>
+        <source>The transport layer version: %1</source>
+        <translation type="unfinished">La version de la couche de transport : %1</translation>
+    </message>
+    <message>
+        <source>The BIP324 session ID string in hex, if any.</source>
+        <translation type="unfinished">La chaîne d'ID de session BIP324 en hexadécimal, le cas échéant.</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation type="unfinished">ID de session</translation>
+    </message>
+    <message>
+        <source>Whether we relay transactions to this peer.</source>
+        <translation type="unfinished">Si nous relayons des transactions à ce pair.</translation>
+    </message>
+    <message>
+        <source>Transaction Relay</source>
+        <translation type="unfinished">Relais de transaction</translation>
+    </message>
+    <message>
         <source>Starting Block</source>
         <translation type="unfinished">Bloc de départ</translation>
     </message>
@@ -2233,6 +2385,16 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <source>Address Relay</source>
         <extracomment>Text title for the Address Relay field in the peer details area, which displays whether we relay addresses to this peer (Yes/No).</extracomment>
         <translation type="unfinished">Relais d’adresses</translation>
+    </message>
+    <message>
+        <source>The total number of addresses received from this peer that were processed (excludes addresses that were dropped due to rate-limiting).</source>
+        <extracomment>Tooltip text for the Addresses Processed field in the peer details area, which displays the total number of addresses received from this peer that were processed (excludes addresses that were dropped due to rate-limiting).</extracomment>
+        <translation type="unfinished">Nombre total d'adresses reçues de ce pair qui ont été traitées (à l'exclusion des adresses qui ont été abandonnées en raison de la limitation du débit).</translation>
+    </message>
+    <message>
+        <source>The total number of addresses received from this peer that were dropped (not processed) due to rate-limiting.</source>
+        <extracomment>Tooltip text for the Addresses Rate-Limited field in the peer details area, which displays the total number of addresses received from this peer that were dropped (not processed) due to rate-limiting.</extracomment>
+        <translation type="unfinished">Nombre total d'adresses reçues de ce pair qui ont été abandonnées (non traitées) en raison de la limitation du débit.</translation>
     </message>
     <message>
         <source>Addresses Processed</source>
@@ -2394,6 +2556,21 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <source>Outbound Address Fetch: short-lived, for soliciting addresses</source>
         <extracomment>Explanatory text for a short-lived outbound peer connection that is used to request addresses from a peer.</extracomment>
         <translation type="unfinished">Récupération d’adresse sortante : de courte durée, pour solliciter des adresses</translation>
+    </message>
+    <message>
+        <source>detecting: peer could be v1 or v2</source>
+        <extracomment>Explanatory text for "detecting" transport type.</extracomment>
+        <translation type="unfinished">détection : paires pourrait être v1 ou v2</translation>
+    </message>
+    <message>
+        <source>v1: unencrypted, plaintext transport protocol</source>
+        <extracomment>Explanatory text for v1 transport type.</extracomment>
+        <translation type="unfinished">v1: protocole de transport non chiffré en texte clair</translation>
+    </message>
+    <message>
+        <source>v2: BIP324 encrypted transport protocol</source>
+        <extracomment>Explanatory text for v2 transport type.</extracomment>
+        <translation type="unfinished">v2: Protocole de transport chiffré BIP324</translation>
     </message>
     <message>
         <source>we selected the peer for high bandwidth relay</source>
@@ -2602,6 +2779,22 @@ Pour plus de précisions sur cette console, tapez %6.
         <translation type="unfinished">Copier le &amp;montant</translation>
     </message>
     <message>
+        <source>Not recommended due to higher fees and less protection against typos.</source>
+        <translation type="unfinished">Non recommandé en raison de frais élevés et d'une faible protection contre les fautes de frappe.</translation>
+    </message>
+    <message>
+        <source>Generates an address compatible with older wallets.</source>
+        <translation type="unfinished">Génère une adresse compatible avec les anciens portefeuilles.</translation>
+    </message>
+    <message>
+        <source>Generates a native segwit address (BIP-173). Some old wallets don't support it.</source>
+        <translation type="unfinished">Génère une adresse segwit native (BIP-173). Certains anciens portefeuilles ne le supportent pas.</translation>
+    </message>
+    <message>
+        <source>Bech32m (BIP-350) is an upgrade to Bech32, wallet support is still limited.</source>
+        <translation type="unfinished">Bech32m (BIP-350) est une mise à jour de Bech32, la prise en charge du portefeuille est encore limitée.</translation>
+    </message>
+    <message>
         <source>Could not unlock wallet.</source>
         <translation type="unfinished">Impossible de déverrouiller le porte-monnaie.</translation>
     </message>
@@ -2779,10 +2972,6 @@ Pour plus de précisions sur cette console, tapez %6.
         <translation type="unfinished">Effacer tous les champs du formulaire.</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Poussière :</translation>
-    </message>
-    <message>
         <source>Choose…</source>
         <translation type="unfinished">Choisir…</translation>
     </message>
@@ -2800,7 +2989,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     </message>
     <message>
         <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for sugarchain transactions than the network can process.</source>
-        <translation type="unfinished">Quand le volume des transactions est inférieur à l’espace dans les blocs, les mineurs et les nœuds de relais peuvent imposer des frais minimaux. Il est correct de payer ces frais minimaux, mais soyez conscient que cette transaction pourrait n’être jamais confirmée si la demande en transactions de sugarchains dépassait la capacité de traitement du réseau.</translation>
+        <translation type="unfinished">Quand le volume des transactions est inférieur à l’espace dans les blocs, les mineurs et les nœuds de relais peuvent imposer des frais minimaux. Il est correct de payer ces frais minimaux, mais soyez conscient que cette transaction pourrait n’être jamais confirmée si la demande en transactions de pièces dépassait la capacité de traitement du réseau.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -2857,10 +3046,6 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     <message>
         <source>Copy bytes</source>
         <translation type="unfinished">Copier les octets</translation>
-    </message>
-    <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Copier la poussière</translation>
     </message>
     <message>
         <source>Copy change</source>
@@ -2981,6 +3166,20 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Montant total</translation>
     </message>
     <message>
+        <source>Unsigned Transaction</source>
+        <comment>PSBT copied</comment>
+        <extracomment>Caption of "PSBT has been copied" messagebox</extracomment>
+        <translation type="unfinished">Transaction non signée</translation>
+    </message>
+    <message>
+        <source>The PSBT has been copied to the clipboard. You can also save it.</source>
+        <translation type="unfinished">Le PSBT a été copié dans le presse-papiers. Vous pouvez également le sauvegarder.</translation>
+    </message>
+    <message>
+        <source>PSBT saved to disk</source>
+        <translation type="unfinished">PSBT sauvegardé sur le disque</translation>
+    </message>
+    <message>
         <source>Confirm send coins</source>
         <translation type="unfinished">Confirmer l’envoi de pièces</translation>
     </message>
@@ -3072,8 +3271,8 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Le montant à envoyer dans l’unité sélectionnée</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less sugarchains than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">Les frais seront déduits du montant envoyé. Le destinataire recevra moins de sugarchains que le montant saisi dans le champ de montant. Si plusieurs destinataires sont sélectionnés, les frais seront partagés également.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less coins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished">Les frais seront déduits du montant envoyé. Le destinataire recevra moins de pièces que le montant saisi dans le champ de montant. Si plusieurs destinataires sont sélectionnés, les frais seront partagés également.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -3118,8 +3317,8 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">&amp;Signer un message</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive sugarchains sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">Vous pouvez signer des messages ou des accords avec vos adresses pour prouver que vous pouvez recevoir des sugarchains à ces dernières. Faites attention de ne rien signer de vague ou au hasard, car des attaques d’hameçonnage pourraient essayer de vous faire signer avec votre identité afin de l’usurper. Ne signez que des déclarations entièrement détaillées et avec lesquelles vous êtes d’accord.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive coins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation type="unfinished">Vous pouvez signer des messages ou des accords avec vos adresses pour prouver que vous pouvez recevoir des pièces à ces dernières. Faites attention de ne rien signer de vague ou au hasard, car des attaques d’hameçonnage pourraient essayer de vous faire signer avec votre identité afin de l’usurper. Ne signez que des déclarations entièrement détaillées et avec lesquelles vous êtes d’accord.</translation>
     </message>
     <message>
         <source>The Sugarchain address to sign the message with</source>
@@ -3143,7 +3342,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     </message>
     <message>
         <source>Sign the message to prove you own this Sugarchain address</source>
-        <translation type="unfinished">Signer le message afin de prouver que vous détenez cette adresse Sugarchain</translation>
+        <translation type="unfinished">Signer le message afin de prouver que vous détenez cette adresse Bitcoin</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3270,6 +3469,16 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <source>conflicted with a transaction with %1 confirmations</source>
         <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents an unconfirmed transaction that conflicts with a confirmed transaction.</extracomment>
         <translation type="unfinished">est en conflit avec une transaction ayant %1 confirmations</translation>
+    </message>
+    <message>
+        <source>0/unconfirmed, in memory pool</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents an unconfirmed transaction that is in the memory pool.</extracomment>
+        <translation type="unfinished">0/non confirmé, dans la pool de mémoire</translation>
+    </message>
+    <message>
+        <source>0/unconfirmed, not in memory pool</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents an unconfirmed transaction that is not in the memory pool.</extracomment>
+        <translation type="unfinished">0/non confirmé, pas dans la pool de mémoire</translation>
     </message>
     <message>
         <source>abandoned</source>
@@ -3459,10 +3668,6 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Envoyée à</translation>
     </message>
     <message>
-        <source>Payment to yourself</source>
-        <translation type="unfinished">Paiement à vous-même</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation type="unfinished">Miné </translation>
     </message>
@@ -3538,10 +3743,6 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Envoyée à</translation>
     </message>
     <message>
-        <source>To yourself</source>
-        <translation type="unfinished">À vous-même</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation type="unfinished">Miné </translation>
     </message>
@@ -3613,7 +3814,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     <message>
         <source>Comma separated file</source>
         <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
-        <translation type="unfinished">Fichier séparé par des virgules</translation>
+        <translation type="unfinished">Fichier avec séparateur virgule</translation>
     </message>
     <message>
         <source>Confirmed</source>
@@ -3747,6 +3948,11 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">La TBPS a été copiée</translation>
     </message>
     <message>
+        <source>Copied to clipboard</source>
+        <comment>Fee-bump PSBT saved</comment>
+        <translation type="unfinished">Copié dans le presse-papiers</translation>
+    </message>
+    <message>
         <source>Can't sign transaction.</source>
         <translation type="unfinished">Impossible de signer la transaction.</translation>
     </message>
@@ -3814,6 +4020,14 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">%s est corrompu. Essayez l’outil sugarchain-wallet pour le sauver ou restaurez une sauvegarde.</translation>
     </message>
     <message>
+        <source>%s failed to validate the -assumeutxo snapshot state. This indicates a hardware problem, or a bug in the software, or a bad software modification that allowed an invalid snapshot to be loaded. As a result of this, the node will shut down and stop using any state that was built on the snapshot, resetting the chain height from %d to %d. On the next restart, the node will resume syncing from %d without using any snapshot data. Please report this incident to %s, including how you obtained the snapshot. The invalid snapshot chainstate will be left on disk in case it is helpful in diagnosing the issue that caused this error.</source>
+        <translation type="unfinished">%s a échoué à valider l'état instantané -assumeutxo. Cela indique un problème matériel, ou un bug dans le logiciel, ou une mauvaise modification du logiciel qui a permis de charger un instantané invalide. En conséquence, le nœud s'arrêtera et cessera d'utiliser tout état qui a été construit sur l'instantané, réinitialisant la hauteur de la chaîne de %d à %d. Au prochain redémarrage, le nœud reprendra la synchronisation à partir de %d sans utiliser de données d'instantané. Veuillez signaler cet incident à %s, en précisant comment vous avez obtenu l'instantané. L'état de chaîne d'instantané invalide sera conservé sur le disque au cas où il serait utile pour diagnostiquer le problème qui a causé cette erreur.</translation>
+    </message>
+    <message>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any peer will connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%s demande d'écouter sur le port %u. Ce port est considéré comme "mauvais" et il est donc peu probable qu'un pair s'y connecte. Voir doc/p2p-bad-ports.md pour plus de détails et une liste complète.</translation>
+    </message>
+    <message>
         <source>Cannot downgrade wallet from version %i to version %i. Wallet version unchanged.</source>
         <translation type="unfinished">Impossible de rétrograder le porte-monnaie de la version %i à la version %i. La version du porte-monnaie reste inchangée.</translation>
     </message>
@@ -3826,12 +4040,16 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">Impossible de mettre à niveau un porte-monnaie divisé non-HD de la version %i vers la version %i sans mise à niveau pour prendre en charge la réserve de clés antérieure à la division. Veuillez utiliser la version %i ou ne pas indiquer de version.</translation>
     </message>
     <message>
+        <source>Disk space for %s may not accommodate the block files. Approximately %u GB of data will be stored in this directory.</source>
+        <translation type="unfinished">L'espace disque %s peut ne pas être suffisant pour les fichiers en bloc. Environ %u Go de données seront stockés dans ce répertoire.</translation>
+    </message>
+    <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation type="unfinished">Distribué sous la licence MIT d’utilisation d’un logiciel, consultez le fichier joint %s ou %s</translation>
     </message>
     <message>
-        <source>Error reading %s! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation type="unfinished">Erreur de lecture de %s. Toutes les clés ont été lues correctement, mais les données de la transaction ou les entrées du carnet d’adresses sont peut-être manquantes ou incorrectes.</translation>
+        <source>Error loading wallet. Wallet requires blocks to be downloaded, and software does not currently support loading wallets while blocks are being downloaded out of order when using assumeutxo snapshots. Wallet should be able to load successfully after node sync reaches height %s</source>
+        <translation type="unfinished">Erreur de chargement du portefeuille. Le portefeuille nécessite le téléchargement de blocs, et le logiciel ne prend pas actuellement en charge le chargement de portefeuilles lorsque les blocs sont téléchargés dans le désordre lors de l'utilisation de snapshots assumeutxo. Le portefeuille devrait pouvoir être chargé avec succès une fois que la synchronisation des nœuds aura atteint la hauteur %s</translation>
     </message>
     <message>
         <source>Error reading %s! Transaction data may be missing or incorrect. Rescanning wallet.</source>
@@ -3852,6 +4070,10 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
     <message>
         <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>
         <translation type="unfinished">Erreur : les porte-monnaie hérités ne prennent en charge que les types d’adresse « legacy », « p2sh-segwit », et « bech32 »</translation>
+    </message>
+    <message>
+        <source>Error: Unable to produce descriptors for this legacy wallet. Make sure to provide the wallet's passphrase if it is encrypted.</source>
+        <translation type="unfinished">Erreur : Impossible de produire des descripteurs pour ce portefeuille existant. Veillez à fournir la phrase secrète du portefeuille s'il est crypté.</translation>
     </message>
     <message>
         <source>File %s already exists. If you are sure this is what you want, move it out of the way first.</source>
@@ -3890,8 +4112,16 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">L’élagage est configuré au-dessous du minimum de %d Mio. Veuillez utiliser un nombre plus élevé.</translation>
     </message>
     <message>
+        <source>Prune mode is incompatible with -reindex-chainstate. Use full -reindex instead.</source>
+        <translation type="unfinished">Le mode Prune est incompatible avec -reindex-chainstate. Utilisez plutôt -reindex complet.</translation>
+    </message>
+    <message>
         <source>Prune: last wallet synchronisation goes beyond pruned data. You need to -reindex (download the whole blockchain again in case of pruned node)</source>
         <translation type="unfinished">Élagage : la dernière synchronisation de porte-monnaie va par-delà les données élaguées. Vous devez -reindex (réindexer, télécharger de nouveau toute la chaîne de blocs en cas de nœud élagué)</translation>
+    </message>
+    <message>
+        <source>Rename of '%s' -&gt; '%s' failed. You should resolve this by manually moving or deleting the invalid snapshot directory %s, otherwise you will encounter the same error again on the next startup.</source>
+        <translation type="unfinished">La modification de '%s' -&gt; '%s' a échoué. Vous devriez résoudre cela en déplaçant ou en supprimant manuellement le répertoire de snapshot invalide %s, sinon vous rencontrerez la même erreur à nouveau au prochain démarrage.</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Unknown sqlite wallet schema version %d. Only version %d is supported</source>
@@ -3900,10 +4130,6 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
     <message>
         <source>The block database contains a block which appears to be from the future. This may be due to your computer's date and time being set incorrectly. Only rebuild the block database if you are sure that your computer's date and time are correct</source>
         <translation type="unfinished">La base de données des blocs comprend un bloc qui semble provenir du futur. Cela pourrait être causé par la date et l’heure erronées de votre ordinateur. Ne reconstruisez la base de données des blocs que si vous êtes certain que la date et l’heure de votre ordinateur sont justes.</translation>
-    </message>
-    <message>
-        <source>The block index db contains a legacy 'txindex'. To clear the occupied disk space, run a full -reindex, otherwise ignore this error. This error message will not be displayed again.</source>
-        <translation type="unfinished">La base de données d’indexation des blocs comprend un « txindex » hérité. Pour libérer l’espace disque occupé, exécutez un -reindex complet ou ignorez cette erreur. Ce message d’erreur ne sera pas affiché de nouveau.</translation>
     </message>
     <message>
         <source>The transaction amount is too small to send after the fee has been deducted</source>
@@ -3940,6 +4166,22 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
     <message>
         <source>Unknown wallet file format "%s" provided. Please provide one of "bdb" or "sqlite".</source>
         <translation type="unfinished">Le format de fichier porte-monnaie « %s » indiqué est inconnu. Veuillez soit indiquer « bdb » soit « sqlite ».</translation>
+    </message>
+    <message>
+        <source>Unsupported category-specific logging level %1$s=%2$s. Expected %1$s=&lt;category&gt;:&lt;loglevel&gt;. Valid categories: %3$s. Valid loglevels: %4$s.</source>
+        <translation type="unfinished">Niveau de journalisation spécifique à la catégorie non pris en charge %1$s=%2$s. Attendu %1$s=&lt;catégorie&gt;:&lt;niveaudejournal&gt;. Catégories valides : %3$s. Niveaux de journalisation valides : %4$s.</translation>
+    </message>
+    <message>
+        <source>Unsupported chainstate database format found. Please restart with -reindex-chainstate. This will rebuild the chainstate database.</source>
+        <translation type="unfinished">Le format de la base de données chainstate n'est pas supporté. Veuillez redémarrer avec -reindex-chainstate. Cela reconstruira la base de données chainstate.</translation>
+    </message>
+    <message>
+        <source>Wallet created successfully. The legacy wallet type is being deprecated and support for creating and opening legacy wallets will be removed in the future.</source>
+        <translation type="unfinished">Portefeuille créé avec succès. Le type de portefeuille ancien est en cours de suppression et la prise en charge de la création et de l'ouverture des portefeuilles anciens sera supprimée à l'avenir.</translation>
+    </message>
+    <message>
+        <source>Wallet loaded successfully. The legacy wallet type is being deprecated and support for creating and opening legacy wallets will be removed in the future. Legacy wallets can be migrated to a descriptor wallet with migratewallet.</source>
+        <translation type="unfinished">Portefeuille chargé avec succès. Le type de portefeuille existant est obsolète et la prise en charge de la création et de l'ouverture de portefeuilles existants sera supprimée à l'avenir. Les anciens portefeuilles peuvent être migrés vers un portefeuille descripteur avec migratewallet.</translation>
     </message>
     <message>
         <source>Warning: Dumpfile wallet format "%s" does not match command line specified format "%s".</source>
@@ -3990,8 +4232,8 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">Impossible d’écrire dans le répertoire de données « %s » ; veuillez vérifier les droits.</translation>
     </message>
     <message>
-        <source>The -txindex upgrade started by a previous version cannot be completed. Restart with the previous version or run a full -reindex.</source>
-        <translation type="unfinished">La mise à niveau -txindex lancée par une version précédente ne peut pas être achevée. Redémarrez la version précédente ou exécutez un -reindex complet.</translation>
+        <source>%s is set very high! Fees this large could be paid on a single transaction.</source>
+        <translation type="unfinished">%s est très élevé ! Des frais aussi importants pourraient être payés sur une seule transaction.</translation>
     </message>
     <message>
         <source>Cannot provide specific connections and have addrman find outgoing connections at the same time.</source>
@@ -4002,8 +4244,114 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">Erreur de chargement de %s : le porte-monnaie signataire externe est chargé sans que la prise en charge de signataires externes soit compilée</translation>
     </message>
     <message>
+        <source>Error reading %s! All keys read correctly, but transaction data or address metadata may be missing or incorrect.</source>
+        <translation type="unfinished">Erreur de lecture de %s! Toutes les clés ont été lues correctement, mais les données de transaction ou les métadonnées d'adresse peuvent être manquantes ou incorrectes.</translation>
+    </message>
+    <message>
+        <source>Error: Address book data in wallet cannot be identified to belong to migrated wallets</source>
+        <translation type="unfinished">Erreur : Les données du carnet d'adresses du portefeuille ne peuvent pas être identifiées comme appartenant à des portefeuilles migrés</translation>
+    </message>
+    <message>
+        <source>Error: Duplicate descriptors created during migration. Your wallet may be corrupted.</source>
+        <translation type="unfinished">Erreur : Descripteurs en double créés pendant la migration. Votre portefeuille est peut-être corrompu.</translation>
+    </message>
+    <message>
+        <source>Error: Transaction %s in wallet cannot be identified to belong to migrated wallets</source>
+        <translation type="unfinished">Erreur : La transaction %s dans le portefeuille ne peut pas être identifiée comme appartenant aux portefeuilles migrés</translation>
+    </message>
+    <message>
+        <source>Failed to calculate bump fees, because unconfirmed UTXOs depend on enormous cluster of unconfirmed transactions.</source>
+        <translation type="unfinished">Échec du calcul des frais de majoration, car les UTXO non confirmés dépendent d'un énorme groupe de transactions non confirmées.</translation>
+    </message>
+    <message>
         <source>Failed to rename invalid peers.dat file. Please move or delete it and try again.</source>
         <translation type="unfinished">Échec de renommage du fichier peers.dat invalide. Veuillez le déplacer ou le supprimer, puis réessayer.</translation>
+    </message>
+    <message>
+        <source>Fee estimation failed. Fallbackfee is disabled. Wait a few blocks or enable %s.</source>
+        <translation type="unfinished">L'estimation des frais a échoué. Fallbackfee est désactivé. Attendez quelques blocs ou activez %s.</translation>
+    </message>
+    <message>
+        <source>Incompatible options: -dnsseed=1 was explicitly specified, but -onlynet forbids connections to IPv4/IPv6</source>
+        <translation type="unfinished">Options incompatibles : -dnsseed=1 a été explicitement spécifié, mais -onlynet interdit les connexions vers IPv4/IPv6</translation>
+    </message>
+    <message>
+        <source>Invalid amount for %s=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
+        <translation type="unfinished">Montant non valide pour %s=&lt;amount&gt; : '%s' (doit être au moins égal au minrelay fee de %s pour éviter les transactions bloquées)</translation>
+    </message>
+    <message>
+        <source>Outbound connections restricted to CJDNS (-onlynet=cjdns) but -cjdnsreachable is not provided</source>
+        <translation type="unfinished">Connexions sortantes limitées à CJDNS (-onlynet=cjdns) mais -cjdnsreachable n'est pas fourni</translation>
+    </message>
+    <message>
+        <source>Outbound connections restricted to Tor (-onlynet=onion) but the proxy for reaching the Tor network is explicitly forbidden: -onion=0</source>
+        <translation type="unfinished">Connexions sortantes limitées à Tor (-onlynet=onion) mais le proxy pour atteindre le réseau Tor est explicitement interdit : -onion=0</translation>
+    </message>
+    <message>
+        <source>Outbound connections restricted to Tor (-onlynet=onion) but the proxy for reaching the Tor network is not provided: none of -proxy, -onion or -listenonion is given</source>
+        <translation type="unfinished">Connexions sortantes limitées à Tor (-onlynet=onion) mais le proxy pour atteindre le réseau Tor n'est pas fourni : aucun des paramètres -proxy, -onion ou -listenonion n'est donné</translation>
+    </message>
+    <message>
+        <source>Outbound connections restricted to i2p (-onlynet=i2p) but -i2psam is not provided</source>
+        <translation type="unfinished">Connexions sortantes limitées à i2p (-onlynet=i2p) mais -i2psam n'est pas fourni</translation>
+    </message>
+    <message>
+        <source>The inputs size exceeds the maximum weight. Please try sending a smaller amount or manually consolidating your wallet's UTXOs</source>
+        <translation type="unfinished">La taille des entrées dépasse le poids maximum. Veuillez essayer d'envoyer un montant plus petit ou de consolider manuellement les UTXOs de votre portefeuille</translation>
+    </message>
+    <message>
+        <source>The preselected coins total amount does not cover the transaction target. Please allow other inputs to be automatically selected or include more coins manually</source>
+        <translation type="unfinished">Le montant total des pièces présélectionnées ne couvre pas l'objectif de la transaction. Veuillez permettre à d'autres entrées d'être sélectionnées automatiquement ou inclure plus de pièces manuellement</translation>
+    </message>
+    <message>
+        <source>Transaction requires one destination of non-0 value, a non-0 feerate, or a pre-selected input</source>
+        <translation type="unfinished">La transaction nécessite une destination d'une valeur non nulle, un ratio de frais non nul, ou une entrée présélectionnée.</translation>
+    </message>
+    <message>
+        <source>UTXO snapshot failed to validate. Restart to resume normal initial block download, or try loading a different snapshot.</source>
+        <translation type="unfinished">La validation de la snapshot UTXO a échoué. Redémarrez pour reprendre le téléchargement normal du bloc initial, ou essayez de charger une autre snapshot.</translation>
+    </message>
+    <message>
+        <source>Unconfirmed UTXOs are available, but spending them creates a chain of transactions that will be rejected by the mempool</source>
+        <translation type="unfinished">Les UTXO non confirmés sont disponibles, mais les dépenser crée une chaîne de transactions qui sera rejetée par le mempool</translation>
+    </message>
+    <message>
+        <source>Unexpected legacy entry in descriptor wallet found. Loading wallet %s
+
+The wallet might have been tampered with or created with malicious intent.
+</source>
+        <translation type="unfinished">Une entrée héritée inattendue dans le portefeuille de descripteurs a été trouvée. Chargement du portefeuille %s
+
+Le portefeuille peut avoir été altéré ou créé avec des intentions malveillantes.
+</translation>
+    </message>
+    <message>
+        <source>Unrecognized descriptor found. Loading wallet %s
+
+The wallet might had been created on a newer version.
+Please try running the latest software version.
+</source>
+        <translation type="unfinished">Descripteur non reconnu trouvé. Chargement du portefeuille %s
+
+Le portefeuille a peut-être été créé avec une version plus récente.
+Veuillez essayer d'utiliser la dernière version du logiciel.
+</translation>
+    </message>
+    <message>
+        <source>
+Unable to cleanup failed migration</source>
+        <translation type="unfinished">
+Impossible de corriger l'échec de la migration</translation>
+    </message>
+    <message>
+        <source>
+Unable to restore backup of wallet.</source>
+        <translation type="unfinished">
+Impossible de restaurer la sauvegarde du portefeuille.</translation>
+    </message>
+    <message>
+        <source>Block verification was interrupted</source>
+        <translation type="unfinished">La vérification des blocs a été interrompue</translation>
     </message>
     <message>
         <source>Config setting for %s only applied on %s network when in [%s] section.</source>
@@ -4078,12 +4426,28 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">Erreur d’ouverture de la base de données des blocs</translation>
     </message>
     <message>
+        <source>Error reading configuration file: %s</source>
+        <translation type="unfinished">Erreur de lecture du fichier de configuration : %s</translation>
+    </message>
+    <message>
         <source>Error reading from database, shutting down.</source>
         <translation type="unfinished">Erreur de lecture de la base de données, fermeture en cours</translation>
     </message>
     <message>
         <source>Error reading next record from wallet database</source>
         <translation type="unfinished">Erreur de lecture de l’enregistrement suivant de la base de données du porte-monnaie</translation>
+    </message>
+    <message>
+        <source>Error: Cannot extract destination from the generated scriptpubkey</source>
+        <translation type="unfinished">Erreur : Impossible d'extraire la destination du scriptpubkey généré</translation>
+    </message>
+    <message>
+        <source>Error: Could not add watchonly tx to watchonly wallet</source>
+        <translation type="unfinished">Erreur : Impossible d'ajouter la transaction watchonly au portefeuille watchonly</translation>
+    </message>
+    <message>
+        <source>Error: Could not delete watchonly transactions</source>
+        <translation type="unfinished">Erreur : Impossible d'effacer les transactions de type "watchonly".</translation>
     </message>
     <message>
         <source>Error: Couldn't create cursor into database</source>
@@ -4096,6 +4460,10 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
     <message>
         <source>Error: Dumpfile checksum does not match. Computed %s, expected %s</source>
         <translation type="unfinished">Erreur : La somme de contrôle du fichier de vidage ne correspond pas. Calculée %s, attendue %s</translation>
+    </message>
+    <message>
+        <source>Error: Failed to create new watchonly wallet</source>
+        <translation type="unfinished">Erreur : Echec de la création d'un nouveau portefeuille watchonly</translation>
     </message>
     <message>
         <source>Error: Got key that was not hex: %s</source>
@@ -4118,8 +4486,36 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">Erreur : Aucune adresse %s n’est disponible.</translation>
     </message>
     <message>
+        <source>Error: Not all watchonly txs could be deleted</source>
+        <translation type="unfinished">Erreur : Toutes les transactions watchonly n'ont pas pu être supprimés.</translation>
+    </message>
+    <message>
+        <source>Error: This wallet already uses SQLite</source>
+        <translation type="unfinished">Erreur : Ce portefeuille utilise déjà SQLite</translation>
+    </message>
+    <message>
+        <source>Error: This wallet is already a descriptor wallet</source>
+        <translation type="unfinished">Erreur : Ce portefeuille est déjà un portefeuille de descripteurs</translation>
+    </message>
+    <message>
+        <source>Error: Unable to begin reading all records in the database</source>
+        <translation type="unfinished">Erreur : Impossible de commencer à lire tous les enregistrements de la base de données</translation>
+    </message>
+    <message>
+        <source>Error: Unable to make a backup of your wallet</source>
+        <translation type="unfinished">Erreur : Impossible d'effectuer une sauvegarde de votre portefeuille</translation>
+    </message>
+    <message>
         <source>Error: Unable to parse version %u as a uint32_t</source>
         <translation type="unfinished">Erreur : Impossible d’analyser la version %u en tant que uint32_t</translation>
+    </message>
+    <message>
+        <source>Error: Unable to read all records in the database</source>
+        <translation type="unfinished">Erreur : Impossible de lire tous les enregistrements de la base de données</translation>
+    </message>
+    <message>
+        <source>Error: Unable to remove watchonly address book data</source>
+        <translation type="unfinished">Erreur : Impossible de supprimer les données du carnet d'adresses watchonly</translation>
     </message>
     <message>
         <source>Error: Unable to write record to new wallet</source>
@@ -4132,6 +4528,10 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
     <message>
         <source>Failed to rescan the wallet during initialization</source>
         <translation type="unfinished">Échec de réanalyse du porte-monnaie lors de l’initialisation</translation>
+    </message>
+    <message>
+        <source>Failed to start indexes, shutting down..</source>
+        <translation type="unfinished">Échec du démarrage des index, arrêt.</translation>
     </message>
     <message>
         <source>Failed to verify database</source>
@@ -4162,6 +4562,10 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">L’entrée est introuvable ou a déjà été dépensée</translation>
     </message>
     <message>
+        <source>Insufficient dbcache for block verification</source>
+        <translation type="unfinished">Insuffisance de dbcache pour la vérification des blocs</translation>
+    </message>
+    <message>
         <source>Insufficient funds</source>
         <translation type="unfinished">Les fonds sont insuffisants</translation>
     </message>
@@ -4182,12 +4586,32 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">L’autorisation P2P est invalide : « %s »</translation>
     </message>
     <message>
+        <source>Invalid amount for %s=&lt;amount&gt;: '%s' (must be at least %s)</source>
+        <translation type="unfinished">Montant non valide pour %s=&lt;amount&gt; : '%s' (doit être au moins %s)</translation>
+    </message>
+    <message>
+        <source>Invalid amount for %s=&lt;amount&gt;: '%s'</source>
+        <translation type="unfinished">Montant non valide pour %s=&lt;amount&gt; : '%s'</translation>
+    </message>
+    <message>
         <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
         <translation type="unfinished">Le montant est invalide pour -%s=&lt;amount&gt; : « %s »</translation>
     </message>
     <message>
         <source>Invalid netmask specified in -whitelist: '%s'</source>
         <translation type="unfinished">Le masque réseau indiqué dans -whitelist est invalide : « %s »</translation>
+    </message>
+    <message>
+        <source>Invalid port specified in %s: '%s'</source>
+        <translation type="unfinished">Port non valide spécifié dans %s: '%s'</translation>
+    </message>
+    <message>
+        <source>Invalid pre-selected input %s</source>
+        <translation type="unfinished">Entrée présélectionnée non valide %s</translation>
+    </message>
+    <message>
+        <source>Listening for incoming connections failed (listen returned error %s)</source>
+        <translation type="unfinished">L'écoute des connexions entrantes a échoué ( l'écoute a renvoyé une erreur %s)</translation>
     </message>
     <message>
         <source>Loading P2P addresses…</source>
@@ -4224,6 +4648,14 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
     <message>
         <source>Not enough file descriptors available.</source>
         <translation type="unfinished">Trop peu de descripteurs de fichiers sont disponibles.</translation>
+    </message>
+    <message>
+        <source>Not found pre-selected input %s</source>
+        <translation type="unfinished">Entrée présélectionnée introuvable %s</translation>
+    </message>
+    <message>
+        <source>Not solvable pre-selected input %s</source>
+        <translation type="unfinished">Entrée présélectionnée non solvable %s</translation>
     </message>
     <message>
         <source>Prune cannot be configured with a negative value.</source>
@@ -4290,6 +4722,10 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">Le répertoire des blocs indiqué « %s » n’existe pas</translation>
     </message>
     <message>
+        <source>Specified data directory "%s" does not exist.</source>
+        <translation type="unfinished">Le répertoire de données spécifié "%s" n'existe pas.</translation>
+    </message>
+    <message>
         <source>Starting network threads…</source>
         <translation type="unfinished">Démarrage des processus réseau…</translation>
     </message>
@@ -4350,6 +4786,10 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">La transaction est trop grosse</translation>
     </message>
     <message>
+        <source>Unable to allocate memory for -maxsigcachesize: '%s' MiB</source>
+        <translation type="unfinished">Impossible d'allouer de la mémoire pour -maxsigcachesize : '%s' Mo</translation>
+    </message>
+    <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation type="unfinished">Impossible de se lier à %s sur cet ordinateur (la liaison a retourné l’erreur %s)</translation>
     </message>
@@ -4360,6 +4800,10 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
     <message>
         <source>Unable to create the PID file '%s': %s</source>
         <translation type="unfinished">Impossible de créer le fichier PID « %s » : %s</translation>
+    </message>
+    <message>
+        <source>Unable to find UTXO for external input</source>
+        <translation type="unfinished">Impossible de trouver l'UTXO pour l'entrée externe</translation>
     </message>
     <message>
         <source>Unable to generate initial keys</source>
@@ -4382,6 +4826,10 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">Impossible de démarrer le serveur HTTP. Consulter le journal de débogage pour plus de précisions.</translation>
     </message>
     <message>
+        <source>Unable to unload the wallet before migrating</source>
+        <translation type="unfinished">Impossible de vider le portefeuille avant la migration</translation>
+    </message>
+    <message>
         <source>Unknown -blockfilterindex value %s.</source>
         <translation type="unfinished">La valeur -blockfilterindex %s est inconnue.</translation>
     </message>
@@ -4402,6 +4850,14 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">Les nouvelles règles inconnues sont activées (versionbit %i)</translation>
     </message>
     <message>
+        <source>Unsupported global logging level %s=%s. Valid values: %s.</source>
+        <translation type="unfinished">Niveau de journalisation global non pris en charge %s=%s. Valeurs valides : %s.</translation>
+    </message>
+    <message>
+        <source>acceptstalefeeestimates is not supported on %s chain.</source>
+        <translation type="unfinished">acceptstalefeeestimates n'est pas pris en charge sur la chaîne %s.</translation>
+    </message>
+    <message>
         <source>Unsupported logging category %s=%s.</source>
         <translation type="unfinished">La catégorie de journalisation %s=%s n’est pas prise en charge</translation>
     </message>
@@ -4419,7 +4875,7 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart %s to complete</source>
-        <translation type="unfinished">Le porte-monnaie devait être réécrit : redémarrer %s pour terminer l’opération.</translation>
+        <translation type="unfinished">Le portefeuille doit être réécrit : redémarrer %s pour terminer</translation>
     </message>
     <message>
         <source>Settings file could not be read</source>

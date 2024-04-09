@@ -1,4 +1,4 @@
-<TS version="2.1" language="fr_LU">
+<TS version="2.1" language="fr">
 <context>
     <name>AddressBookPage</name>
     <message>
@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation type="unfinished">Copier l’adresse sélectionnée actuellement dans le presse-papiers</translation>
+        <translation type="unfinished">Copier l’adresse sélectionnée dans le presse-papiers</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
@@ -27,7 +27,7 @@
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation type="unfinished">Supprimer l’adresse sélectionnée actuellement de la liste</translation>
+        <translation type="unfinished">Supprimer l’adresse sélectionnée de la liste</translation>
     </message>
     <message>
         <source>Enter address or label to search</source>
@@ -55,16 +55,16 @@
     </message>
     <message>
         <source>C&amp;hoose</source>
-        <translation type="unfinished">C&amp;hoisir</translation>
+        <translation type="unfinished">&amp;Choisir</translation>
     </message>
     <message>
-        <source>These are your Sugarchain addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Ce sont vos adresses Sugarchain pour envoyer des paiements. Vérifiez toujours le montant et l’adresse du destinataire avant d’envoyer des pièces.</translation>
+        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Ce sont vos adresses Bitcoin pour envoyer des paiements. Vérifiez toujours le montant et l’adresse de réception avant d’envoyer des pièces.</translation>
     </message>
     <message>
-        <source>These are your Sugarchain addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Il s'agit de vos adresses Sugarchain pour la réception des paiements. Utilisez le bouton "Créer une nouvelle adresse de réception" dans l'onglet "Recevoir" pour créer de nouvelles adresses.
+        <translation type="unfinished">Il s'agit de vos adresses Bitcoin pour la réception des paiements. Utilisez le bouton "Créer une nouvelle adresse de réception" dans l'onglet "Recevoir" pour créer de nouvelles adresses.
 La signature n'est possible qu'avec les adresses de type "patrimoine".</translation>
     </message>
     <message>
@@ -73,7 +73,7 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     </message>
     <message>
         <source>Copy &amp;Label</source>
-        <translation type="unfinished">Copier l’é&amp;tiquette</translation>
+        <translation type="unfinished">Copier &amp;l’étiquette</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -86,12 +86,16 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     <message>
         <source>Comma separated file</source>
         <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
-        <translation type="unfinished">Fichier séparé par des virgules</translation>
+        <translation type="unfinished">Fichier avec séparateur virgule</translation>
     </message>
     <message>
         <source>There was an error trying to save the address list to %1. Please try again.</source>
         <extracomment>An error message. %1 is a stand-in argument for the name of the file we attempted to save to.</extracomment>
         <translation type="unfinished">Une erreur est survenue lors de l'enregistrement de la liste d'adresses vers %1. Veuillez réessayer plus tard.</translation>
+    </message>
+    <message>
+        <source>Sending addresses - %1</source>
+        <translation type="unfinished">Adresses d’envois - %1</translation>
     </message>
     <message>
         <source>Receiving addresses - %1</source>
@@ -160,8 +164,8 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Confirmer le chiffrement du porte-monnaie</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
-        <translation type="unfinished">Avertissement : Si vous chiffrez votre porte-monnaie et perdez votre phrase de passe, vous &lt;b&gt;PERDREZ TOUS VOS PIÈCES DE MONNAIE&lt;/b&gt; !</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Avertissement : Si vous chiffrez votre porte-monnaie et perdez votre phrase de passe, vous allez &lt;b&gt;PERDRE TOUS VOS BITCOINS&lt;/b&gt; !</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -180,8 +184,8 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Saisir l’ancienne puis la nouvelle phrase de passe du porte-monnaie.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">N’oubliez pas que le chiffrement de votre porte-monnaie ne peut pas protéger entièrement vos pièces contre le vol par des programmes malveillants qui infecteraient votre ordinateur.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">N’oubliez pas que le chiffrement de votre porte-monnaie ne peut pas protéger entièrement vos bitcoins contre le vol par des programmes malveillants qui infecteraient votre ordinateur.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -252,7 +256,7 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     </message>
 </context>
 <context>
-    <name>SugarchainApplication</name>
+    <name>BitcoinApplication</name>
     <message>
         <source>Settings file %1 might be corrupt or invalid.</source>
         <translation type="unfinished">Le fichier de paramètres %1 est peut-être corrompu ou non valide.</translation>
@@ -303,8 +307,8 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Montant</translation>
     </message>
     <message>
-        <source>Enter a Sugarchain address (e.g. %1)</source>
-        <translation type="unfinished">Saisir une adresse Sugarchain (p. ex. %1)</translation>
+        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <translation type="unfinished">Saisir une adresse Bitcoin (p. ex. %1)</translation>
     </message>
     <message>
         <source>Unroutable</source>
@@ -425,7 +429,7 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     </message>
 </context>
 <context>
-    <name>SugarchainGUI</name>
+    <name>BitcoinGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation type="unfinished">&amp;Vue d’ensemble</translation>
@@ -488,8 +492,8 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Le serveur mandataire est &lt;b&gt;activé&lt;/b&gt; : %1</translation>
     </message>
     <message>
-        <source>Send coins to a Sugarchain address</source>
-        <translation type="unfinished">Envoyer des pièces à une adresse Sugarchain</translation>
+        <source>Send coins to a Bitcoin address</source>
+        <translation type="unfinished">Envoyer des pièces à une adresse Bitcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -528,16 +532,16 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Signer un &amp;message…</translation>
     </message>
     <message>
-        <source>Sign messages with your Sugarchain addresses to prove you own them</source>
-        <translation type="unfinished">Signer les messages avec vos adresses Sugarchain pour prouver que vous les détenez</translation>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <translation type="unfinished">Signer les messages avec vos adresses Bitcoin pour prouver que vous les détenez</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
         <translation type="unfinished">&amp;Vérifier un message…</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Sugarchain addresses</source>
-        <translation type="unfinished">Vérifier les messages pour s’assurer qu’ils ont été signés avec les adresses Sugarchain indiquées</translation>
+        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <translation type="unfinished">Vérifier les messages pour s’assurer qu’ils ont été signés avec les adresses Bitcoin indiquées</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -596,8 +600,8 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Connexion aux pairs…</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sugarchain: URIs)</source>
-        <translation type="unfinished">Demander des paiements (génère des codes QR et des URI sugarchain:)</translation>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
+        <translation type="unfinished">Demander des paiements (génère des codes QR et des URI bitcoin:)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -651,16 +655,16 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">À jour</translation>
     </message>
     <message>
-        <source>Load Partially Signed Sugarchain Transaction</source>
-        <translation type="unfinished">Charger une transaction Sugarchain signée partiellement</translation>
+        <source>Load Partially Signed Bitcoin Transaction</source>
+        <translation type="unfinished">Charger une transaction Bitcoin signée partiellement</translation>
     </message>
     <message>
         <source>Load PSBT from &amp;clipboard…</source>
         <translation type="unfinished">Charger la TBSP du &amp;presse-papiers…</translation>
     </message>
     <message>
-        <source>Load Partially Signed Sugarchain Transaction from clipboard</source>
-        <translation type="unfinished">Charger du presse-papiers une transaction Sugarchain signée partiellement</translation>
+        <source>Load Partially Signed Bitcoin Transaction from clipboard</source>
+        <translation type="unfinished">Charger du presse-papiers une transaction Bitcoin signée partiellement</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -679,8 +683,8 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">&amp;Adresses de réception</translation>
     </message>
     <message>
-        <source>Open a sugarchain: URI</source>
-        <translation type="unfinished">Ouvrir une URI sugarchain:</translation>
+        <source>Open a bitcoin: URI</source>
+        <translation type="unfinished">Ouvrir une URI bitcoin:</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -717,8 +721,8 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Migrer un portefeuilles </translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Sugarchain command-line options</source>
-        <translation type="unfinished">Afficher le message d’aide de %1 pour obtenir la liste des options possibles en ligne de commande Sugarchain</translation>
+        <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
+        <translation type="unfinished">Afficher le message d’aide de %1 pour obtenir la liste des options possibles en ligne de commande Bitcoin</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -781,11 +785,11 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">A&amp;fficher</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Sugarchain network.</source>
+        <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>%n connexion active avec le réseau Sugarchain.</numerusform>
-            <numerusform>%n connexions actives avec le réseau Sugarchain.</numerusform>
+            <numerusform>%n connexion active avec le réseau Bitcoin.</numerusform>
+            <numerusform>%n connexions actives avec le réseau Bitcoin.</numerusform>
         </translation>
     </message>
     <message>
@@ -1080,15 +1084,18 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Migrer le portefeuille</translation>
     </message>
     <message>
+        <source>Are you sure you wish to migrate the wallet &lt;i&gt;%1&lt;/i&gt;?</source>
+        <translation type="unfinished">Êtes-vous sûr de vouloir migrer le portefeuille 1 %1 1?</translation>
+    </message>
+    <message>
         <source>Migrating the wallet will convert this wallet to one or more descriptor wallets. A new wallet backup will need to be made.
 If this wallet contains any watchonly scripts, a new wallet will be created which contains those watchonly scripts.
 If this wallet contains any solvable but not watched scripts, a different and new wallet will be created which contains those scripts.
 
 The migration process will create a backup of the wallet before migrating. This backup file will be named &lt;wallet name&gt;-&lt;timestamp&gt;.legacy.bak and can be found in the directory for this wallet. In the event of an incorrect migration, the backup can be restored with the "Restore Wallet" functionality.</source>
         <translation type="unfinished">La migration du porte-monnaie convertira ce porte-monnaie en un ou plusieurs porte-monnaie de descripteurs. Une nouvelle sauvegarde du porte-monnaie devra être effectuée.
-Si ce porte-monnaie contient des scripts en lecture seule, un nouveau porte-monnaie sera créé contenant ces scripts en lecture seule.
+Si ce porte-monnaie contient des scripts en lecture seule, un nouveau porte-monnaie sera créé contenant ces scripts en lecture seule. 
 Si ce porte-monnaie contient des scripts solvables mais non surveillés, un autre nouveau porte-monnaie sera créé contenant ces scripts.
-
 Le processus de migration créera une sauvegarde du porte-monnaie avant la migration. Ce fichier de sauvegarde sera nommé &lt;nom du porte-monnaie&gt;-&lt;horodatage&gt;.legacy.bak et pourra être trouvé dans le répertoire de ce porte-monnaie. En cas de migration incorrecte, la sauvegarde peut être restaurée avec la fonctionnalité "Restaurer le porte-monnaie".</translation>
     </message>
     <message>
@@ -1165,7 +1172,7 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
     <message>
         <source>Restore wallet warning</source>
         <extracomment>Title of message box which is displayed when the wallet is restored with some warning.</extracomment>
-        <translation type="unfinished">Avertissement de la récupération du Portefeuille</translation>
+        <translation type="unfinished">Avertissement du Portefeuille restauré</translation>
     </message>
     <message>
         <source>Restore wallet message</source>
@@ -1299,8 +1306,8 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
         <translation type="unfinished">Modifier l’adresse d’envoi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Sugarchain address.</source>
-        <translation type="unfinished">L’adresse saisie « %1 » n’est pas une adresse Sugarchain valide.</translation>
+        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <translation type="unfinished">L’adresse saisie « %1 » n’est pas une adresse Bitcoin valide.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1386,8 +1393,8 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Sugarchain block chain.</source>
-        <translation type="unfinished">%1 téléchargera et stockera une copie de la chaîne de blocs Sugarchain.</translation>
+        <source>%1 will download and store a copy of the Bitcoin block chain.</source>
+        <translation type="unfinished">%1 téléchargera et stockera une copie de la chaîne de blocs Bitcoin.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1431,7 +1438,7 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
     </message>
     <message>
         <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2 GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
-        <translation type="unfinished">Quand vous cliquerez sur Valider, %1 commencera à télécharger et à traiter l’intégralité de la chaîne de blocs %4 (%2 Go) en débutant avec les transactions les plus anciennes de %3, quand %4 a été lancé initialement.</translation>
+        <translation type="unfinished">Quand vous cliquerez sur Valider, %1 commencera à télécharger et à traiter l’intégralité de la chaîne de blocs %4 (%2 Go) en débutant avec les transactions les plus anciennes de %3, quand %4 a été lancé initialement.</translation>
     </message>
     <message>
         <source>If you have chosen to limit block chain storage (pruning), the historical data must still be downloaded and processed, but will be deleted afterward to keep your disk usage low.</source>
@@ -1475,12 +1482,12 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
         <translation type="unfinished">Formulaire</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sugarchain network, as detailed below.</source>
-        <translation type="unfinished">Les transactions récentes ne sont peut-être pas encore visibles et par conséquent le solde de votre porte-monnaie est peut-être erroné. Ces renseignements seront justes quand votre porte-monnaie aura fini de se synchroniser avec le réseau Sugarchain, comme décrit ci-dessous.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bitcoin network, as detailed below.</source>
+        <translation type="unfinished">Les transactions récentes ne sont peut-être pas encore visibles et par conséquent le solde de votre porte-monnaie est peut-être erroné. Ces renseignements seront justes quand votre porte-monnaie aura fini de se synchroniser avec le réseau Bitcoin, comme décrit ci-dessous.</translation>
     </message>
     <message>
-        <source>Attempting to spend coins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">Toute tentative de dépense de pièces affectés par des transactions qui ne sont pas encore affichées ne sera pas acceptée par le réseau.</translation>
+        <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation type="unfinished">Toute tentative de dépense de bitcoins affectés par des transactions qui ne sont pas encore affichées ne sera pas acceptée par le réseau.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1534,8 +1541,8 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open sugarchain URI</source>
-        <translation type="unfinished">Ouvrir une URI sugarchain</translation>
+        <source>Open bitcoin URI</source>
+        <translation type="unfinished">Ouvrir une URI bitcoin</translation>
     </message>
     <message>
         <source>URI:</source>
@@ -1698,16 +1705,16 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
         <translation type="unfinished">&amp;Chemin du script signataire externe</translation>
     </message>
     <message>
-        <source>Automatically open the Sugarchain client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="unfinished">Ouvrir automatiquement le port du client Sugarchain sur le routeur. Cela ne fonctionne que si votre routeur prend en charge l’UPnP et si la fonction est activée.</translation>
+        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation type="unfinished">Ouvrir automatiquement le port du client Bitcoin sur le routeur. Cela ne fonctionne que si votre routeur prend en charge l’UPnP et si la fonction est activée.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation type="unfinished">Mapper le port avec l’&amp;UPnP</translation>
     </message>
     <message>
-        <source>Automatically open the Sugarchain client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">Ouvrir automatiquement le port du client Sugarchain sur le routeur. Cela ne fonctionne que si votre routeur prend en charge NAT-PMP. Le port externe peut être aléatoire.</translation>
+        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
+        <translation type="unfinished">Ouvrir automatiquement le port du client Bitcoin sur le routeur. Cela ne fonctionne que si votre routeur prend en charge NAT-PMP. Le port externe peut être aléatoire.</translation>
     </message>
     <message>
         <source>Map port using NA&amp;T-PMP</source>
@@ -1722,8 +1729,8 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
         <translation type="unfinished">Permettre les connexions e&amp;ntrantes</translation>
     </message>
     <message>
-        <source>Connect to the Sugarchain network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Se connecter au réseau Sugarchain par un mandataire SOCKS5.</translation>
+        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">Se connecter au réseau Bitcoin par un mandataire SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1802,8 +1809,8 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
         <translation type="unfinished">Afficher ou non les fonctions de contrôle des pièces.</translation>
     </message>
     <message>
-        <source>Connect to the Sugarchain network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">Se connecter au réseau Sugarchain par un mandataire SOCKS5 séparé pour les services oignon de Tor.</translation>
+        <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <translation type="unfinished">Se connecter au réseau Bitcoin par un mandataire SOCKS5 séparé pour les services oignon de Tor.</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
@@ -1911,8 +1918,8 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
         <translation type="unfinished">Formulaire</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sugarchain network after a connection is established, but this process has not completed yet.</source>
-        <translation type="unfinished">Les renseignements affichés peuvent être obsolètes. Votre porte-monnaie se synchronise automatiquement avec le réseau Sugarchain dès qu’une connexion est établie, mais ce processus n’est pas encore achevé.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation type="unfinished">Les renseignements affichés peuvent être obsolètes. Votre porte-monnaie se synchronise automatiquement avec le réseau Bitcoin dès qu’une connexion est établie, mais ce processus n’est pas encore achevé.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -2126,16 +2133,16 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
         <translation type="unfinished">Erreur de demande de paiement</translation>
     </message>
     <message>
-        <source>Cannot start sugarchain: click-to-pay handler</source>
-        <translation type="unfinished">Impossible de démarrer le gestionnaire de cliquer-pour-payer sugarchain:</translation>
+        <source>Cannot start bitcoin: click-to-pay handler</source>
+        <translation type="unfinished">Impossible de démarrer le gestionnaire de cliquer-pour-payer bitcoin:</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation type="unfinished">Gestion des URI</translation>
     </message>
     <message>
-        <source>'sugarchain://' is not a valid URI. Use 'sugarchain:' instead.</source>
-        <translation type="unfinished">'sugarchain://' n’est pas une URI valide. Utilisez plutôt 'sugarchain:'.</translation>
+        <source>'bitcoin://' is not a valid URI. Use 'bitcoin:' instead.</source>
+        <translation type="unfinished">'bitcoin://' n’est pas une URI valide. Utilisez plutôt 'bitcoin:'.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.
@@ -2144,8 +2151,8 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="unfinished">Impossible de traiter la demande de paiement, car BIP70 n’est pas pris en charge. En raison des failles de sécurité généralisées de BIP70, il est fortement recommandé d’ignorer toute demande de marchand de changer de porte-monnaie. Si vous recevez cette erreur, vous devriez demander au marchand de vous fournir une URI compatible BIP21.</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Sugarchain address or malformed URI parameters.</source>
-        <translation type="unfinished">L’URI ne peut pas être analysée. Cela peut être causé par une adresse Sugarchain invalide ou par des paramètres d’URI mal formés.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <translation type="unfinished">L’URI ne peut pas être analysée. Cela peut être causé par une adresse Bitcoin invalide ou par des paramètres d’URI mal formés.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2696,8 +2703,8 @@ Pour plus de précisions sur cette console, tapez %6.
         <translation type="unfinished">M&amp;essage :</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sugarchain network.</source>
-        <translation type="unfinished">Un message facultatif à joindre à la demande de paiement et qui sera affiché à l’ouverture de celle-ci. Note : Le message ne sera pas envoyé avec le paiement par le réseau Sugarchain.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
+        <translation type="unfinished">Un message facultatif à joindre à la demande de paiement et qui sera affiché à l’ouverture de celle-ci. Note : Le message ne sera pas envoyé avec le paiement par le réseau Bitcoin.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2981,8 +2988,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
 Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshis par Kov » pour une transaction d’une taille de 500 octets (la moitié de 1 Kov) donneront des frais de seulement 50 satoshis.</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for sugarchain transactions than the network can process.</source>
-        <translation type="unfinished">Quand le volume des transactions est inférieur à l’espace dans les blocs, les mineurs et les nœuds de relais peuvent imposer des frais minimaux. Il est correct de payer ces frais minimaux, mais soyez conscient que cette transaction pourrait n’être jamais confirmée si la demande en transactions de pièces dépassait la capacité de traitement du réseau.</translation>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for bitcoin transactions than the network can process.</source>
+        <translation type="unfinished">Quand le volume des transactions est inférieur à l’espace dans les blocs, les mineurs et les nœuds de relais peuvent imposer des frais minimaux. Il est correct de payer ces frais minimaux, mais soyez conscient que cette transaction pourrait n’être jamais confirmée si la demande en transactions de bitcoins dépassait la capacité de traitement du réseau.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -3067,8 +3074,8 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Cr&amp;éer une transaction non signée</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed Sugarchain Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">Crée une transaction Sugarchain signée partiellement (TBSP) à utiliser, par exemple, avec un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBSP.</translation>
+        <source>Creates a Partially Signed Bitcoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation type="unfinished">Crée une transaction Bitcoin signée partiellement (TBSP) à utiliser, par exemple, avec un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBSP.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -3127,9 +3134,9 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Vous pouvez augmenter les frais ultérieurement (signale Remplacer-par-des-frais, BIP-125).</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed Sugarchain Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed Bitcoin Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
-        <translation type="unfinished">Veuillez réviser votre proposition de transaction. Une transaction Sugarchain partiellement signée (TBSP) sera produite, que vous pourrez enregistrer ou copier puis signer avec, par exemple, un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBSP.</translation>
+        <translation type="unfinished">Veuillez réviser votre proposition de transaction. Une transaction Bitcoin partiellement signée (TBSP) sera produite, que vous pourrez enregistrer ou copier puis signer avec, par exemple, un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBSP.</translation>
     </message>
     <message>
         <source>Do you want to create this transaction?</source>
@@ -3137,9 +3144,9 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Voulez-vous créer cette transaction ?</translation>
     </message>
     <message>
-        <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Sugarchain Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Bitcoin Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can send their transaction or create a PSBT. This string is displayed when both private keys and PSBT controls are enabled.</extracomment>
-        <translation type="unfinished">Veuillez réviser votre transaction. Vous pouvez créer et envoyer cette transaction ou créer une transaction Sugarchain partiellement signée (TBSP), que vous pouvez enregistrer ou copier, et ensuite avec laquelle signer, par ex., un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBSP.</translation>
+        <translation type="unfinished">Veuillez réviser votre transaction. Vous pouvez créer et envoyer cette transaction ou créer une transaction Bitcoin partiellement signée (TBSP), que vous pouvez enregistrer ou copier, et ensuite avec laquelle signer, par ex., un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBSP.</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
@@ -3209,8 +3216,8 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Des frais supérieurs à %1 sont considérés comme ridiculement élevés.</translation>
     </message>
     <message>
-        <source>Warning: Invalid Sugarchain address</source>
-        <translation type="unfinished">Avertissement : L’adresse Sugarchain est invalide</translation>
+        <source>Warning: Invalid Bitcoin address</source>
+        <translation type="unfinished">Avertissement : L’adresse Bitcoin est invalide</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -3248,8 +3255,8 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Choisir une adresse utilisée précédemment</translation>
     </message>
     <message>
-        <source>The Sugarchain address to send the payment to</source>
-        <translation type="unfinished">L’adresse Sugarchain à laquelle envoyer le paiement</translation>
+        <source>The Bitcoin address to send the payment to</source>
+        <translation type="unfinished">L’adresse Bitcoin à laquelle envoyer le paiement</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -3264,8 +3271,8 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Le montant à envoyer dans l’unité sélectionnée</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less coins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">Les frais seront déduits du montant envoyé. Le destinataire recevra moins de pièces que le montant saisi dans le champ de montant. Si plusieurs destinataires sont sélectionnés, les frais seront partagés également.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less bitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished">Les frais seront déduits du montant envoyé. Le destinataire recevra moins de bitcoins que le montant saisi dans le champ de montant. Si plusieurs destinataires sont sélectionnés, les frais seront partagés également.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -3284,8 +3291,8 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Saisir une étiquette pour cette adresse afin de l’ajouter à la liste d’adresses utilisées</translation>
     </message>
     <message>
-        <source>A message that was attached to the sugarchain: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sugarchain network.</source>
-        <translation type="unfinished">Un message qui était joint à l’URI sugarchain: et qui sera stocké avec la transaction pour référence. Note : Ce message ne sera pas envoyé par le réseau Sugarchain.</translation>
+        <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
+        <translation type="unfinished">Un message qui était joint à l’URI bitcoin: et qui sera stocké avec la transaction pour référence. Note : Ce message ne sera pas envoyé par le réseau Bitcoin.</translation>
     </message>
 </context>
 <context>
@@ -3310,12 +3317,12 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">&amp;Signer un message</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive coins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">Vous pouvez signer des messages ou des accords avec vos adresses pour prouver que vous pouvez recevoir des pièces à ces dernières. Faites attention de ne rien signer de vague ou au hasard, car des attaques d’hameçonnage pourraient essayer de vous faire signer avec votre identité afin de l’usurper. Ne signez que des déclarations entièrement détaillées et avec lesquelles vous êtes d’accord.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive bitcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation type="unfinished">Vous pouvez signer des messages ou des accords avec vos adresses pour prouver que vous pouvez recevoir des bitcoins à ces dernières. Faites attention de ne rien signer de vague ou au hasard, car des attaques d’hameçonnage pourraient essayer de vous faire signer avec votre identité afin de l’usurper. Ne signez que des déclarations entièrement détaillées et avec lesquelles vous êtes d’accord.</translation>
     </message>
     <message>
-        <source>The Sugarchain address to sign the message with</source>
-        <translation type="unfinished">L’adresse Sugarchain avec laquelle signer le message</translation>
+        <source>The Bitcoin address to sign the message with</source>
+        <translation type="unfinished">L’adresse Bitcoin avec laquelle signer le message</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3334,8 +3341,8 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Copier la signature actuelle dans le presse-papiers</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Sugarchain address</source>
-        <translation type="unfinished">Signer le message afin de prouver que vous détenez cette adresse Sugarchain</translation>
+        <source>Sign the message to prove you own this Bitcoin address</source>
+        <translation type="unfinished">Signer le message afin de prouver que vous détenez cette adresse Bitcoin</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3358,8 +3365,8 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">Saisissez ci-dessous l’adresse du destinataire, le message (assurez-vous de copier fidèlement les retours à la ligne, les espaces, les tabulations, etc.) et la signature pour vérifier le message. Faites attention à ne pas déduire davantage de la signature que ce qui est contenu dans le message signé même, pour éviter d’être trompé par une attaque de l’intercepteur. Notez que cela ne fait que prouver que le signataire reçoit avec l’adresse et ne peut pas prouver la provenance d’une transaction.</translation>
     </message>
     <message>
-        <source>The Sugarchain address the message was signed with</source>
-        <translation type="unfinished">L’adresse Sugarchain avec laquelle le message a été signé</translation>
+        <source>The Bitcoin address the message was signed with</source>
+        <translation type="unfinished">L’adresse Bitcoin avec laquelle le message a été signé</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -3370,8 +3377,8 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
         <translation type="unfinished">La signature donnée quand le message a été signé</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Sugarchain address</source>
-        <translation type="unfinished">Vérifier le message pour s’assurer qu’il a été signé avec l’adresse Sugarchain indiquée</translation>
+        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
+        <translation type="unfinished">Vérifier le message pour s’assurer qu’il a été signé avec l’adresse Bitcoin indiquée</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3807,7 +3814,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     <message>
         <source>Comma separated file</source>
         <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
-        <translation type="unfinished">Fichier séparé par des virgules</translation>
+        <translation type="unfinished">Fichier avec séparateur virgule</translation>
     </message>
     <message>
         <source>Confirmed</source>
@@ -4003,14 +4010,14 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
     </message>
 </context>
 <context>
-    <name>sugarchain-core</name>
+    <name>bitcoin-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Les développeurs de %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool sugarchain-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s est corrompu. Essayez l’outil sugarchain-wallet pour le sauver ou restaurez une sauvegarde.</translation>
+        <source>%s corrupt. Try using the wallet tool bitcoin-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s est corrompu. Essayez l’outil bitcoin-wallet pour le sauver ou restaurez une sauvegarde.</translation>
     </message>
     <message>
         <source>%s failed to validate the -assumeutxo snapshot state. This indicates a hardware problem, or a bug in the software, or a bad software modification that allowed an invalid snapshot to be loaded. As a result of this, the node will shut down and stop using any state that was built on the snapshot, resetting the chain height from %d to %d. On the next restart, the node will resume syncing from %d without using any snapshot data. Please report this incident to %s, including how you obtained the snapshot. The invalid snapshot chainstate will be left on disk in case it is helpful in diagnosing the issue that caused this error.</source>
@@ -4057,8 +4064,8 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
         <translation type="unfinished">Erreur : L’enregistrement de l’identificateur du fichier de vidage est incorrect. Est « %s », mais « %s » est attendu. </translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of sugarchain-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation type="unfinished">Erreur : La version du fichier de vidage n’est pas prise en charge. Cette version de sugarchain-wallet ne prend en charge que les fichiers de vidage version 1. Le fichier de vidage obtenu est de la version %s.</translation>
+        <source>Error: Dumpfile version is not supported. This version of bitcoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation type="unfinished">Erreur : La version du fichier de vidage n’est pas prise en charge. Cette version de bitcoin-wallet ne prend en charge que les fichiers de vidage version 1. Le fichier de vidage obtenu est de la version %s.</translation>
     </message>
     <message>
         <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>
@@ -4250,7 +4257,7 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
     </message>
     <message>
         <source>Error: Transaction %s in wallet cannot be identified to belong to migrated wallets</source>
-        <translation type="unfinished">Erreur : La transaction %s dans le portefeuille ne peut pas être identifiée comme appartenant aux portefeuilles migrés.</translation>
+        <translation type="unfinished">Erreur : La transaction %s dans le portefeuille ne peut pas être identifiée comme appartenant aux portefeuilles migrés</translation>
     </message>
     <message>
         <source>Failed to calculate bump fees, because unconfirmed UTXOs depend on enormous cluster of unconfirmed transactions.</source>
@@ -4290,7 +4297,7 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
     </message>
     <message>
         <source>The inputs size exceeds the maximum weight. Please try sending a smaller amount or manually consolidating your wallet's UTXOs</source>
-        <translation type="unfinished">La taille des entrées dépasse le poids maximum. Veuillez essayer d'envoyer un montant plus petit ou de consolider manuellement les UTXOs de votre portefeuille.</translation>
+        <translation type="unfinished">La taille des entrées dépasse le poids maximum. Veuillez essayer d'envoyer un montant plus petit ou de consolider manuellement les UTXOs de votre portefeuille</translation>
     </message>
     <message>
         <source>The preselected coins total amount does not cover the transaction target. Please allow other inputs to be automatically selected or include more coins manually</source>
@@ -4306,7 +4313,7 @@ Accédez à Fichier &gt; Ouvrir un porte-monnaie pour en charger un.
     </message>
     <message>
         <source>Unconfirmed UTXOs are available, but spending them creates a chain of transactions that will be rejected by the mempool</source>
-        <translation type="unfinished">Les UTXO non confirmés sont disponibles, mais les dépenser crée une chaîne de transactions qui sera rejetée par le mempool.</translation>
+        <translation type="unfinished">Les UTXO non confirmés sont disponibles, mais les dépenser crée une chaîne de transactions qui sera rejetée par le mempool</translation>
     </message>
     <message>
         <source>Unexpected legacy entry in descriptor wallet found. Loading wallet %s
@@ -4324,15 +4331,17 @@ Le portefeuille peut avoir été altéré ou créé avec des intentions malveill
 The wallet might had been created on a newer version.
 Please try running the latest software version.
 </source>
-        <translation type="unfinished">Descripteur non reconnu trouvé. Chargement du portefeuille %ss
+        <translation type="unfinished">Descripteur non reconnu trouvé. Chargement du portefeuille %s
 
 Le portefeuille a peut-être été créé avec une version plus récente.
-Veuillez essayer d'utiliser la dernière version du logiciel.</translation>
+Veuillez essayer d'utiliser la dernière version du logiciel.
+</translation>
     </message>
     <message>
         <source>
 Unable to cleanup failed migration</source>
-        <translation type="unfinished">Impossible de corriger l'échec de la migration</translation>
+        <translation type="unfinished">
+Impossible de corriger l'échec de la migration</translation>
     </message>
     <message>
         <source>
@@ -4434,7 +4443,7 @@ Impossible de restaurer la sauvegarde du portefeuille.</translation>
     </message>
     <message>
         <source>Error: Could not add watchonly tx to watchonly wallet</source>
-        <translation type="unfinished">Erreur : Impossible d'ajouter le tx watchonly au portefeuille watchonly</translation>
+        <translation type="unfinished">Erreur : Impossible d'ajouter la transaction watchonly au portefeuille watchonly</translation>
     </message>
     <message>
         <source>Error: Could not delete watchonly transactions</source>
@@ -4506,7 +4515,7 @@ Impossible de restaurer la sauvegarde du portefeuille.</translation>
     </message>
     <message>
         <source>Error: Unable to remove watchonly address book data</source>
-        <translation type="unfinished">Erreur : Impossible de supprimer les données du carnet d'adresses en mode veille</translation>
+        <translation type="unfinished">Erreur : Impossible de supprimer les données du carnet d'adresses watchonly</translation>
     </message>
     <message>
         <source>Error: Unable to write record to new wallet</source>
@@ -4866,7 +4875,7 @@ Impossible de restaurer la sauvegarde du portefeuille.</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart %s to complete</source>
-        <translation type="unfinished">Le porte-monnaie devait être réécrit : redémarrer %s pour terminer l’opération.</translation>
+        <translation type="unfinished">Le portefeuille doit être réécrit : redémarrer %s pour terminer</translation>
     </message>
     <message>
         <source>Settings file could not be read</source>
