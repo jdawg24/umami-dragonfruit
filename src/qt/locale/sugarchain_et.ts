@@ -58,14 +58,6 @@
         <translation type="unfinished">V&amp;ali</translation>
     </message>
     <message>
-        <source>Sending addresses</source>
-        <translation type="unfinished">Saatvad aadressid</translation>
-    </message>
-    <message>
-        <source>Receiving addresses</source>
-        <translation type="unfinished">Vastuvõtvad aadressid</translation>
-    </message>
-    <message>
         <source>These are your Sugarchain addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished">Need on sinu Sugarchain aadressid maksete saatmiseks. Ennem müntide saatmist kontrolli alati summat ja makse saaja aadressi.</translation>
     </message>
@@ -163,8 +155,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kinnita rahakoti krüpteerimine.</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">Hoiatus:Kui sa krüpteerid oma rahakoti ja kaotad salafraasi, siis sa&lt;b&gt;KAOTAD OMA BITCOINID&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Hoiatus:Kui sa krüpteerid oma rahakoti ja kaotad salafraasi, siis sa&lt;b&gt;KAOTAD OMA MÜNDID&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -183,8 +175,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Sisesta rahakoti vana salafraas ja uus salafraas.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your sugarchains from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Pea meeles, et rahakoti krüpteerimine ei välista sugarchainide vargust, kui sinu arvuti on nakatunud pahavaraga.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Pea meeles, et rahakoti krüpteerimine ei välista mündid vargust, kui sinu arvuti on nakatunud pahavaraga.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -376,7 +368,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Send coins to a Sugarchain address</source>
-        <translation type="unfinished">Saada münte Sugarchaini aadressile</translation>
+        <translation type="unfinished">Saada münte mündid aadressile</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -416,11 +408,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Sign messages with your Sugarchain addresses to prove you own them</source>
-        <translation type="unfinished">Omandi tõestamiseks allkirjasta sõnumid oma Sugarchaini aadressiga</translation>
+        <translation type="unfinished">Omandi tõestamiseks allkirjasta sõnumid oma mündid aadressiga</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Sugarchain addresses</source>
-        <translation type="unfinished">Kinnita sõnumid kindlustamaks et need allkirjastati määratud Sugarchaini aadressiga</translation>
+        <translation type="unfinished">Kinnita sõnumid kindlustamaks et need allkirjastati määratud mündid aadressiga</translation>
     </message>
     <message>
         <source>Close Wallet…</source>
@@ -452,7 +444,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Request payments (generates QR codes and sugarchain: URIs)</source>
-        <translation type="unfinished">Loo maksepäring (genereerib QR koodid ja sugarchaini: URId)</translation>
+        <translation type="unfinished">Loo maksepäring (genereerib QR koodid ja sugarchain: URId)</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -583,10 +575,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Tasu:</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Puru:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation type="unfinished">Peale tehingutasu:</translation>
     </message>
@@ -643,24 +631,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kopeeri baidid</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Kopeeri puru</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Kopeeri vahetusraha</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
         <translation type="unfinished">(%1 lukustatud)</translation>
-    </message>
-    <message>
-        <source>yes</source>
-        <translation type="unfinished">jah</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation type="unfinished">ei</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -845,7 +821,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Automatically open the Sugarchain client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="unfinished">Sugarchaini kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
+        <translation type="unfinished">mündid kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -950,6 +926,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </context>
 <context>
     <name>PSBTOperationsDialog</name>
+    <message>
+        <source>own address</source>
+        <translation type="unfinished">oma aadress</translation>
+    </message>
     <message>
         <source>or</source>
         <translation type="unfinished">või</translation>
@@ -1295,10 +1275,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Puhasta kõik vormi väljad.</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Puru:</translation>
-    </message>
-    <message>
         <source>Clear &amp;All</source>
         <translation type="unfinished">Puhasta &amp;Kõik</translation>
     </message>
@@ -1329,10 +1305,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Copy bytes</source>
         <translation type="unfinished">Kopeeri baidid</translation>
-    </message>
-    <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Kopeeri puru</translation>
     </message>
     <message>
         <source>Copy change</source>
@@ -1449,7 +1421,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Sign the message to prove you own this Sugarchain address</source>
-        <translation type="unfinished">Allkirjasta sõnum Sugarchaini aadressi sulle kuulumise tõestamiseks</translation>
+        <translation type="unfinished">Allkirjasta sõnum mündid aadressi sulle kuulumise tõestamiseks</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1473,7 +1445,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Sugarchain address</source>
-        <translation type="unfinished">Kinnita sõnum tõestamaks selle allkirjastatust määratud Sugarchaini aadressiga.</translation>
+        <translation type="unfinished">Kinnita sõnum tõestamaks selle allkirjastatust määratud mündid aadressiga.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1698,10 +1670,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Saadetud</translation>
     </message>
     <message>
-        <source>Payment to yourself</source>
-        <translation type="unfinished">Makse iseendale</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation type="unfinished">Mine'itud</translation>
     </message>
@@ -1759,10 +1727,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Sent to</source>
         <translation type="unfinished">Saadetud</translation>
-    </message>
-    <message>
-        <source>To yourself</source>
-        <translation type="unfinished">Iseendale</translation>
     </message>
     <message>
         <source>Mined</source>
