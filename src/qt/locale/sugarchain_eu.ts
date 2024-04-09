@@ -424,7 +424,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Sign messages with your Sugarchain addresses to prove you own them</source>
-        <translation type="unfinished">Sinatu mezuak Bitcoinen helbideekin, jabetza frogatzeko.</translation>
+        <translation type="unfinished">Sinatu mezuak sugarchain helbideekin, jabetza frogatzeko.</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>

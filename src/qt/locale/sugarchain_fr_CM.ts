@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>These are your Sugarchain addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Ce sont vos adresses Bitcoin pour envoyer des paiements. Vérifiez toujours le montant et l’adresse du destinataire avant d’envoyer des pièces.</translation>
+        <translation type="unfinished">Ce sont vos adresses Sugarchain pour envoyer des paiements. Vérifiez toujours le montant et l’adresse du destinataire avant d’envoyer des pièces.</translation>
     </message>
     <message>
         <source>These are your Sugarchain addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
@@ -489,7 +489,7 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     </message>
     <message>
         <source>Send coins to a Sugarchain address</source>
-        <translation type="unfinished">Envoyer des pièces à une adresse Bitcoin</translation>
+        <translation type="unfinished">Envoyer des pièces à une adresse Sugarchain</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -529,7 +529,7 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     </message>
     <message>
         <source>Sign messages with your Sugarchain addresses to prove you own them</source>
-        <translation type="unfinished">Signer les messages avec vos adresses Bitcoin pour prouver que vous les détenez</translation>
+        <translation type="unfinished">Signer les messages avec vos adresses Sugarchain pour prouver que vous les détenez</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
@@ -537,7 +537,7 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Sugarchain addresses</source>
-        <translation type="unfinished">Vérifier les messages pour s’assurer qu’ils ont été signés avec les adresses Bitcoin indiquées</translation>
+        <translation type="unfinished">Vérifier les messages pour s’assurer qu’ils ont été signés avec les adresses Sugarchain indiquées</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -652,7 +652,7 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     </message>
     <message>
         <source>Load Partially Signed Sugarchain Transaction</source>
-        <translation type="unfinished">Charger une transaction Bitcoin signée partiellement</translation>
+        <translation type="unfinished">Charger une transaction Sugarchain signée partiellement</translation>
     </message>
     <message>
         <source>Load PSBT from &amp;clipboard…</source>
@@ -660,7 +660,7 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
     </message>
     <message>
         <source>Load Partially Signed Sugarchain Transaction from clipboard</source>
-        <translation type="unfinished">Charger du presse-papiers une transaction Bitcoin signée partiellement</translation>
+        <translation type="unfinished">Charger du presse-papiers une transaction Sugarchain signée partiellement</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -785,7 +785,7 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform>%n connexion active avec le réseau Sugarchain.</numerusform>
-            <numerusform>%n connexions actives avec le réseau Bitcoin.</numerusform>
+            <numerusform>%n connexions actives avec le réseau Sugarchain.</numerusform>
         </translation>
     </message>
     <message>
@@ -1300,7 +1300,7 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
     </message>
     <message>
         <source>The entered address "%1" is not a valid Sugarchain address.</source>
-        <translation type="unfinished">L’adresse saisie « %1 » n’est pas une adresse Bitcoin valide.</translation>
+        <translation type="unfinished">L’adresse saisie « %1 » n’est pas une adresse Sugarchain valide.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1476,7 +1476,7 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sugarchain network, as detailed below.</source>
-        <translation type="unfinished">Les transactions récentes ne sont peut-être pas encore visibles et par conséquent le solde de votre porte-monnaie est peut-être erroné. Ces renseignements seront justes quand votre porte-monnaie aura fini de se synchroniser avec le réseau Bitcoin, comme décrit ci-dessous.</translation>
+        <translation type="unfinished">Les transactions récentes ne sont peut-être pas encore visibles et par conséquent le solde de votre porte-monnaie est peut-être erroné. Ces renseignements seront justes quand votre porte-monnaie aura fini de se synchroniser avec le réseau Sugarchain, comme décrit ci-dessous.</translation>
     </message>
     <message>
         <source>Attempting to spend coins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
@@ -1707,7 +1707,7 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
     </message>
     <message>
         <source>Automatically open the Sugarchain client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">Ouvrir automatiquement le port du client Bitcoin sur le routeur. Cela ne fonctionne que si votre routeur prend en charge NAT-PMP. Le port externe peut être aléatoire.</translation>
+        <translation type="unfinished">Ouvrir automatiquement le port du client Sugarchain sur le routeur. Cela ne fonctionne que si votre routeur prend en charge NAT-PMP. Le port externe peut être aléatoire.</translation>
     </message>
     <message>
         <source>Map port using NA&amp;T-PMP</source>
@@ -1723,7 +1723,7 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
     </message>
     <message>
         <source>Connect to the Sugarchain network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Se connecter au réseau Bitcoin par un mandataire SOCKS5.</translation>
+        <translation type="unfinished">Se connecter au réseau Sugarchain par un mandataire SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1803,7 +1803,7 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
     </message>
     <message>
         <source>Connect to the Sugarchain network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">Se connecter au réseau Bitcoin par un mandataire SOCKS5 séparé pour les services oignon de Tor.</translation>
+        <translation type="unfinished">Se connecter au réseau Sugarchain par un mandataire SOCKS5 séparé pour les services oignon de Tor.</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
@@ -1912,7 +1912,7 @@ Le processus de migration créera une sauvegarde du porte-monnaie avant la migra
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sugarchain network after a connection is established, but this process has not completed yet.</source>
-        <translation type="unfinished">Les renseignements affichés peuvent être obsolètes. Votre porte-monnaie se synchronise automatiquement avec le réseau Bitcoin dès qu’une connexion est établie, mais ce processus n’est pas encore achevé.</translation>
+        <translation type="unfinished">Les renseignements affichés peuvent être obsolètes. Votre porte-monnaie se synchronise automatiquement avec le réseau Sugarchain dès qu’une connexion est établie, mais ce processus n’est pas encore achevé.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -2697,7 +2697,7 @@ Pour plus de précisions sur cette console, tapez %6.
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sugarchain network.</source>
-        <translation type="unfinished">Un message facultatif à joindre à la demande de paiement et qui sera affiché à l’ouverture de celle-ci. Note : Le message ne sera pas envoyé avec le paiement par le réseau Bitcoin.</translation>
+        <translation type="unfinished">Un message facultatif à joindre à la demande de paiement et qui sera affiché à l’ouverture de celle-ci. Note : Le message ne sera pas envoyé avec le paiement par le réseau Sugarchain.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -3068,7 +3068,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     </message>
     <message>
         <source>Creates a Partially Signed Sugarchain Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">Crée une transaction Bitcoin signée partiellement (TBSP) à utiliser, par exemple, avec un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBSP.</translation>
+        <translation type="unfinished">Crée une transaction Sugarchain signée partiellement (TBSP) à utiliser, par exemple, avec un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBSP.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -3129,7 +3129,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     <message>
         <source>Please, review your transaction proposal. This will produce a Partially Signed Sugarchain Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
-        <translation type="unfinished">Veuillez réviser votre proposition de transaction. Une transaction Bitcoin partiellement signée (TBSP) sera produite, que vous pourrez enregistrer ou copier puis signer avec, par exemple, un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBSP.</translation>
+        <translation type="unfinished">Veuillez réviser votre proposition de transaction. Une transaction Sugarchain partiellement signée (TBSP) sera produite, que vous pourrez enregistrer ou copier puis signer avec, par exemple, un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBSP.</translation>
     </message>
     <message>
         <source>Do you want to create this transaction?</source>
@@ -3139,7 +3139,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     <message>
         <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Sugarchain Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can send their transaction or create a PSBT. This string is displayed when both private keys and PSBT controls are enabled.</extracomment>
-        <translation type="unfinished">Veuillez réviser votre transaction. Vous pouvez créer et envoyer cette transaction ou créer une transaction Bitcoin partiellement signée (TBSP), que vous pouvez enregistrer ou copier, et ensuite avec laquelle signer, par ex., un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBSP.</translation>
+        <translation type="unfinished">Veuillez réviser votre transaction. Vous pouvez créer et envoyer cette transaction ou créer une transaction Sugarchain partiellement signée (TBSP), que vous pouvez enregistrer ou copier, et ensuite avec laquelle signer, par ex., un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBSP.</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
@@ -3210,7 +3210,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     </message>
     <message>
         <source>Warning: Invalid Sugarchain address</source>
-        <translation type="unfinished">Avertissement : L’adresse Bitcoin est invalide</translation>
+        <translation type="unfinished">Avertissement : L’adresse Sugarchain est invalide</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -3249,7 +3249,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     </message>
     <message>
         <source>The Sugarchain address to send the payment to</source>
-        <translation type="unfinished">L’adresse Bitcoin à laquelle envoyer le paiement</translation>
+        <translation type="unfinished">L’adresse Sugarchain à laquelle envoyer le paiement</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -3285,7 +3285,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     </message>
     <message>
         <source>A message that was attached to the sugarchain: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sugarchain network.</source>
-        <translation type="unfinished">Un message qui était joint à l’URI sugarchain: et qui sera stocké avec la transaction pour référence. Note : Ce message ne sera pas envoyé par le réseau Bitcoin.</translation>
+        <translation type="unfinished">Un message qui était joint à l’URI sugarchain: et qui sera stocké avec la transaction pour référence. Note : Ce message ne sera pas envoyé par le réseau Sugarchain.</translation>
     </message>
 </context>
 <context>
@@ -3315,7 +3315,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     </message>
     <message>
         <source>The Sugarchain address to sign the message with</source>
-        <translation type="unfinished">L’adresse Bitcoin avec laquelle signer le message</translation>
+        <translation type="unfinished">L’adresse Sugarchain avec laquelle signer le message</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3335,7 +3335,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     </message>
     <message>
         <source>Sign the message to prove you own this Sugarchain address</source>
-        <translation type="unfinished">Signer le message afin de prouver que vous détenez cette adresse Bitcoin</translation>
+        <translation type="unfinished">Signer le message afin de prouver que vous détenez cette adresse Sugarchain</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3359,7 +3359,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     </message>
     <message>
         <source>The Sugarchain address the message was signed with</source>
-        <translation type="unfinished">L’adresse Bitcoin avec laquelle le message a été signé</translation>
+        <translation type="unfinished">L’adresse Sugarchain avec laquelle le message a été signé</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -3371,7 +3371,7 @@ Note : Les frais étant calculés par octet, un taux de frais de « 100 satoshi
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Sugarchain address</source>
-        <translation type="unfinished">Vérifier le message pour s’assurer qu’il a été signé avec l’adresse Bitcoin indiquée</translation>
+        <translation type="unfinished">Vérifier le message pour s’assurer qu’il a été signé avec l’adresse Sugarchain indiquée</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
