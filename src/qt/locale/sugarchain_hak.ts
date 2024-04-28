@@ -58,21 +58,13 @@
         <translation type="unfinished">选择(&amp;H)</translation>
     </message>
     <message>
-        <source>Sending addresses</source>
-        <translation type="unfinished">发送地址</translation>
-    </message>
-    <message>
-        <source>Receiving addresses</source>
-        <translation type="unfinished">收款地址</translation>
-    </message>
-    <message>
         <source>These are your Sugarchain addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">这些是你的比特币支付地址。在发送之前，一定要核对金额和接收地址。</translation>
+        <translation type="unfinished">這些是您的糖鏈付款地址。在发送之前，一定要核对金额和接收地址。</translation>
     </message>
     <message>
         <source>These are your Sugarchain addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">這些是您的比特幣接收地址。使用“接收”標籤中的“產生新的接收地址”按鈕產生新的地址。只能使用“傳統”類型的地址進行簽名。</translation>
+        <translation type="unfinished">這些是您的糖鏈接收地址。使用“接收”標籤中的“產生新的接收地址”按鈕產生新的地址。只能使用“傳統”類型的地址進行簽名。</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -99,6 +91,14 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>There was an error trying to save the address list to %1. Please try again.</source>
         <extracomment>An error message. %1 is a stand-in argument for the name of the file we attempted to save to.</extracomment>
         <translation type="unfinished">儲存地址列表到 %1 時發生錯誤。請再試一次。</translation>
+    </message>
+    <message>
+        <source>Sending addresses - %1</source>
+        <translation type="unfinished">付款地址 - %1</translation>
+    </message>
+    <message>
+        <source>Receiving addresses - %1</source>
+        <translation type="unfinished">收款地址 - %1</translation>
     </message>
     <message>
         <source>Exporting Failed</source>
@@ -159,8 +159,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">确认钱包加密</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">警告: 如果把钱包加密后又忘记密码，你就会从此&lt;b&gt;失去其中所有的比特币了&lt;/b&gt;！</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <translation type="unfinished">警告: 如果把钱包加密后又忘记密码，你就会从此&lt;b&gt;裡面的金幣全部遺失了&lt;/b&gt;！</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -179,8 +179,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">输入钱包的旧密码和新密码。</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your sugarchains from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">請記得, 即使將錢包加密, 也不能完全防止因惡意軟體入侵, 而導致位元幣被偷.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">請記住，即使錢包被加密，也不能完全防止惡意軟體入侵導致的幣被盜.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -450,7 +450,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Send coins to a Sugarchain address</source>
-        <translation type="unfinished">向一个比特币地址发币</translation>
+        <translation type="unfinished">將硬幣發送到糖鏈地址</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -494,7 +494,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Sign messages with your Sugarchain addresses to prove you own them</source>
-        <translation type="unfinished">用比特币地址关联的私钥为消息签名，以证明您拥有这个比特币地址</translation>
+        <translation type="unfinished">使用與糖鏈位址關聯的私鑰對訊息進行簽名，以证明您拥有这个比特币地址</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
@@ -502,7 +502,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Sugarchain addresses</source>
-        <translation type="unfinished">校验消息，确保该消息是由指定的比特币地址所有者签名的</translation>
+        <translation type="unfinished">校验消息，確保訊息由指定的糖鏈位址擁有者簽名</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -560,6 +560,22 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>Connecting to peers…</source>
         <translation type="unfinished">连到同行...</translation>
     </message>
+    <message>
+        <source>Request payments (generates QR codes and sugarchain: URIs)</source>
+        <translation type="unfinished">请求支付 (生成二维码和 sugarchain: URI)</translation>
+    </message>
+    <message>
+        <source>Show the list of used sending addresses and labels</source>
+        <translation type="unfinished">显示用过的付款地址和标签的列表</translation>
+    </message>
+    <message>
+        <source>Show the list of used receiving addresses and labels</source>
+        <translation type="unfinished">显示用过的收款地址和标签的列表</translation>
+    </message>
+    <message>
+        <source>&amp;Command-line options</source>
+        <translation type="unfinished">命令行选项(&amp;C)</translation>
+    </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
         <translation type="unfinished">
@@ -567,12 +583,40 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         </translation>
     </message>
     <message>
+        <source>%1 behind</source>
+        <translation type="unfinished">落后 %1</translation>
+    </message>
+    <message>
         <source>Catching up…</source>
         <translation type="unfinished">赶上...</translation>
     </message>
     <message>
+        <source>Last received block was generated %1 ago.</source>
+        <translation type="unfinished">最新接收到的区块是在%1之前生成的。</translation>
+    </message>
+    <message>
+        <source>Transactions after this will not yet be visible.</source>
+        <translation type="unfinished">在此之后的交易尚不可见。</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">信息</translation>
+    </message>
+    <message>
+        <source>Up to date</source>
+        <translation type="unfinished">已是最新</translation>
+    </message>
+    <message>
         <source>Load Partially Signed Sugarchain Transaction</source>
-        <translation type="unfinished">加载部分签名比特币交易（PSBT）</translation>
+        <translation type="unfinished">加載部分簽名的糖鏈交易（PSBT）</translation>
     </message>
     <message>
         <source>Load PSBT from &amp;clipboard…</source>
@@ -580,7 +624,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Load Partially Signed Sugarchain Transaction from clipboard</source>
-        <translation type="unfinished">从剪贴板中加载部分签名比特币交易（PSBT）</translation>
+        <translation type="unfinished">從剪貼簿加載部分簽名的糖鏈交易（PSBT）</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -629,8 +673,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">关闭所有钱包</translation>
     </message>
     <message>
+        <source>Migrate Wallet</source>
+        <translation type="unfinished">迁移钱包</translation>
+    </message>
+    <message>
+        <source>Migrate a wallet</source>
+        <translation type="unfinished">迁移一个钱包</translation>
+    </message>
+    <message>
         <source>Show the %1 help message to get a list with possible Sugarchain command-line options</source>
-        <translation type="unfinished">显示%1帮助消息以获得可能包含Sugarchain命令行选项的列表</translation>
+        <translation type="unfinished">显示 %1 帮助信息，获取可用命令行选项列表</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -696,7 +748,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>%n active connection(s) to Sugarchain network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform> %n 与比特币网络接。</numerusform>
+            <numerusform> %n 與糖鍊網路的接口。</numerusform>
         </translation>
     </message>
     <message>
@@ -722,6 +774,14 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Pre-syncing Headers (%1%)…</source>
         <translation type="unfinished">預先同步標頭(%1%)</translation>
+    </message>
+    <message>
+        <source>Error creating wallet</source>
+        <translation type="unfinished">创建钱包时出错</translation>
+    </message>
+    <message>
+        <source>Cannot create new wallet, the software was compiled without sqlite support (required for descriptor wallets)</source>
+        <translation type="unfinished">无法创建新钱包，软件编译时未启用SQLite支持（输出描述符钱包需要它）</translation>
     </message>
     <message>
         <source>Error: %1</source>
@@ -794,10 +854,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">手动选币</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">零散錢:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation type="unfinished">計費後金額:</translation>
     </message>
@@ -858,24 +914,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">复制字节数</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">複製零散金額</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">複製找零金額</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
         <translation type="unfinished">(%1已锁定)</translation>
-    </message>
-    <message>
-        <source>yes</source>
-        <translation type="unfinished">是</translation>
-    </message>
-    <message>
-        <source>This label turns red if any recipient receives an amount smaller than the current dust threshold.</source>
-        <translation type="unfinished">當任何一個收款金額小於目前的灰塵金額上限時，文字會變紅色。</translation>
     </message>
     <message>
         <source>Can vary +/- %1 satoshi(s) per input.</source>
@@ -920,6 +964,57 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
+    <name>MigrateWalletActivity</name>
+    <message>
+        <source>Migrate wallet</source>
+        <translation type="unfinished">迁移钱包</translation>
+    </message>
+    <message>
+        <source>Are you sure you wish to migrate the wallet &lt;i&gt;%1&lt;/i&gt;?</source>
+        <translation type="unfinished">您确定想要迁移钱包&lt;i&gt;%1&lt;/i&gt;吗？</translation>
+    </message>
+    <message>
+        <source>Migrating the wallet will convert this wallet to one or more descriptor wallets. A new wallet backup will need to be made.
+If this wallet contains any watchonly scripts, a new wallet will be created which contains those watchonly scripts.
+If this wallet contains any solvable but not watched scripts, a different and new wallet will be created which contains those scripts.
+
+The migration process will create a backup of the wallet before migrating. This backup file will be named &lt;wallet name&gt;-&lt;timestamp&gt;.legacy.bak and can be found in the directory for this wallet. In the event of an incorrect migration, the backup can be restored with the "Restore Wallet" functionality.</source>
+        <translation type="unfinished">迁移钱包将会把这个钱包转换成一个或多个输出描述符钱包。将会需要创建一个新的钱包备份。
+如果这个钱包包含仅观察脚本，将会创建包含那些仅观察脚本的新钱包。
+如果这个钱包包含可解但又未被监视的脚本，将会创建一个不同的钱包以包含那些脚本。
+
+迁移过程开始前将会创建一个钱包备份。备份文件将会被命名为 &lt;wallet name&gt;-&lt;timestamp&gt;.legacy.bak 然后被保存在该钱包所在目录下。如果迁移过程出错，可以使用“恢复钱包”功能恢复备份。</translation>
+    </message>
+    <message>
+        <source>Migrate Wallet</source>
+        <translation type="unfinished">迁移钱包</translation>
+    </message>
+    <message>
+        <source>Migrating Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
+        <translation type="unfinished">迁移钱包 &lt;b&gt;%1&lt;/b&gt;...</translation>
+    </message>
+    <message>
+        <source>The wallet '%1' was migrated successfully.</source>
+        <translation type="unfinished">已成功迁移钱包 '%1' 。</translation>
+    </message>
+    <message>
+        <source> Watchonly scripts have been migrated to a new wallet named '%1'.</source>
+        <translation type="unfinished">仅观察脚本已被迁移至名为 '%1' 的新钱包中。</translation>
+    </message>
+    <message>
+        <source> Solvable but not watched scripts have been migrated to a new wallet named '%1'.</source>
+        <translation type="unfinished"> 可解但又未被监视的脚本已被迁移至名为 '%1' 的新钱包中。</translation>
+    </message>
+    <message>
+        <source>Migration failed</source>
+        <translation type="unfinished">迁移失败</translation>
+    </message>
+    <message>
+        <source>Migration Successful</source>
+        <translation type="unfinished">迁移成功</translation>
+    </message>
+</context>
+<context>
     <name>OpenWalletActivity</name>
     <message>
         <source>Open wallet failed</source>
@@ -930,9 +1025,13 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">打開錢包警告</translation>
     </message>
     <message>
+        <source>default wallet</source>
+        <translation type="unfinished">默认钱包</translation>
+    </message>
+    <message>
         <source>Open Wallet</source>
         <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
-        <translation type="unfinished">開啟錢包</translation>
+        <translation type="unfinished">打开钱包</translation>
     </message>
     </context>
 <context>
@@ -969,6 +1068,14 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>Close wallet</source>
         <translation type="unfinished">卸载钱包</translation>
     </message>
+    <message>
+        <source>Closing the wallet for too long can result in having to resync the entire chain if pruning is enabled.</source>
+        <translation type="unfinished">启用修剪时，如果一个钱包被卸载太久，就必须重新同步整条区块链才能再次加载它。</translation>
+    </message>
+    <message>
+        <source>Close all wallets</source>
+        <translation type="unfinished">关闭所有钱包</translation>
+    </message>
     </context>
 <context>
     <name>CreateWalletDialog</name>
@@ -977,8 +1084,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">新增錢包</translation>
     </message>
     <message>
+        <source>You are one step away from creating your new wallet!</source>
+        <translation type="unfinished">距离创建您的新钱包只有一步之遥了！</translation>
+    </message>
+    <message>
+        <source>Please provide a name and, if desired, enable any advanced options</source>
+        <translation type="unfinished">请指定一个名字，如果需要的话还可以启用高级选项</translation>
+    </message>
+    <message>
         <source>Wallet Name</source>
-        <translation type="unfinished">錢包名稱</translation>
+        <translation type="unfinished">钱包名称</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -989,8 +1104,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">加密錢包。 錢包將使用您選擇的密碼進行加密。</translation>
     </message>
     <message>
+        <source>Advanced Options</source>
+        <translation type="unfinished">进阶设定</translation>
+    </message>
+    <message>
         <source>Disable private keys for this wallet. Wallets with private keys disabled will have no private keys and cannot have an HD seed or imported private keys. This is ideal for watch-only wallets.</source>
         <translation type="unfinished">禁用此錢包的私鑰。取消了私鑰的錢包將沒有私鑰，並且不能有HD種子或匯入的私鑰。這是只能看的錢包的理想選擇。</translation>
+    </message>
+    <message>
+        <source>Disable Private Keys</source>
+        <translation type="unfinished">禁用私钥</translation>
     </message>
     <message>
         <source>Make a blank wallet. Blank wallets do not initially have private keys or scripts. Private keys and addresses can be imported, or an HD seed can be set, at a later time.</source>
@@ -1004,8 +1127,24 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>EditAddressDialog</name>
     <message>
+        <source>Edit Address</source>
+        <translation type="unfinished">编辑地址</translation>
+    </message>
+    <message>
+        <source>&amp;Label</source>
+        <translation type="unfinished">标签(&amp;L)</translation>
+    </message>
+    <message>
+        <source>The label associated with this address list entry</source>
+        <translation type="unfinished">与此地址关联的标签</translation>
+    </message>
+    <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
         <translation type="unfinished">跟這個地址清單關聯的地址。只有發送地址能被修改。</translation>
+    </message>
+    <message>
+        <source>New sending address</source>
+        <translation type="unfinished">新建付款地址</translation>
     </message>
     <message>
         <source>Edit receiving address</source>
@@ -1014,6 +1153,14 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Edit sending address</source>
         <translation type="unfinished">编辑付款地址</translation>
+    </message>
+    <message>
+        <source>The entered address "%1" is already in the address book with label "%2".</source>
+        <translation type="unfinished">输入的地址“%1”已经存在于地址簿中，标签为“%2”。</translation>
+    </message>
+    <message>
+        <source>Could not unlock wallet.</source>
+        <translation type="unfinished">无法解锁钱包。</translation>
     </message>
     <message>
         <source>New key generation failed.</source>
@@ -1030,7 +1177,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>Directory already exists. Add %1 if you intend to create a new directory here.</source>
         <translation type="unfinished">已經有這個目錄了。如果你要在裡面造出新的目錄的話，請加上 %1.</translation>
     </message>
-    </context>
+    <message>
+        <source>Cannot create data directory here.</source>
+        <translation type="unfinished">无法在此创建数据目录。</translation>
+    </message>
+</context>
 <context>
     <name>Intro</name>
     <message numerus="yes">
@@ -1059,10 +1210,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
         <translation type="unfinished">此目录中至少会保存 %1 GB 的数据，并且大小还会随着时间增长。</translation>
     </message>
-    <message>
-        <source>Approximately %1 GB of data will be stored in this directory.</source>
-        <translation type="unfinished">会在此目录中存储约 %1 GB 的数据。</translation>
-    </message>
     <message numerus="yes">
         <source>(sufficient to restore backups %n day(s) old)</source>
         <extracomment>Explanatory text on the capability of the current prune target.</extracomment>
@@ -1072,7 +1219,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>%1 will download and store a copy of the Sugarchain block chain.</source>
-        <translation type="unfinished">%1 将会下载并存储比特币区块链。</translation>
+        <translation type="unfinished">%1 糖鏈區塊鏈將下載並存儲。</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1091,12 +1238,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">欢迎</translation>
     </message>
     <message>
-        <source>Welcome to %1.</source>
-        <translation type="unfinished">欢迎使用 %1</translation>
-    </message>
-    <message>
         <source>As this is the first time the program is launched, you can choose where %1 will store its data.</source>
         <translation type="unfinished">由于这是第一次启动此程序，您可以选择%1存储数据的位置</translation>
+    </message>
+    <message>
+        <source>This initial synchronisation is very demanding, and may expose hardware problems with your computer that had previously gone unnoticed. Each time you run %1, it will continue downloading where it left off.</source>
+        <translation type="unfinished">初始化同步过程是非常吃力的，同时可能会暴露您之前没有注意到的电脑硬件问题。你每次启动%1时，它都会从之前中断的地方继续下载。</translation>
     </message>
     <message>
         <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2 GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
@@ -1118,10 +1265,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>version</source>
-        <translation type="unfinished">版本</translation>
-    </message>
-    <message>
         <source>About %1</source>
         <translation type="unfinished">关于 %1</translation>
     </message>
@@ -1136,28 +1279,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>%1 is shutting down…</source>
         <translation type="unfinished">%1正在关闭...</translation>
     </message>
-    <message>
-        <source>Do not shut down the computer until this window disappears.</source>
-        <translation type="unfinished">在此窗口消失前不要关闭计算机。</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>ModalOverlay</name>
     <message>
         <source>Form</source>
         <translation type="unfinished">窗体</translation>
-    </message>
-    <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sugarchain network, as detailed below.</source>
-        <translation type="unfinished">近期交易可能尚未显示，因此当前余额可能不准确。以上信息将在与比特币网络完全同步后更正。详情如下</translation>
-    </message>
-    <message>
-        <source>Attempting to spend sugarchains that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">尝试使用受未可见交易影响的余额将不被网络接受。</translation>
-    </message>
-    <message>
-        <source>Number of blocks left</source>
-        <translation type="unfinished">剩余区块数量</translation>
     </message>
     <message>
         <source>Unknown…</source>
@@ -1168,20 +1295,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">计算中...</translation>
     </message>
     <message>
-        <source>Last block time</source>
-        <translation type="unfinished">上一区块时间</translation>
-    </message>
-    <message>
         <source>Progress</source>
         <translation type="unfinished">进度</translation>
     </message>
     <message>
         <source>Progress increase per hour</source>
         <translation type="unfinished">每小时进度增加</translation>
-    </message>
-    <message>
-        <source>Estimated time left until synced</source>
-        <translation type="unfinished">预计剩余同步时间</translation>
     </message>
     <message>
         <source>Hide</source>
@@ -1204,7 +1323,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>OpenURIDialog</name>
     <message>
         <source>Open sugarchain URI</source>
-        <translation type="unfinished">打开比特币URI</translation>
+        <translation type="unfinished">開放糖鏈URI</translation>
     </message>
     </context>
 <context>
@@ -1383,7 +1502,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Connect to the Sugarchain network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">连接比特币网络时专门为Tor onion服务使用另一个 SOCKS5 代理。</translation>
+        <translation type="unfinished">當專門連接到糖鏈網路時Tor onion服务使用另一个 SOCKS5 代理。</translation>
     </message>
     <message>
         <source>Monospaced font in the Overview tab:</source>
@@ -1609,7 +1728,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Sugarchain address or malformed URI parameters.</source>
-        <translation type="unfinished">无法解析 URI 地址！可能是因为比特币地址无效，或是 URI 参数格式错误。</translation>
+        <translation type="unfinished">无法解析 URI 地址！可能是因為糖鏈位址無效，或是 URI 参数格式错误。</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1762,6 +1881,22 @@ If you are receiving this error you should request the merchant provide a BIP21 
     <message>
         <source>Select a peer to view detailed information.</source>
         <translation type="unfinished">选择节点查看详细信息。</translation>
+    </message>
+    <message>
+        <source>The transport layer version: %1</source>
+        <translation type="unfinished">传输层版本: %1</translation>
+    </message>
+    <message>
+        <source>Transport</source>
+        <translation type="unfinished">传输</translation>
+    </message>
+    <message>
+        <source>The BIP324 session ID string in hex, if any.</source>
+        <translation type="unfinished">十六进制格式的BIP324会话ID，如果有的话。</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation type="unfinished">会话ID</translation>
     </message>
     <message>
         <source>Whether we relay transactions to this peer.</source>
@@ -1939,6 +2074,21 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="unfinished">出站触须: 短暂，用于测试地址</translation>
     </message>
     <message>
+        <source>detecting: peer could be v1 or v2</source>
+        <extracomment>Explanatory text for "detecting" transport type.</extracomment>
+        <translation type="unfinished">检测中: 节点可能是v1或是v2</translation>
+    </message>
+    <message>
+        <source>v1: unencrypted, plaintext transport protocol</source>
+        <extracomment>Explanatory text for v1 transport type.</extracomment>
+        <translation type="unfinished">v1: 未加密，明文传输协议</translation>
+    </message>
+    <message>
+        <source>v2: BIP324 encrypted transport protocol</source>
+        <extracomment>Explanatory text for v2 transport type.</extracomment>
+        <translation type="unfinished">v2: BIP324加密传输协议</translation>
+    </message>
+    <message>
         <source>we selected the peer for high bandwidth relay</source>
         <translation type="unfinished">我们选择了用于高带宽转发的节点</translation>
     </message>
@@ -2027,7 +2177,7 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sugarchain network.</source>
-        <translation type="unfinished">可在支付请求上备注一条信息，在打开支付请求时可以看到。注意:该消息不是通过比特币网络传送。</translation>
+        <translation type="unfinished">可在支付请求上备注一条信息，在打开支付请求时可以看到。注意:該訊息不是透過糖鏈網路發送的。</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -2223,10 +2373,6 @@ For more information on using this console, type %6.
         <translation type="unfinished">增加收款人(&amp;R)</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">零散錢:</translation>
-    </message>
-    <message>
         <source>Choose…</source>
         <translation type="unfinished">选择...</translation>
     </message>
@@ -2267,10 +2413,6 @@ For more information on using this console, type %6.
         <translation type="unfinished">复制字节数</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">複製零散金額</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">複製找零金額</translation>
     </message>
@@ -2280,7 +2422,7 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Creates a Partially Signed Sugarchain Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">创建一个“部分签名比特币交易”（PSBT），以用于诸如离线%1钱包，或是兼容PSBT的硬件钱包这类用途。</translation>
+        <translation type="unfinished">創建“部分簽名的糖鏈交易”（PSBT），以用于诸如离线%1钱包，或是兼容PSBT的硬件钱包这类用途。</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2320,7 +2462,7 @@ For more information on using this console, type %6.
     <message>
         <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Sugarchain Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can send their transaction or create a PSBT. This string is displayed when both private keys and PSBT controls are enabled.</extracomment>
-        <translation type="unfinished">请务必仔细检查您的交易。你可以创建并发送这笔交易；也可以创建一个“部分签名比特币交易(PSBT)”，它可以被保存下来或被复制出去，然后就可以对它进行签名，比如用离线%1钱包，或是用兼容PSBT的硬件钱包。</translation>
+        <translation type="unfinished">请务必仔细检查您的交易。你可以创建并发送这笔交易；也可以创建一个“部分簽署的糖鏈交易(PSBT)”，它可以被保存下来或被复制出去，然后就可以对它进行签名，比如用离线%1钱包，或是用兼容PSBT的硬件钱包。</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
@@ -2373,7 +2515,7 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Warning: Invalid Sugarchain address</source>
-        <translation type="unfinished">警告: 比特币地址无效</translation>
+        <translation type="unfinished">警告: 糖鏈地址無效</translation>
     </message>
     <message>
         <source>Confirm custom change address</source>
@@ -2396,7 +2538,7 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>The Sugarchain address to send the payment to</source>
-        <translation type="unfinished">將支付發送到的比特幣地址給</translation>
+        <translation type="unfinished">發送付款的糖鏈地址</translation>
     </message>
     <message>
         <source>The amount to send in the selected unit</source>
@@ -2445,8 +2587,8 @@ For more information on using this console, type %6.
         <translation type="unfinished">簽署訊息(&amp;S)</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive sugarchains sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">您可以使用您的地址簽名訊息/協議，以證明您可以接收發送給他們的比特幣。但是請小心，不要簽名語意含糊不清，或隨機產生的內容，因為釣魚式詐騙可能會用騙你簽名的手法來冒充是你。只有簽名您同意的詳細內容。</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive coins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation type="unfinished">您可以使用您的地址簽署訊息/協議，以證明您可以收到發送給他們的硬幣。但請注意不要使用不明確或隨機產生的內容進行簽名，因為網路釣魚詐騙可能會使用您的簽名冒充您。僅簽署您同意的詳細信息。</translation>
     </message>
     <message>
         <source>Signature</source>
@@ -2486,7 +2628,7 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Sugarchain address</source>
-        <translation type="unfinished">驗證這個訊息來確定是用指定的比特幣地址簽名的</translation>
+        <translation type="unfinished">驗證此訊息以確保它是使用指定的糖鏈位址進行簽署的</translation>
     </message>
     <message>
         <source>Click "Sign Message" to generate signature</source>
@@ -2684,10 +2826,6 @@ For more information on using this console, type %6.
         <translation type="unfinished">发送到</translation>
     </message>
     <message>
-        <source>Payment to yourself</source>
-        <translation type="unfinished">付給自己</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation type="unfinished">開採所得</translation>
     </message>
@@ -2741,10 +2879,6 @@ For more information on using this console, type %6.
     <message>
         <source>Sent to</source>
         <translation type="unfinished">发送到</translation>
-    </message>
-    <message>
-        <source>To yourself</source>
-        <translation type="unfinished">給自己</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -2916,12 +3050,16 @@ Go to File &gt; Open Wallet to load a wallet.
         <source>Could not commit transaction</source>
         <translation type="unfinished">沒辦法提交交易</translation>
     </message>
-    </context>
+    <message>
+        <source>default wallet</source>
+        <translation type="unfinished">默认钱包</translation>
+    </message>
+</context>
 <context>
     <name>WalletView</name>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished">&amp;匯出</translation>
+        <translation type="unfinished">导出(E)</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -2964,6 +3102,10 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">%s 開發人員</translation>
     </message>
     <message>
+        <source>%s failed to validate the -assumeutxo snapshot state. This indicates a hardware problem, or a bug in the software, or a bad software modification that allowed an invalid snapshot to be loaded. As a result of this, the node will shut down and stop using any state that was built on the snapshot, resetting the chain height from %d to %d. On the next restart, the node will resume syncing from %d without using any snapshot data. Please report this incident to %s, including how you obtained the snapshot. The invalid snapshot chainstate will be left on disk in case it is helpful in diagnosing the issue that caused this error.</source>
+        <translation type="unfinished">%s 验证 -assumeutxo 快照状态失败。这表明硬件可能有问题，也可能是软件bug，或者还可能是软件被不当修改、从而让非法快照也能够被加载。因此，将关闭节点并停止使用从这个快照构建出的任何状态，并将链高度从 %d 重置到 %d 。下次启动时，节点将会不使用快照数据从 %d 继续同步。请将这个事件报告给 %s 并在报告中包括您是如何获得这份快照的。无效的链状态快照仍被保存至磁盘上，以供诊断问题的原因。</translation>
+    </message>
+    <message>
         <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any peer will connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
         <translation type="unfinished">%s请求监听端口%u。此端口被认为是“坏的”，所以不太可能有其他节点会连接过来。详情以及完整的端口列表请参见 doc/p2p-bad-ports.md 。</translation>
     </message>
@@ -3000,6 +3142,10 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">错误: 转储文件版本不被支持。这个版本的 sugarchain-wallet 只支持版本为 1 的转储文件。得到的转储文件版本却是%s</translation>
     </message>
     <message>
+        <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>
+        <translation type="unfinished">错误: 旧式钱包只支持 "legacy", "p2sh-segwit", 和 "bech32" 这三种地址类型</translation>
+    </message>
+    <message>
         <source>Error: Unable to produce descriptors for this legacy wallet. Make sure to provide the wallet's passphrase if it is encrypted.</source>
         <translation type="unfinished">错误: 无法为该旧式钱包生成描述符。如果钱包已被加密，请确保提供的钱包加密密码正确。</translation>
     </message>
@@ -3024,16 +3170,16 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">修剪:上次同步钱包的位置已经超出（落后于）现有修剪后数据的范围。你需要进行-reindex（对于已经启用修剪节点，就需要重新下载整个区块链）</translation>
     </message>
     <message>
+        <source>Rename of '%s' -&gt; '%s' failed. You should resolve this by manually moving or deleting the invalid snapshot directory %s, otherwise you will encounter the same error again on the next startup.</source>
+        <translation type="unfinished">重命名 '%s' -&gt; '%s' 失败。您需要手动移走或删除无效的快照目录 %s来解决这个问题，不然的话您就会在下一次启动时遇到相同的错误。</translation>
+    </message>
+    <message>
         <source>SQLiteDatabase: Unknown sqlite wallet schema version %d. Only version %d is supported</source>
         <translation type="unfinished">SQLiteDatabase: SQLite钱包schema版本%d未知。只支持%d版本</translation>
     </message>
     <message>
         <source>The block database contains a block which appears to be from the future. This may be due to your computer's date and time being set incorrectly. Only rebuild the block database if you are sure that your computer's date and time are correct</source>
         <translation type="unfinished">區塊資料庫中有來自未來的區塊。可能是你電腦的日期時間不對。如果確定電腦日期時間沒錯的話，就重建區塊資料庫看看。</translation>
-    </message>
-    <message>
-        <source>The block index db contains a legacy 'txindex'. To clear the occupied disk space, run a full -reindex, otherwise ignore this error. This error message will not be displayed again.</source>
-        <translation type="unfinished">区块索引数据库含有历史遗留的 'txindex' 。可以运行完整的 -reindex 来清理被占用的磁盘空间；也可以忽略这个错误。这个错误消息将不会再次显示。</translation>
     </message>
     <message>
         <source>The transaction amount is too small to send after the fee has been deducted</source>
@@ -3068,12 +3214,20 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">提供了未知的钱包格式 "%s" 。请使用 "bdb" 或 "sqlite" 中的一种。</translation>
     </message>
     <message>
+        <source>Unsupported category-specific logging level %1$s=%2$s. Expected %1$s=&lt;category&gt;:&lt;loglevel&gt;. Valid categories: %3$s. Valid loglevels: %4$s.</source>
+        <translation type="unfinished">不支持的类别限定日志等级 %1$s=%2$s 。 预期参数 %1$s=&lt;category&gt;:&lt;loglevel&gt;。 有效的类别: %3$s 。有效的日志等级: %4$s 。</translation>
+    </message>
+    <message>
         <source>Unsupported chainstate database format found. Please restart with -reindex-chainstate. This will rebuild the chainstate database.</source>
         <translation type="unfinished">找到了不受支持的 chainstate 数据库格式。请使用 -reindex-chainstate 参数重启。这将会重建 chainstate 数据库。</translation>
     </message>
     <message>
         <source>Wallet created successfully. The legacy wallet type is being deprecated and support for creating and opening legacy wallets will be removed in the future.</source>
         <translation type="unfinished">钱包创建成功。旧式钱包已被弃用，未来将不再支持创建或打开旧式钱包。</translation>
+    </message>
+    <message>
+        <source>Wallet loaded successfully. The legacy wallet type is being deprecated and support for creating and opening legacy wallets will be removed in the future. Legacy wallets can be migrated to a descriptor wallet with migratewallet.</source>
+        <translation type="unfinished">钱包加载成功。旧式钱包已被弃用，未来将不再支持创建或打开旧式钱包。可以使用 migratewallet 命令将旧式钱包迁移至输出描述符钱包。</translation>
     </message>
     <message>
         <source>Warning: Dumpfile wallet format "%s" does not match command line specified format "%s".</source>
@@ -3116,28 +3270,8 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">不能写入到数据目录'%s'；请检查文件权限。</translation>
     </message>
     <message>
-        <source>The -txindex upgrade started by a previous version cannot be completed. Restart with the previous version or run a full -reindex.</source>
-        <translation type="unfinished">无法完成由之前版本启动的 -txindex 升级。请用之前的版本重新启动，或者进行一次完整的 -reindex 。</translation>
-    </message>
-    <message>
-        <source>%s failed to validate the -assumeutxo snapshot state. This indicates a hardware problem, or a bug in the software, or a bad software modification that allowed an invalid snapshot to be loaded. As a result of this, the node will shut down and stop using any state that was built on the snapshot, resetting the chain height from %d to %d. On the next restart, the node will resume syncing from %d without using any snapshot data. Please report this incident to %s, including how you obtained the snapshot. The invalid snapshot chainstate has been left on disk in case it is helpful in diagnosing the issue that caused this error.</source>
-        <translation type="unfinished">%s 验证 -assumeutxo 快照状态失败。这表明硬件可能有问题，也可能是软件bug，或者还可能是软件被不当修改、从而让非法快照也能够被加载。因此，将关闭节点并停止使用从这个快照构建出的任何状态，并将链高度从 %d 重置到 %d 。下次启动时，节点将会不使用快照数据从 %d 继续同步。请将这个事件报告给 %s 并在报告中包括您是如何获得这份快照的。无效的链状态快照仍被保存至磁盘上，以供诊断问题的原因。</translation>
-    </message>
-    <message>
         <source>%s is set very high! Fees this large could be paid on a single transaction.</source>
         <translation type="unfinished">%s被设置得很高! 这可是一次交易就有可能付出的手续费。</translation>
-    </message>
-    <message>
-        <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
-        <translation type="unfinished">-reindex-chainstate 与 -blockfilterindex 不兼容。请在进行 -reindex-chainstate 时临时禁用 blockfilterindex ，或者改用 -reindex （而不是 -reindex-chainstate ）来完整地重建所有索引。</translation>
-    </message>
-    <message>
-        <source>-reindex-chainstate option is not compatible with -coinstatsindex. Please temporarily disable coinstatsindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
-        <translation type="unfinished">-reindex-chainstate 与 -coinstatsindex 不兼容。请在进行  -reindex-chainstate 时临时禁用 coinstatsindex ，或者改用 -reindex （而不是 -reindex-chainstate ）来完整地重建所有索引。</translation>
-    </message>
-    <message>
-        <source>-reindex-chainstate option is not compatible with -txindex. Please temporarily disable txindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
-        <translation type="unfinished">-reindex-chainstate 与 -txindex 不兼容。请在进行 -reindex-chainstate 时临时禁用 txindex ，或者改用 -reindex （而不是 -reindex-chainstate ）来完整地重建所有索引。</translation>
     </message>
     <message>
         <source>Cannot provide specific connections and have addrman find outgoing connections at the same time.</source>
@@ -3146,6 +3280,10 @@ Go to File &gt; Open Wallet to load a wallet.
     <message>
         <source>Error loading %s: External signer wallet being loaded without external signer support compiled</source>
         <translation type="unfinished">加载%s时出错: 编译时未启用外部签名器支持，却仍然试图加载外部签名器钱包</translation>
+    </message>
+    <message>
+        <source>Error reading %s! All keys read correctly, but transaction data or address metadata may be missing or incorrect.</source>
+        <translation type="unfinished">读取 %s 时出错! 所有密钥都被正确读取，但交易数据或地址元数据可能缺失或有误。</translation>
     </message>
     <message>
         <source>Error: Address book data in wallet cannot be identified to belong to migrated wallets</source>
@@ -3158,6 +3296,10 @@ Go to File &gt; Open Wallet to load a wallet.
     <message>
         <source>Error: Transaction %s in wallet cannot be identified to belong to migrated wallets</source>
         <translation type="unfinished">错误：钱包中的交易%s无法被识别为属于迁移后的钱包</translation>
+    </message>
+    <message>
+        <source>Failed to calculate bump fees, because unconfirmed UTXOs depend on enormous cluster of unconfirmed transactions.</source>
+        <translation type="unfinished">计算追加手续费失败，因为未确认UTXO依赖了大量未确认交易的簇集。</translation>
     </message>
     <message>
         <source>Failed to rename invalid peers.dat file. Please move or delete it and try again.</source>
@@ -3232,10 +3374,6 @@ Please try running the latest software version.
 钱包可能由新版软件创建，
 请尝试运行最新的软件版本。
 </translation>
-    </message>
-    <message>
-        <source>Unsupported category-specific logging level -loglevel=%s. Expected -loglevel=&lt;category&gt;:&lt;loglevel&gt;. Valid categories: %s. Valid loglevels: %s.</source>
-        <translation type="unfinished">不支持的类别限定日志等级 -loglevel=%s。预期参数 -loglevel=&lt;category&gt;:&lt;loglevel&gt;. Valid categories: %s。有效的类别： %s。</translation>
     </message>
     <message>
         <source>
@@ -3364,6 +3502,10 @@ Unable to restore backup of wallet.</source>
     <message>
         <source>Error: Unable to write record to new wallet</source>
         <translation type="unfinished">错误: 无法写入记录到新钱包</translation>
+    </message>
+    <message>
+        <source>Failed to start indexes, shutting down..</source>
+        <translation type="unfinished">无法启动索引，关闭中...</translation>
     </message>
     <message>
         <source>Failed to verify database</source>
@@ -3606,8 +3748,12 @@ Unable to restore backup of wallet.</source>
         <translation type="unfinished">在 -onlynet 指定了不明的網路別: '%s'</translation>
     </message>
     <message>
-        <source>Unsupported global logging level -loglevel=%s. Valid values: %s.</source>
-        <translation type="unfinished">不支持的全局日志等级 -loglevel=%s 。有效的数值：%s 。</translation>
+        <source>Unsupported global logging level %s=%s. Valid values: %s.</source>
+        <translation type="unfinished">不支持的全局日志等级 %s=%s。有效数值: %s.</translation>
+    </message>
+    <message>
+        <source>acceptstalefeeestimates is not supported on %s chain.</source>
+        <translation type="unfinished">%s链上acceptstalefeeestimates 不受支持。</translation>
     </message>
     <message>
         <source>Unsupported logging category %s=%s.</source>
