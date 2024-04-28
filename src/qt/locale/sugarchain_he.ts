@@ -58,21 +58,13 @@
         <translation type="unfinished">&amp;בחירה</translation>
     </message>
     <message>
-        <source>Sending addresses</source>
-        <translation type="unfinished">כתובת לשליחה</translation>
-    </message>
-    <message>
-        <source>Receiving addresses</source>
-        <translation type="unfinished">כתובות לקבלה</translation>
-    </message>
-    <message>
         <source>These are your Sugarchain addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">אלה כתובות הביטקוין שלך לשליחת תשלומים. חשוב לבדוק את הסכום ואת הכתובת המקבלת לפני שליחת מטבעות.</translation>
+        <translation type="unfinished">אלו הן הכתובות של רשת הסוכר שלך לשליחת תשלומים. חשוב לבדוק את הסכום ואת הכתובת המקבלת לפני שליחת מטבעות.</translation>
     </message>
     <message>
         <source>These are your Sugarchain addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">אלה כתובת הביטקוין שלך לקבלת תשלומים. ניתן להשתמש בכפתור „יצירת כתובת קבלה חדשה” בלשונית הקבלה ליצירת כתובות חדשות.
+        <translation type="unfinished">זוהי כתובת רשת הסוכר שלך לקבלת תשלומים. ניתן להשתמש בכפתור „יצירת כתובת קבלה חדשה” בלשונית הקבלה ליצירת כתובות חדשות.
 חתימה אפשרית רק עבור כתובות מסוג „legacy”.</translation>
     </message>
     <message>
@@ -164,8 +156,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">אישור הצפנת הארנק</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">אזהרה: הצפנת הארנק שלך ושיכחת הסיסמה &lt;b&gt;תגרום לאיבוד כל הביטקוינים שלך&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <translation type="unfinished">אזהרה: הצפנת הארנק שלך ושיכחת הסיסמה &lt;b&gt;אתה תאבד את כל המטבעות שלך&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -184,7 +176,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">נא לספק את הסיסמה הישנה ולתת סיסמה חדשה לארנק.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your sugarchains from being stolen by malware infecting your computer.</source>
+        <source>Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
         <translation type="unfinished">זכור שהצפנת הארנק לא יכולה להגן עליך לגמרי מגניבת המטבעות שלך על ידי תוכנה זדונית שנמצאת על המחשב שלך.</translation>
     </message>
     <message>
@@ -228,6 +220,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">סיסמת הארנק שונתה בהצלחה.</translation>
     </message>
     <message>
+        <source>Passphrase change failed</source>
+        <translation type="unfinished">שינוי הסיסמה נכשל</translation>
+    </message>
+    <message>
         <source>Warning: The Caps Lock key is on!</source>
         <translation type="unfinished">אזהרה: מקש Caps Lock פעיל!</translation>
     </message>
@@ -241,6 +237,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 </context>
 <context>
     <name>SugarchainApplication</name>
+    <message>
+        <source>Settings file %1 might be corrupt or invalid.</source>
+        <translation type="unfinished">קובץ ההגדרות %1 כנראה פגום או שגוי.</translation>
+    </message>
     <message>
         <source>Runaway exception</source>
         <translation type="unfinished">חריגת בריחה</translation>
@@ -288,7 +288,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Enter a Sugarchain address (e.g. %1)</source>
-        <translation type="unfinished">נא לספק כתובת ביטקוין (למשל: %1)</translation>
+        <translation type="unfinished">אנא ספק כתובת רשת סוכר (למשל: %1)</translation>
     </message>
     <message>
         <source>Inbound</source>
@@ -460,7 +460,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Send coins to a Sugarchain address</source>
-        <translation type="unfinished">שליחת מטבעות לכתובת ביטקוין</translation>
+        <translation type="unfinished">שליחת מטבעות לכתובת של רשת סוכר</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -499,12 +499,24 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">ה&amp;חלפת מילת צופן…</translation>
     </message>
     <message>
+        <source>Sign &amp;message…</source>
+        <translation type="unfinished">&amp;חתימה על הודעה…</translation>
+    </message>
+    <message>
         <source>Sign messages with your Sugarchain addresses to prove you own them</source>
-        <translation type="unfinished">חתום על הודעות עם כתובות הביטקוין שלך כדי להוכיח שהן בבעלותך</translation>
+        <translation type="unfinished">חתום על הודעות עם כתובות רשת הסוכר שלך כדי להוכיח שאתה הבעלים שלהן</translation>
+    </message>
+    <message>
+        <source>&amp;Verify message…</source>
+        <translation type="unfinished">&amp;אשר הודעה</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Sugarchain addresses</source>
-        <translation type="unfinished">אמת הודעות כדי להבטיח שהן נחתמו עם כתובת ביטקוין מסוימות</translation>
+        <translation type="unfinished">חתום על הודעות עם כתובות רשת הסוכר שלך כדי להוכיח שאתה הבעלים שלהן</translation>
+    </message>
+    <message>
+        <source>&amp;Load PSBT from file…</source>
+        <translation type="unfinished">&amp;טעינת PBST מקובץ…</translation>
     </message>
     <message>
         <source>Open &amp;URI…</source>
@@ -539,8 +551,20 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">סרגל כלים לשוניות</translation>
     </message>
     <message>
+        <source>Syncing Headers (%1%)…</source>
+        <translation type="unfinished">הכותרות מסונכרנות (%1%)…</translation>
+    </message>
+    <message>
         <source>Synchronizing with network…</source>
         <translation type="unfinished">בסנכרון עם הרשת</translation>
+    </message>
+    <message>
+        <source>Indexing blocks on disk…</source>
+        <translation type="unfinished">מעביר לאינדקס בלוקים בדיסק...</translation>
+    </message>
+    <message>
+        <source>Processing blocks on disk…</source>
+        <translation type="unfinished">מעבד בלוקים בדיסק...</translation>
     </message>
     <message>
         <source>Connecting to peers…</source>
@@ -603,11 +627,15 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Load Partially Signed Sugarchain Transaction</source>
-        <translation type="unfinished">העלה עיסקת ביטקוין חתומה חלקית</translation>
+        <translation type="unfinished">העלה עסקת שרשרת סוכר חתומה חלקית</translation>
+    </message>
+    <message>
+        <source>Load PSBT from &amp;clipboard…</source>
+        <translation type="unfinished">העלאת PSBT מהקליפבורד...</translation>
     </message>
     <message>
         <source>Load Partially Signed Sugarchain Transaction from clipboard</source>
-        <translation type="unfinished">טעינת עסקת ביטקוין חתומה חלקית מלוח הגזירים</translation>
+        <translation type="unfinished">טוען עסקת שרשרת סוכר חתומה חלקית מהלוח</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -627,7 +655,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Open a sugarchain: URI</source>
-        <translation type="unfinished">פתיחת ביטקוין: כתובת משאב</translation>
+        <translation type="unfinished">פתיחת שרשרת סוכר: כתובת משאב</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -657,7 +685,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Sugarchain command-line options</source>
-        <translation type="unfinished">יש להציג את הודעת העזרה של %1 כדי להציג רשימה עם אפשרויות שורת פקודה לביטקוין</translation>
+        <translation type="unfinished">יש להציג את הודעת העזרה של %1כדי להציג רשימה של אפשרויות שורת הפקודה עבור שרשרת סוכר</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -677,9 +705,19 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">אין ארנקים זמינים</translation>
     </message>
     <message>
+        <source>Wallet Data</source>
+        <extracomment>Name of the wallet data file format.</extracomment>
+        <translation type="unfinished">נתוני ארנק</translation>
+    </message>
+    <message>
         <source>Load Wallet Backup</source>
         <extracomment>The title for Restore Wallet File Windows</extracomment>
         <translation type="unfinished">טעינת גיבוי הארנק</translation>
+    </message>
+    <message>
+        <source>Restore Wallet</source>
+        <extracomment>Title of pop-up window shown when the user is attempting to restore a wallet.</extracomment>
+        <translation type="unfinished">שחזור ארנק</translation>
     </message>
     <message>
         <source>Wallet Name</source>
@@ -702,6 +740,14 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>%1 client</source>
         <translation type="unfinished">לקוח %1</translation>
     </message>
+    <message>
+        <source>&amp;Hide</source>
+        <translation type="unfinished">ה&amp;סתרה</translation>
+    </message>
+    <message>
+        <source>S&amp;how</source>
+        <translation type="unfinished">ה&amp;צגה</translation>
+    </message>
     <message numerus="yes">
         <source>%n active connection(s) to Sugarchain network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
@@ -709,6 +755,30 @@ Signing is only possible with addresses of the type 'legacy'.</source>
             <numerusform />
             <numerusform />
         </translation>
+    </message>
+    <message>
+        <source>Click for more actions.</source>
+        <extracomment>A substring of the tooltip. "More actions" are available via the context menu.</extracomment>
+        <translation type="unfinished">נא ללחוץ כאן לפעולות נוספות.</translation>
+    </message>
+    <message>
+        <source>Show Peers tab</source>
+        <extracomment>A context menu item. The "Peers tab" is an element of the "Node window".</extracomment>
+        <translation type="unfinished">הצגת לשונית עמיתים</translation>
+    </message>
+    <message>
+        <source>Disable network activity</source>
+        <extracomment>A context menu item.</extracomment>
+        <translation type="unfinished">השבתת פעילות רשת</translation>
+    </message>
+    <message>
+        <source>Enable network activity</source>
+        <extracomment>A context menu item. The network activity was disabled previously.</extracomment>
+        <translation type="unfinished">הפעלת פעילות רשת</translation>
+    </message>
+    <message>
+        <source>Pre-syncing Headers (%1%)…</source>
+        <translation type="unfinished">הכותרות בקדם סנכרון (%1%)…</translation>
     </message>
     <message>
         <source>Error: %1</source>
@@ -813,10 +883,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">עמלה:</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">אבק:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation type="unfinished">לאחר עמלה:</translation>
     </message>
@@ -865,6 +931,18 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">העתקת הסכום</translation>
     </message>
     <message>
+        <source>&amp;Copy address</source>
+        <translation type="unfinished">ה&amp;עתקת כתובת</translation>
+    </message>
+    <message>
+        <source>Copy &amp;label</source>
+        <translation type="unfinished">העתקת &amp;תווית</translation>
+    </message>
+    <message>
+        <source>Copy &amp;amount</source>
+        <translation type="unfinished">העתקת &amp;סכום</translation>
+    </message>
+    <message>
         <source>Copy quantity</source>
         <translation type="unfinished">העתקת הכמות</translation>
     </message>
@@ -881,28 +959,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">העתקת בתים</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">העתקת אבק</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">העתקת השינוי</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
         <translation type="unfinished">(%1 נעולים)</translation>
-    </message>
-    <message>
-        <source>yes</source>
-        <translation type="unfinished">כן</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation type="unfinished">לא</translation>
-    </message>
-    <message>
-        <source>This label turns red if any recipient receives an amount smaller than the current dust threshold.</source>
-        <translation type="unfinished">תווית זו הופכת לאדומה אם מישהו מהנמענים מקבל סכום נמוך יותר מסף האבק הנוכחי.</translation>
     </message>
     <message>
         <source>Can vary +/- %1 satoshi(s) per input.</source>
@@ -962,6 +1024,14 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">פותח ארנק&lt;b&gt;%1&lt;/b&gt;...</translation>
     </message>
 </context>
+<context>
+    <name>RestoreWalletActivity</name>
+    <message>
+        <source>Restore Wallet</source>
+        <extracomment>Title of progress window which is displayed when wallets are being restored.</extracomment>
+        <translation type="unfinished">שחזור ארנק</translation>
+    </message>
+    </context>
 <context>
     <name>WalletController</name>
     <message>
@@ -1028,20 +1098,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">יצירת ארנק ריק</translation>
     </message>
     <message>
-        <source>Use descriptors for scriptPubKey management</source>
-        <translation type="unfinished">השתמש ב descriptors לניהול scriptPubKey </translation>
-    </message>
-    <message>
-        <source>Descriptor Wallet</source>
-        <translation type="unfinished">ארנק Descriptor </translation>
-    </message>
-    <message>
         <source>Create</source>
         <translation type="unfinished">יצירה</translation>
-    </message>
-    <message>
-        <source>Compiled without sqlite support (required for descriptor wallets)</source>
-        <translation type="unfinished">מהודר ללא תמיכת sqlite (נחוץ לארנקי דסקריפטור)</translation>
     </message>
     </context>
 <context>
@@ -1080,7 +1138,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>The entered address "%1" is not a valid Sugarchain address.</source>
-        <translation type="unfinished">הכתובת שסיפקת "%1" אינה כתובת ביטקוין תקנית.</translation>
+        <translation type="unfinished">הכתובת שסיפקת "%1"אינה כתובת רגילה של שרשרת סוכר.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1126,7 +1184,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>Intro</name>
     <message>
         <source>Sugarchain</source>
-        <translation type="unfinished">ביטקוין</translation>
+        <translation type="unfinished">שרשרת סוכר</translation>
     </message>
     <message numerus="yes">
         <source>%n GB of space available</source>
@@ -1167,7 +1225,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>%1 will download and store a copy of the Sugarchain block chain.</source>
-        <translation type="unfinished">%1 תוריד ותאחסן עותק של שרשרת הבלוקים של ביטקוין.</translation>
+        <translation type="unfinished">%1 תוריד ותאחסן עותק של שרשרת הבלוקים של שרשרת סוכר.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1252,11 +1310,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sugarchain network, as detailed below.</source>
-        <translation type="unfinished">ייתכן שהעברות שבוצעו לאחרונה לא יופיעו עדיין, ולכן המאזן בארנק שלך יהיה שגוי. המידע הנכון יוצג במלואו כאשר הארנק שלך יסיים להסתנכרן עם רשת הביטקוין, כמפורט למטה.</translation>
+        <translation type="unfinished">ייתכן שהעברות שבוצעו לאחרונה לא יופיעו עדיין, ולכן המאזן בארנק שלך יהיה שגוי.המידע הנכון יוצג במלואו כאשר הארנק שלך יסיים להסתנכרן עם רשת רשת הסוכר, כמפורט להלן.</translation>
     </message>
     <message>
-        <source>Attempting to spend sugarchains that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">הרשת תסרב לקבל הוצאת ביטקוינים במידה והם כבר נמצאים בהעברות אשר לא מוצגות עדיין.</translation>
+        <source>Attempting to spend coins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation type="unfinished">הרשת תסרב לקבל משיכת מטבעות אם הם כבר נמצאים בהעברות שעדיין לא מוצגות.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1295,7 +1353,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>OpenURIDialog</name>
     <message>
         <source>Open sugarchain URI</source>
-        <translation type="unfinished">פתיחת כתובת משאב ביטקוין</translation>
+        <translation type="unfinished">פתיחת כתובת משאב שרשרת סוכר</translation>
     </message>
     <message>
         <source>URI:</source>
@@ -1403,7 +1461,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Automatically open the Sugarchain client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="unfinished">פתיחת הפתחה של ביטקוין בנתב באופן אוטומטי. עובד רק אם UPnP מופעל ונתמך בנתב.</translation>
+        <translation type="unfinished">פתיחת שרשרת סוכר בנתב אוטומטית. עובד רק אם UPnP מופעל ונתמך בנתב.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1419,7 +1477,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Connect to the Sugarchain network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">התחבר לרשת הביטקוין דרך פרוקסי SOCKS5.</translation>
+        <translation type="unfinished">התחבר לרשת שרשרת הסוכר באמצעות פרוקסי SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1483,7 +1541,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Connect to the Sugarchain network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">התחבר לרשת ביטקוין דרך פרוקסי נפרד SOCKS5 proxy לשרותי שכבות בצל (onion services).</translation>
+        <translation type="unfinished">התחבר לרשת שרשרת סוכר דרך פרוקסי נפרד SOCKS5 proxy לשרותי שכבות בצל (onion services).</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
@@ -1559,7 +1617,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sugarchain network after a connection is established, but this process has not completed yet.</source>
-        <translation type="unfinished">המידע המוצג עשוי להיות מיושן. הארנק שלך מסתנכרן באופן אוטומטי עם רשת הביטקוין לאחר יצירת החיבור, אך התהליך טרם הסתיים.</translation>
+        <translation type="unfinished">המידע המוצג עשוי להיות מיושן. הארנק שלך מסתנכרן אוטומטית עם רשת שרשרת הסוכר ברגע שהחיבור נוצר, אך התהליך טרם הסתיים.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1701,6 +1759,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished"> * שליחת %1 אל %2</translation>
     </message>
     <message>
+        <source>own address</source>
+        <translation type="unfinished">כתובת עצמית</translation>
+    </message>
+    <message>
         <source>Unable to calculate transaction fee or total transaction amount.</source>
         <translation type="unfinished">לא מצליח לחשב עמלת עיסקה או הערך הכולל של העיסקה.</translation>
     </message>
@@ -1765,7 +1827,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Sugarchain address or malformed URI parameters.</source>
-        <translation type="unfinished">לא ניתן לנתח את כתובת המשאב! מצב זה יכול לקרות עקב כתובת ביטקוין שגויה או פרמטרים שגויים בכתובת המשאב.</translation>
+        <translation type="unfinished">לא ניתן לנתח את כתובת המשאב! מצב זה יכול לקרות עקב כתובת שרשרת סוכר שגויה או פרמטרים שגויים בכתובת המשאב.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2063,6 +2125,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">יוצא:</translation>
     </message>
     <message>
+        <source>&amp;Copy address</source>
+        <extracomment>Context menu action to copy the address of a peer.</extracomment>
+        <translation type="unfinished">ה&amp;עתקת כתובת</translation>
+    </message>
+    <message>
         <source>&amp;Disconnect</source>
         <translation type="unfinished">&amp;ניתוק</translation>
     </message>
@@ -2139,7 +2206,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sugarchain network.</source>
-        <translation type="unfinished">הודעת רשות לצירוף לבקשת התשלום שתוצג בעת פתיחת הבקשה. לתשומת לבך: ההודעה לא תישלח עם התשלום ברשת ביטקוין.</translation>
+        <translation type="unfinished">הודעת רשות לצירוף לבקשת התשלום שתוצג בעת פתיחת הבקשה. לתשומת לבך: ההודעה לא תישלח עם התשלום ברשת שרשרת סוכר.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2196,6 +2263,18 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Copy &amp;URI</source>
         <translation type="unfinished">העתקת &amp;כתובת משאב</translation>
+    </message>
+    <message>
+        <source>&amp;Copy address</source>
+        <translation type="unfinished">ה&amp;עתקת כתובת</translation>
+    </message>
+    <message>
+        <source>Copy &amp;label</source>
+        <translation type="unfinished">העתקת &amp;תווית</translation>
+    </message>
+    <message>
+        <source>Copy &amp;amount</source>
+        <translation type="unfinished">העתקת &amp;סכום</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -2367,16 +2446,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">ניקוי של כל השדות בטופס.</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">אבק:</translation>
-    </message>
-    <message>
         <source>Hide transaction fee settings</source>
         <translation type="unfinished">הסתרת הגדרות עמלת עסקה</translation>
     </message>
     <message>
         <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for sugarchain transactions than the network can process.</source>
-        <translation type="unfinished">כאשר יש פחות נפח עסקאות מאשר מקום בבלוק, כורים וכן צמתות מקשרות יכולות להכתיב עמלות מינימום. התשלום של עמלת מינימום הנו תקין, אך יש לקחת בחשבון שהדבר יכול לגרום לעסקה שלא תאושר ברגע שיש יותר ביקוש לעסקאות ביטקוין מאשר הרשת יכולה לעבד.</translation>
+        <translation type="unfinished">כאשר יש פחות נפח עסקאות מאשר מקום בבלוק, כורים וכן צמתות מקשרות יכולות להכתיב עמלות מינימום. התשלום של עמלת מינימום הנו תקין, אך יש לקחת בחשבון שהדבר יכול לגרום לעסקה שלא תאושר ברגע שיש יותר ביקוש לעסקאות שרשרת סוכר מאשר הרשת יכולה לעבד.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -2431,10 +2506,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">העתקת בתים</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">העתקת אבק</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">העתקת השינוי</translation>
     </message>
@@ -2448,7 +2519,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Creates a Partially Signed Sugarchain Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">יוצר עסקת ביטקוין חתומה חלקית (PSBT) לשימוש עם ארנק %1 לא מחובר למשל, או עם PSBT ארנק חומרה תואם.</translation>
+        <translation type="unfinished">יוצר עסקת שרשרת סוכר חתומה חלקית (PSBT) לשימוש עם ארנק %1 לא מחובר למשל, או עם PSBT ארנק חומרה תואם.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2486,7 +2557,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Please, review your transaction proposal. This will produce a Partially Signed Sugarchain Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
-        <translation type="unfinished">בבקשה לסקור את העיסקה המוצעת. הדבר יצור עיסקת ביטקוין חתומה חלקית (PSBT) אשר ניתן לשמור או להעתיק ואז לחתום עם למשל ארנק לא מקוון %1, או עם ארנק חומרה תואם-PSBT.</translation>
+        <translation type="unfinished">בבקשה לסקור את העיסקה המוצעת. הדבר יצור עיסקת שרשרת סוכר חתומה חלקית (PSBT) אשר ניתן לשמור או להעתיק ואז לחתום עם למשל ארנק לא מקוון %1, או עם ארנק חומרה תואם-PSBT.</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
@@ -2550,7 +2621,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Warning: Invalid Sugarchain address</source>
-        <translation type="unfinished">אזהרה: כתובת ביטקיון שגויה</translation>
+        <translation type="unfinished">אזהרה:כתובת רשת סוכר שגויה</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2589,7 +2660,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>The Sugarchain address to send the payment to</source>
-        <translation type="unfinished">כתובת הביטקוין של המוטב</translation>
+        <translation type="unfinished">כתובת רשת הסוכר של המוטב</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -2604,8 +2675,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">הסכום לשליחה במטבע הנבחר</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less sugarchains than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">העמלה תנוכה מהסכום שנשלח. הנמען יקבל פחות ביטקוינים ממה שסיפקת בשדה הסכום. אם נבחרו מספר נמענים, העמלה תחולק באופן שווה.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less coins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished">האגרה תנוכה מהסכום שנשלח. הנמען יקבל פחות מטבעות ממה שסיפקת בשדה הסכום. אם נבחרו מספר נמענים, העמלה תחולק שווה בשווה.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2625,7 +2696,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>A message that was attached to the sugarchain: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sugarchain network.</source>
-        <translation type="unfinished">הודעה שצורפה לביטקוין: כתובת שתאוחסן בהעברה לצורך מעקב מצדך. לתשומת לבך: הודעה זו לא תישלח ברשת הביטקוין.</translation>
+        <translation type="unfinished">הודעה מצורפת לשרשרת סוכר: כתובת שתאוחסן בהעברה לצורך מעקב מצדך. לתשומת לבך:הודעה זו לא תישלח ברשת רשת הסוכר.</translation>
     </message>
 </context>
 <context>
@@ -2650,12 +2721,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">חתימה על הו&amp;דעה</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive sugarchains sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">אפשר לחתום על הודעות/הסכמים באמצעות הכתובות שלך, כדי להוכיח שבאפשרותך לקבל את הביטקוינים הנשלחים אליהן. יש להיזהר ולא לחתום על תוכן עמום או אקראי, מכיוון שתקיפות דיוג עשויות לנסות לגנוב את זהותך. יש לחתום רק על הצהרות מפורטות שהנך מסכים/ה להן.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive coins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation type="unfinished">אפשר לחתום על הודעות/הסכמים באמצעות הכתובות שלך, כדי להוכיח שאתה יכול לקבל את המטבעות שנשלחו אליהם. יש להיזהר ולא לחתום על תוכן עמום או אקראי, מכיוון שתקיפות דיוג עשויות לנסות לגנוב את זהותך. יש לחתום רק על הצהרות מפורטות שהנך מסכים/ה להן.</translation>
     </message>
     <message>
         <source>The Sugarchain address to sign the message with</source>
-        <translation type="unfinished">כתובת הביטקוין איתה לחתום את ההודעה</translation>
+        <translation type="unfinished">כתובת רשת הסוכר איתה חותמים על ההודעה</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2679,7 +2750,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Sign the message to prove you own this Sugarchain address</source>
-        <translation type="unfinished">ניתן לחתום על ההודעה כדי להוכיח שכתובת ביטקוין זו בבעלותך</translation>
+        <translation type="unfinished">ניתן לחתום על ההודעה כדי להוכיח שכתובת שרשרת סוכר זו בבעלותך</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2703,7 +2774,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>The Sugarchain address the message was signed with</source>
-        <translation type="unfinished">כתובת הביטקוין שאיתה נחתמה ההודעה</translation>
+        <translation type="unfinished">כתובת רשת הסוכר איתה נחתמה ההודעה</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2715,7 +2786,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Sugarchain address</source>
-        <translation type="unfinished">ניתן לאמת את ההודעה כדי להבטיח שהיא נחתמה עם כתובת הביטקוין הנתונה</translation>
+        <translation type="unfinished">ניתן לאמת את ההודעה כדי לוודא שהיא נחתמה עם כתובת רשת הסוכר הנתונה</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3006,10 +3077,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">נשלח אל</translation>
     </message>
     <message>
-        <source>Payment to yourself</source>
-        <translation type="unfinished">תשלום לעצמך</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation type="unfinished">נכרו</translation>
     </message>
@@ -3085,10 +3152,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">נשלח אל</translation>
     </message>
     <message>
-        <source>To yourself</source>
-        <translation type="unfinished">לעצמך</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation type="unfinished">נכרו</translation>
     </message>
@@ -3103,6 +3166,18 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Min amount</source>
         <translation type="unfinished">סכום מזערי</translation>
+    </message>
+    <message>
+        <source>&amp;Copy address</source>
+        <translation type="unfinished">ה&amp;עתקת כתובת</translation>
+    </message>
+    <message>
+        <source>Copy &amp;label</source>
+        <translation type="unfinished">העתקת &amp;תווית</translation>
+    </message>
+    <message>
+        <source>Copy &amp;amount</source>
+        <translation type="unfinished">העתקת &amp;סכום</translation>
     </message>
     <message>
         <source>Export Transaction History</source>
@@ -3276,6 +3351,11 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">גיבוי הארנק</translation>
     </message>
     <message>
+        <source>Wallet Data</source>
+        <extracomment>Name of the wallet data file format.</extracomment>
+        <translation type="unfinished">נתוני ארנק</translation>
+    </message>
+    <message>
         <source>Backup Failed</source>
         <translation type="unfinished">הגיבוי נכשל</translation>
     </message>
@@ -3309,10 +3389,6 @@ Go to File &gt; Open Wallet to load a wallet.
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation type="unfinished">מופץ תחת רשיון התוכנה של MIT, ראה קובץ מלווה  %s או %s</translation>
-    </message>
-    <message>
-        <source>Error reading %s! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation type="unfinished">שגיאה בנסיון לקרוא את %s! כל המפתחות נקראו נכונה, אך נתוני העסקה או הכתובות יתכן שחסרו או שגויים.</translation>
     </message>
     <message>
         <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>
